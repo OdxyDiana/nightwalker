@@ -1,0 +1,378 @@
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css");
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap&family=Noto+Sans+SC:wght@100..900&display=swap");
+
+@import url("./output.css");
+
+/** VARIABLES **/
+:root {
+  --dark-theme-background-1: #121212;
+  --dark-theme-background-2: #191919;
+  --dark-theme-background-3: #1f1f1f;
+  --dark-theme-text-color: #9c9d9f;
+  --light-theme-background-3: #c9c9c9;
+  --light-theme-background-2: #d6d6d6;
+  --light-theme-background-1: #dcdcdc;
+  --light-theme-text-color: #1c1d1f;
+}
+
+:root {
+  --dark-theme-accent-color: #673143;
+  --light-theme-accent-color: #25719c;
+}
+
+/** MODO OSCURO **/
+[data-theme="dark"] {
+  --background-1: var(--dark-theme-background-1);
+  --background-2: var(--dark-theme-background-2);
+  --background-3: var(--dark-theme-background-3);
+  --text-color: var(--dark-theme-text-color);
+  --accent-color: var(--dark-theme-accent-color);
+}
+
+/** MODO CLARO**/
+[data-theme="light"] {
+  --background-1: var(--light-theme-background-1);
+  --background-2: var(--light-theme-background-2);
+  --background-3: var(--light-theme-background-3);
+  --text-color: var(--light-theme-text-color);
+  --accent-color: var(--light-theme-accent-color);
+}
+
+/** GENERAL **/
+img {
+  opacity: 50%;
+}
+.text-color {
+  color: var(--text-color);
+}
+
+.text-color-accent {
+  color: var(--accent-color);
+}
+
+.background-1 {
+  background-color: var(--background-1);
+}
+
+.xl\:background-1 {
+  @media (width >= 80rem) {
+    background-color: var(--background-1);
+  }
+}
+
+.background-2 {
+  background-color: var(--background-2);
+}
+
+.xl\:background-2 {
+  @media (width >= 80rem) {
+    background-color: var(--background-2);
+  }
+}
+
+.background-3 {
+  background-color: var(--background-3);
+}
+
+.xl\:background-3 {
+  @media (width >= 80rem) {
+    background-color: var(--background-3);
+  }
+}
+
+.background-accent {
+  background-color: var(--accent-color);
+}
+
+.xl\:background-accent {
+  @media (width >= 80rem) {
+    background-color: var(--accent-color);
+  }
+}
+
+.border-color-1 {
+  border-color: var(--background-1);
+}
+
+.xl\:border-color-1 {
+  @media (width >= 80rem) {
+    border-color: var(--background-1);
+  }
+}
+
+.border-color-2 {
+  border-color: var(--background-2);
+}
+
+.xl\:border-color-2 {
+  @media (width >= 80rem) {
+    border-color: var(--background-2);
+  }
+}
+
+.border-color-3 {
+  border-color: var(--background-3);
+}
+
+.xl\:border-color-3 {
+  @media (width >= 80rem) {
+    border-color: var(--background-3);
+  }
+}
+
+.border-color-accent {
+  border-color: var(--text-color);
+}
+
+.xl\:border-color-accent {
+  @media (width >= 80rem) {
+    border-color: var(--text-color);
+  }
+}
+
+[data-title] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-title]::after {
+  content: attr(data-title);
+  visibility: hidden;
+  max-width: 500px;
+  min-width: 100px;
+  background-color: var(--background-1);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+[data-title]:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/** HEADER **/
+/** NAVBAR **/
+/** USER NAVBAR **/
+#header-user.user-anon span {
+  font-size: 0px !important;
+}
+#header-user.user-anon span:after {
+  font-size: initial;
+  content: "Invitado";
+}
+
+/** BOTONES NAVEGACION **/
+[data-theme="dark"] nav a.nav-icon.dark-theme {
+  display: none !important;
+}
+[data-theme="light"] nav a.nav-icon.light-theme {
+  display: none !important;
+}
+
+/** BREADCRUMP **/
+#breadcrump a {
+  font-size: initial;
+}
+
+/** CATEGORIAS **/
+.forum-section {
+  .icon-no-new,
+  .icon-closed,
+  .icon-new {
+    display: none;
+  }
+  &.forum_new {
+    .icon-new,
+    .last-post-message {
+      color: var(--accent-color);
+      display: initial;
+    }
+  }
+  &.forum_no_new {
+    .icon-no-new {
+      display: initial;
+    }
+  }
+  &.forum_locked {
+    .icon-closed {
+      display: initial;
+    }
+  }
+  &:has(.desc4, .desc5) {
+    .forum-title {
+      background-color: var(--background-1);
+    }
+  }
+}
+
+/**LISTADO TEMAS**/
+.topic-list-container {
+  .icon-no-new,
+  .icon-closed,
+  .icon-new {
+    display: none;
+  }
+
+  &.post_no_new {
+    .icon-no-new {
+      display: initial;
+    }
+  }
+}
+
+/**AFILIACIONES FOOTER **/
+#afiliaciones {
+  & img {
+    border-radius: var(--radius-sm);
+    border-width: 1px;
+    border-color: var(--background-3);
+  }
+}
+
+/** PERFILES POSTS **/
+
+#post-header {
+  grid-template-areas:
+    "nickname nickname nickname nickname apodo apodo grupo fans personaje personaje personaje"
+    "posts posts wons wons apodo apodo medallero medallero personaje personaje personaje"
+    "fecha fecha fecha permalink empresa edad medallero medallero personaje personaje personaje";
+}
+
+#post-footer {
+  grid-template-areas:
+    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
+    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
+    "pareja pareja pareja reputacion reputacion inventario inventario inventario inventario quote quote";
+}
+
+#post-wrapper {
+  grid-template-areas:
+    "nickname nickname nickname nickname apodo apodo grupo fans personaje personaje personaje"
+    "posts posts wons wons apodo apodo medallero medallero personaje personaje personaje"
+    "fecha fecha fecha permalink empresa edad medallero medallero personaje personaje personaje"
+    "avatar avatar avatar enlaces post-content post-content post-content post-content post-content post-content post-content"
+    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
+    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
+    "pareja pareja pareja reputacion reputacion inventario inventario inventario inventario quote quote";
+}
+
+.post-author-name {
+  grid-area: nickname;
+}
+
+.post-author-field.post-field-post {
+  grid-area: posts;
+}
+
+.post-author-field.post-field-post::after {
+  content: "posts";
+}
+
+.post-author-field.post-field-wons {
+  grid-area: wons;
+}
+
+.post-author-field.post-field-wons::after {
+  content: "Wons";
+}
+
+.post-author-field.post-field-personaje {
+  grid-area: personaje;
+}
+
+.post-author-field.post-field-personaje .post-author-field-content {
+  width: max-content;
+  height: 100%;
+  max-width: max-content;
+  max-height: 100%;
+}
+
+.post-author-field.post-field-personaje .post-author-field-content img {
+  height: 100%;
+  border: 1px solid var(--background-1);
+  border-radius: var(--radius-sm);
+}
+
+.post-author-field.post-field-apodos {
+  grid-area: apodo;
+}
+.post-author-field.post-field-empresa {
+  grid-area: empresa;
+}
+.post-author-field.post-field-edad {
+  grid-area: edad;
+}
+.post-author-field.post-field-edad::after {
+  content: " años";
+}
+
+.post-author-field.post-field-fans {
+  grid-area: fans;
+}
+
+.post-author {
+  grid-area: avatar;
+}
+#post-buttons {
+  grid-area: enlaces;
+}
+.post-fecha {
+  grid-area: fecha;
+}
+.post-permalink {
+  grid-area: permalink;
+}
+.post-author-field.post-field-pareja {
+  grid-area: pareja;
+}
+.post-author-field.post-field-nivelreputacion {
+  grid-area: nivelreputacion;
+}
+.post-author-field.post-field-reputacion {
+  grid-area: reputacion;
+}
+.post-author-field.post-field-reputacion::after {
+  content: " pts de reputación";
+}
+.post-author-field.post-field-medallas {
+  grid-area: medallero;
+}
+.post-author-field.post-field-inventario {
+  grid-area: inventario;
+}
+.post-author-field.post-field-quote {
+  grid-area: quote;
+}
+.post-author-field.post-field-grupo {
+  grid-area: grupo;
+}
+
+.post-content {
+  grid-area: post-content;
+}
+
+#post-buttons a img,
+#post-buttons img {
+  display: none;
+}
+#post-buttons a::after {
+  content: "\eb9a";
+  display: block;
+  font-family: var(--font-phosphor-fill);
+  font-size: 16px;
+  background-color: var(--background-3);
+  padding: calc(var(--spacing) * 3);
+  border: 1px solid var(--background-1);
+  border-radius: var(--radius-sm);
+}

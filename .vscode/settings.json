@@ -1,0 +1,8 @@
+{
+  "livePreview.defaultPreviewPath": "/src/paleta.html",
+  "editor.tabFocusMode": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.scrollToSwitchTabs": false,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.wrapTabs": true
+}

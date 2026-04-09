@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightwalker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+      <script src="profile-section.js"></script>
+  </head>
+  <body class="background-2 p-5">
+    <div
+      id="wrap"
+      class="container background-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+    >
+      <header>
+        <nav
+          class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
+        >
+          <div
+            class="background-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+          >
+            <div
+              id="header-user"
+              class="user-anon flex justify-start items-center"
+            >
+              <div
+                class="w-[50px] h-[50px] overflow-hidden rounded-sm background-2 p-[5px] object-cover object-center border border-color-3 box-content"
+              >
+                <img
+                  src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                  alt="Anonymous"
+                  class="w-[50px] h-[50px] border-color-3 border object-cover object-center rounded-sm opacity-50"
+                />
+              </div>
+              <span class="uppercase font-bold ml-[10px]">Anonymous</span>
+            </div>
+            <div
+              class="navbar-buttons flex justify-center gap-2 items-center p-2"
+            >
+              <a
+                href="/"
+                class="p-2 nav-icon background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Índice"
+              >
+                <i class="ph-fill ph-house"></i>
+              </a>
+              <a
+                href="/memberlist"
+                class="p-2 nav-icon background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Idols"
+              >
+                <i class="ph-fill ph-user-list"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo oscuro"
+              >
+                <i class="ph-fill ph-moon-stars"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo claro"
+              >
+                <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Conéctate"
+                href="/login?connexion"
+              >
+                <i class="ph-fill ph-sign-in"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Registrate"
+                href="/register"
+              >
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            id="breadcrump"
+            class="text-[0px] z-1 background-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"
+          >
+            &nbsp;::&nbsp;
+            <a
+              href="/c1-nombre-de-la-categoria-1"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Nombre de la categoría 1</span></a
+            >
+            &nbsp;::&nbsp;
+            <a
+              href="/f3-expedientes"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Expedientes</span></a
+            >
+          </div>
+        </nav>
+
+        <div
+          id="tablon"
+          class="background-2 rounded-sm border border-color-3 xl:p-5 p-2 grid grid-cols-12 gap-3 xl:gap-5"
+        >
+          <a
+            href="/"
+            class="block w-full xl:w-auto p-5 background-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+          >
+            <img
+              src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
+              alt="Nigthwalker"
+              loading="lazy"
+              class="opacity-50 rounded-sm w-full h-auto border border-color-1"
+            />
+          </a>
+          <div
+            class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+          >
+            <h3
+              class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Notificaciones
+            </h3>
+          </div>
+          <div
+            class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+          >
+            <h3
+              class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Cuentas
+            </h3>
+          </div>
+          <div class="contents">
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Últimos temas
+              </h3>
+            </div>
+            <div
+              class="background-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+            >
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Calendario
+              </h3>
+              <calendario-app [calendario]="calendario"></calendario-app>
+              <script>
+                const calendario = {
+                  noticias: [
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                  ],
+                };
+              </script>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Staff
+              </h3>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+            ></div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Búsquedas
+              </h3>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-10">
+        <div id="profile-main" class="background-2 border border-color-3 border-solid mx-auto rounded-sm xl:p-5 p-3">
+          <div id="profile-grid" class="grid grid-cols-12 xl:gap-5 gap-2">
+            <div id="profile-header" class="grid grid-cols-12 xl:gap-5 gap-2 col-span-12 col-start-1">
+              <div id="profile-nickname" class="background-1 border border-color-3 border-solid rounded-sm xl:p-5 p-3 text-center text-3xl col-span-12 row-start-2 uppercase text-bold">
+                Nickname
+              </div>
+            </div>
+            <div id="profile-body" class="grid grid-cols-12 xl:gap-5 gap-3 background-1 border border-color-3 border-solid rounded-sm xl:p-5 p-3 col-span-12 row-start-3">
+              <div id="profile-avatar-rank" class="flex flex-col gap-2 xl:gap-5 justify-start items-center col-span-2 row-span-6 ">
+                <div
+                        id="profile-avatar" class="border border-color-1 text-center rounded-sm w-full h-auto overflow-hidden"
+                      >
+                        <img
+                          class="max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]" src="https://images2.imgbox.com/0c/77/494XeWpw_o.png" alt="Avatar"
+                        />
+                      </div>
+
+                      <div
+                        class="p-2 xl:p-5 post-author-rank background-2 border border-color-3 rounded-sm uppercase w-full text-center"
+                      >
+                        Idol
+                      </div>
+              </div>
+              <div id="profile-info" class="contents"></div>
+               <template id="profile-field-template" class="contents">
+                <div class="profile-field-container">
+                  <div class="profile-field-label hidden">
+                    <span class="label">Mensajes :</span>
+                    </div>
+                  <div class="profile-field-content">1234</div>
+                </div>
+              </template>
+            </div>
+
+          </div>
+        </div>
+        </main>
+  </body>
+</html>

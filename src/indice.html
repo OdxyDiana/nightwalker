@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightwalker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="forum-section.js"></script>
+  </head>
+  <body class="background-2 p-5">
+    <div
+      id="wrap"
+      class="container background-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+    >
+      <header>
+        <nav
+          class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
+        >
+          <div
+            class="background-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+          >
+            <div
+              id="header-user"
+              class="user-anon flex justify-start items-center"
+            >
+              <div
+                class="w-[50px] h-[50px] overflow-hidden rounded-sm background-2 p-[5px] object-cover object-center border border-color-3 box-content"
+              >
+                <img
+                  src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                  alt="Anonymous"
+                  class="w-[50px] h-[50px] border-color-3 border object-cover object-center rounded-sm opacity-50"
+                />
+              </div>
+              <span class="uppercase font-bold ml-[10px]">Anonymous</span>
+            </div>
+            <div
+              class="navbar-buttons flex justify-center gap-2 items-center p-2"
+            >
+              <a
+                href="/"
+                class="p-2 nav-icon background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Índice"
+              >
+                <i class="ph-fill ph-house"></i>
+              </a>
+              <a
+                href="/memberlist"
+                class="p-2 nav-icon background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Idols"
+              >
+                <i class="ph-fill ph-user-list"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo oscuro"
+              >
+                <i class="ph-fill ph-moon-stars"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo claro"
+              >
+                <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Conéctate"
+                href="/login?connexion"
+              >
+                <i class="ph-fill ph-sign-in"></i>
+              </a>
+              <a
+                class="nav-icon p-2 background-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Registrate"
+                href="/register"
+              >
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            id="breadcrump"
+            class="text-[0px] z-1 background-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"
+          >
+            &nbsp;::&nbsp;
+            <a
+              href="/c1-nombre-de-la-categoria-1"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Nombre de la categoría 1</span></a
+            >
+            &nbsp;::&nbsp;
+            <a
+              href="/f3-expedientes"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Expedientes</span></a
+            >
+          </div>
+        </nav>
+
+        <div
+          id="tablon"
+          class="background-2 rounded-sm border border-color-3 xl:p-5 p-2 grid grid-cols-12 gap-2 xl:gap-5"
+        >
+          <a
+            href="/"
+            class="block w-full xl:w-auto p-5 background-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+          >
+            <img
+              src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
+              alt="Nigthwalker"
+              loading="lazy"
+              class="opacity-50 rounded-sm w-full h-auto border border-color-1"
+            />
+          </a>
+          <div
+            class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+          >
+            <h3
+              class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Notificaciones
+            </h3>
+          </div>
+          <div
+            class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+          >
+            <h3
+              class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Cuentas
+            </h3>
+          </div>
+          <div class="contents">
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Últimos temas
+              </h3>
+            </div>
+            <div
+              class="background-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+            >
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Calendario
+              </h3>
+              <calendario-app [calendario]="calendario"></calendario-app>
+              <script>
+                const calendario = {
+                  noticias: [
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                  ],
+                };
+              </script>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Staff
+              </h3>
+            </div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+            ></div>
+            <div
+              class="background-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+            >
+              <h3
+                class="background-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Búsquedas
+              </h3>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-10">
+        <template id="forum-template">
+          <div
+            class="forum rounded-sm background-2 xl:p-5 p-2 border border-color-3 xl:mb-5 mb-3"
+          >
+            <div
+              class="forum-header background-1 xl:p-5 p-2 text-center uppercase rounded-sm xl:mb-5 mb-3 border border-color-3"
+            >
+              <div class="category-title">
+                <h2 class="text-2xl xl:text-3xl font-extrabold">
+                  Nombre de la categoría 1
+                </h2>
+              </div>
+            </div>
+            <div
+              class="forum-container grid grid-rows-flow grid-cols-2 gap-2 xl:gap-3"
+            ></div>
+          </div>
+        </template>
+        <template id="forum-section-template">
+          <div
+            class="forum-section col-span-2 row-span-1 gap-2 xl:gap-3 gap-2 grid grid-cols-12 grid-flow-rows group forum_no_new p-2 xl:p-3 rounded-sm background-3 xl:has-[.desc1]:col-span-1 xl:has-[.desc2]:col-span-1 border border-color-1 relative has-[.desc4]:md:h-100 has-[.desc4]:h-80 has-[.desc5]:md:h-100 has-[.desc5]:h-80"
+          >
+            <div
+              class="forum-title col-start-1 row-start-1 col-span-12 row-span-1 text-color-accent uppercase xl:text-xl text-lg font-bold py-2 xl:py-3 border-color-3 rounded-sm group-has-[.desc4]:opacity-75 group-has-[.desc4]:border group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:p-2 group-has-[.desc4]:xl:p-3 group-has-[.desc4]:flex group-has-[.desc4]:xl:gap-3 group-has-[.desc4]:gap-2 group-has-[.desc4]:items-center group-has-[.desc4]:md:col-span-7 group-has-[.desc4]:col-span-12 group-has-[.desc4]:col-start-1 group-has-[.desc4]:md:row-start-7 group-has-[.desc4]:row-start-1 group-has-[.desc5]:opacity-75 group-has-[.desc5]:border group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:flex group-has-[.desc5]:xl:gap-3 group-has-[.desc5]:gap-2 group-has-[.desc5]:items-center group-has-[.desc5]:p-2 group-has-[.desc5]:xl:p-3 group-has-[.desc5]:col-span-8 group-has-[.desc5]:md:col-start-2 group-has-[.desc5]:md:col-span-7 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7"
+            >
+              <i
+                class="ph-fill ph-chat-slash border-color-1 border p-2 rounded-sm background-2 text-color icon-no-new group-has-[.guidebook]:hidden"
+                data-title="Hay nuevos mensajes"
+              ></i>
+              <i
+                class="ph-fill ph-chat-dots border-color-1 border p-2 rounded-sm background-2 text-color icon-new group-has-[.guidebook]:hidden"
+                data-title="No hay nuevos mensajes"
+              ></i>
+              <i
+                class="ph-fill ph-lock border-color-1 border p-2 rounded-sm background-2 text-color icon-closed group-has-[.guidebook]:hidden"
+                data-title="Foro cerrado"
+              ></i>
+              <a href="listado-temas.html" data-title="Guidebook">Guidebook</a>
+            </div>
+            <div class="forum-info contents">
+              <div
+                class="flex flex-row items-center justify-center background-2 border border-color-1 rounded-sm group-has-[.guidebook]:hidden group-has-[.desc1]:col-start-1 group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-start-3 group-has-[.desc2]:row-start-3 group-has-[.desc2]:col-start-9 group-has-[.desc2]:col-span-2 group-has-[.desc3]:row-start-6 group-has-[.desc3]:md:col-start-8 group-has-[.desc3]:col-start-9 group-has-[.desc3]:col-span-2 group-has-[.desc4]:opacity-75 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:md:col-start-8 group-has-[.desc4]:col-start-9 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:opacity-75 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-9 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                data-title="Temas"
+              >
+                15 <span class="ph ph ph-chat text-xl ml-1"></span>
+              </div>
+              <div
+                class="flex flex-row items-center justify-center background-2 border border-color-1 rounded-sm text-color-accent group-has-[.guidebook]:hidden group-has-[.desc1]:row-start-3 group-has-[.desc1]:xl:col-start-5 group-has-[.desc1]:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:xl:col-start-11 group-has-[.desc2]:col-start-11 group-has-[.desc2]:row-start-3 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-span-2 group-has-[.desc3]:md:col-start-10 group-has-[.desc3]:col-start-11 group-has-[.desc4]:opacity-75 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:md:col-start-10 group-has-[.desc4]:col-start-11 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:opacity-75 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-11 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                data-title="Mensajes"
+              >
+                100 <span class="ph ph ph-chats text-xl ml-1"></span>
+              </div>
+              <div
+                class="relative overflow-hidden hidden xl:block group-has-[.guidebook]:hidden rounded-sm background-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content group-has-[.desc1]:col-start-1 group-has-[.desc1]:row-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-span-2 group-has-[.desc2]:col-start-7 group-has-[.desc2]:row-start-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:row-span-2 group-has-[.desc3]:row-start-5 group-has-[.desc3]:col-start-12 group-has-[.desc3]:col-span-1 group-has-[.desc3]:row-span-2 group-has-[.desc3]:md:block group-has-[.desc4]:col-start-12 group-has-[.desc4]:row-start-7 group-has-[.desc4]:row-span-2 group-has-[.desc4]:col-span-1 group-has-[.desc4]:md:block group-has-[.desc4]:z-1 group-has-[.desc4]:opacity-75 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7 group-has-[.desc5]:row-span-2 group-has-[.desc5]:col-span-1 group-has-[.desc5]:z-1 group-has-[.desc5]:opacity-75 group-has-[.desc5]:md:block"
+              >
+                <div
+                  class="absolute rounded-sm border-color-2 inset-0 border xl:border-3 object-center overflow-hidden"
+                >
+                  <img
+                    src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                    alt="Avatar"
+                    class="w-full object-center border-color-1 border rounded-sm group-has-[.desc4]:opacity-75 group-has-[.desc5]:opacity-75"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="xl:col-span-10 col-span-12 group-has-[.guidebook]:hidden background-2 border border-color-1 rounded-sm p-2 xl:p-3 gap-1 text-color flex flex-col xl:flex-row xl:items-center group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:row-start-4 group-has-[.desc2]:col-start-1 group-has-[.desc2]:row-start-4 group-has-[.desc2]:col-span-12 group-has-[.desc3]:md:col-span-7 group-has-[.desc3]:col-span-8 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-start-1 group-has-[.desc4]:col-start-1 group-has-[.desc4]:row-start-8 group-has-[.desc4]:md:col-span-7 group-has-[.desc4]:col-span-8 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:opacity-75 group-has-[.desc5]:opacity-75 group-has-[.desc5]:md:col-start-2 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-8 group-has-[.desc5]:md:col-span-11 group-has-[.desc5]:col-span-12"
+              >
+                <a
+                  href="/"
+                  class="xl:grow"
+                  data-title="Titulo de un tema que ya veremos que tan largo es"
+                  ><span
+                    class="truncate block xl:max-w-80 group-has-[.desc2]:xl:max-w-70 group-has-[.desc3]:xl:max-w-90 group-has-[.desc5]:xl:max-w-150"
+                    >Titulo de un tema que ya veremos que tan largo es
+                    LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGO</span
+                  ></a
+                >
+                <span
+                  class="group-has-[.desc1]:xl:hidden flex italic text-xs"
+                  data-title="Mier 26 Mayo 2024 - 23:59"
+                >
+                  Mier 26 Mayo 2024 - 23:59</span
+                >
+                <div
+                  class="flex xl:basis-1/2 xl:justify-end gap-1 items-center group-has-[.desc2]:xl:basis-5/16 group-has-[.desc3]:xl:basis-1/4 group-has-[.desc4]:xl:basis-1/4 group-has-[.desc5]:xl:basis-1/4"
+                >
+                  <a href="/" class="text-sky-600 font-bold"
+                    >Ten Leechaiyapornkul
+                  </a>
+                  <span
+                    data-title="Mier 26 Mayo 2024 - 23:59"
+                    class="hidden group-has-[.desc1]:xl:flex"
+                    ><i class="ph-fill ph-hourglass-high text-sm"></i
+                  ></span>
+                  <a
+                    href="/"
+                    data-title="Último mensaje"
+                    class="last-post-message w-1/12 justify-self-end"
+                    ><i class="ph-fill ph-paper-plane-tilt"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <div
+          id="estadisticas"
+          class="flex flex-col background-2 border border-color-3 rounded-sm p-2 xl:p-5 mt-10"
+        >
+          <div
+            class="background-1 border border-color-3 rounded-sm flex flex-row justify-between xl:mb-5 xl:p-5 mb-3 p-2 text-color"
+          >
+            <a href="/" target="_blank" class="text-3xl">
+              <i class="ph-fill ph-password"></i>
+            </a>
+            <a href="/" target="_blank" class="text-3xl">
+              <i class="ph-fill ph-password"></i>
+            </a>
+            <a href="/" target="_blank" class="text-3xl">
+              <i class="ph-fill ph-password"></i>
+            </a>
+            <a href="/" target="_blank" class="text-3xl">
+              <i class="ph-fill ph-password"></i>
+            </a>
+            <a href="/" target="_blank" class="text-3xl">
+              <i class="ph-fill ph-password"></i>
+            </a>
+          </div>
+          <div class="flex flex-row xl:gap-5 gap-3 mb-3 xl:mb-5">
+            <div
+              class="xl:flex hidden xl:w-1/4 xl:h-auto overflow-hidden rounded-sm background-3 xl:p-5 p-2 object-cover object-center border border-color-1 box-content"
+            >
+              <img
+                src="https://i.pinimg.com/736x/70/f2/a3/70f2a3517a28495857a8dfb2275bcb38.jpg"
+                alt="Quién está en línea"
+                class="w-[300px] h-[400px] xl:w-auto xl:h-auto border-color-1 border object-cover object-center rounded-sm opacity-50"
+              />
+            </div>
+            <div
+              class="w-full h-auto xl:w-3/4 rounded-sm background-3 xl:p-5 p-2 border border-color-1"
+            ></div>
+          </div>
+          <div class="flex xl:flex-row flex-col xl:gap-5 gap-3 xl:mb-5 mb-3">
+            <div
+              class="xl:basis-3/4 overflow-hidden rounded-sm background-3 xl:p-5 p-2 border border-color-1"
+            ></div>
+            <div
+              class="xl:basis-1/4 h-auto rounded-sm background-3 xl:p-5 p-2 border border-color-1"
+            >
+              <div class="grid grid-cols-6 xl:gap-5 gap-3">
+                <div
+                  class="bg-blue-500 col-span-6 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-orange-300 col-span-3 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-violet-500 col-span-3 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-emerald-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-pink-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-neutral-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-cyan-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-amber-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+                <div
+                  class="bg-indigo-500 col-span-2 p-5 rounded-sm border border-color-1"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex xl:flex-row flex-col xl:gap-5 gap-3">
+            <div
+              class="xl:basis-1/4 h-auto background-3 border border-color-1 xl:p-5 p-2 rounded-sm flex flex-col"
+            >
+              <div
+                class="flex flex-row justify-evenly text-color-accent text-md"
+              >
+                <span
+                  class="flex flex-row font-bold items-center"
+                  data-title="Usuarios"
+                  >135 <span class="ph ph-users-four text-xl ml-1"></span
+                ></span>
+                <span
+                  class="flex flex-row font-bold items-center"
+                  data-title="Post"
+                  >119227 <span class="ph ph ph-chats text-xl ml-1"></span
+                ></span>
+              </div>
+              <div class="text-center mt-1">
+                Bienvenido,
+                <a href="/" class="text-sky-600 font-bold"
+                  >Ten Leechaiyapornkul
+                </a>
+              </div>
+            </div>
+            <div
+              class="xl:basis-3/4 h-auto background-3 border border-color-1 xl:p-5 p-2 rounded-sm"
+            ></div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div
+          id="afiliaciones"
+          class="background-2 border border-color-3 flex flex-row gap-2 rounded-sm p-2 xl:p-5 mt-10 w-full"
+        >
+          <div
+            class="background-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-1/4"
+          ></div>
+          <div
+            class="background-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-3/4 gap-2 flex flex-col"
+          >
+            <div class="flex flex-row gap-2">
+              <div
+                class="background-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
+              ></div>
+              <div
+                class="background-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
+              ></div>
+            </div>
+            <div
+              class="background-2 p-2 rounded-sm border border-color-1 flex basis-full gap-2 xl:gap-5 xl:p-5 flex-wrap"
+            >
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
