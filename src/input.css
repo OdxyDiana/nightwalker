@@ -1,8 +1,82 @@
 @import "tailwindcss";
 
 @theme {
+  /* Fuentes */
   --font-sans: "Outfit";
   --font-noto: "Noto Sans SC";
   --font-phosphor-fill: "Phosphor-Fill";
   --text-initial--font-size: "initial";
+
+  /* Colores de Marca / Semánticos */
+  /* Al definirlos aquí, Tailwind crea automáticamente las clases utilitarias */
+
+  --background-1: var(--color-val-1);
+  --background-2: var(--color-val-2);
+  --background-3: var(--color-val-3);
+  --text-color: var(--color-val-text);
+
+  --border-color-1: var(--color-val-1);
+  --border-color-2: var(--color-val-2);
+  --border-color-3: var(--color-val-3);
+}
+
+/* @layer base { */
+[data-theme="dark"] {
+  --color-val-1: #121212; /* Valores por defecto (dark) */
+  --color-val-2: #191919;
+  --color-val-3: #1f1f1f;
+  --color-val-text: #9c9d9f;
+}
+
+[data-theme="light"] {
+  --color-val-1: #dcdcdc; /* Valores para modo claro */
+  --color-val-2: #d6d6d6;
+  --color-val-3: #c9c9c9;
+  --color-val-text: #1c1d1f;
+}
+
+/* AQUÍ ESTÁ EL TRUCO PARA V4 */
+@utility background-1 {
+  background-color: var(--background-1);
+}
+
+@utility background-2 {
+  background-color: var(--background-2);
+}
+
+@utility background-3 {
+  background-color: var(--background-3);
+}
+
+@utility border-color-1 {
+  border-color: var(--background-1);
+}
+
+@utility border-color-2 {
+  border-color: var(--background-2);
+}
+
+@utility border-color-3 {
+  border-color: var(--background-3);
+}
+
+@utility text-color {
+  color: var(--text-color);
+}
+
+@layer components {
+  .surface-1 {
+    @apply border border-solid background-1 border-color-3;
+  }
+
+  .surface-2 {
+    @apply border border-solid background-2 border-color-3;
+  }
+
+  .surface-3 {
+    @apply border border-solid background-3 border-color-1;
+  }
+  .surface4 {
+    @apply border border-solid background-2 border-color-1;
+  }
 }

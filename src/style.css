@@ -6,36 +6,17 @@
 
 /** VARIABLES **/
 :root {
-  --dark-theme-background-1: #121212;
-  --dark-theme-background-2: #191919;
-  --dark-theme-background-3: #1f1f1f;
-  --dark-theme-text-color: #9c9d9f;
-  --light-theme-background-3: #c9c9c9;
-  --light-theme-background-2: #d6d6d6;
-  --light-theme-background-1: #dcdcdc;
-  --light-theme-text-color: #1c1d1f;
-}
-
-:root {
   --dark-theme-accent-color: #673143;
   --light-theme-accent-color: #25719c;
 }
 
 /** MODO OSCURO **/
 [data-theme="dark"] {
-  --background-1: var(--dark-theme-background-1);
-  --background-2: var(--dark-theme-background-2);
-  --background-3: var(--dark-theme-background-3);
-  --text-color: var(--dark-theme-text-color);
   --accent-color: var(--dark-theme-accent-color);
 }
 
 /** MODO CLARO**/
 [data-theme="light"] {
-  --background-1: var(--light-theme-background-1);
-  --background-2: var(--light-theme-background-2);
-  --background-3: var(--light-theme-background-3);
-  --text-color: var(--light-theme-text-color);
   --accent-color: var(--light-theme-accent-color);
 }
 
@@ -43,92 +24,12 @@
 img {
   opacity: 50%;
 }
-.text-color {
-  color: var(--text-color);
-}
-
 .text-color-accent {
   color: var(--accent-color);
 }
 
-.background-1 {
-  background-color: var(--background-1);
-}
-
-.xl\:background-1 {
-  @media (width >= 80rem) {
-    background-color: var(--background-1);
-  }
-}
-
-.background-2 {
-  background-color: var(--background-2);
-}
-
-.xl\:background-2 {
-  @media (width >= 80rem) {
-    background-color: var(--background-2);
-  }
-}
-
-.background-3 {
-  background-color: var(--background-3);
-}
-
-.xl\:background-3 {
-  @media (width >= 80rem) {
-    background-color: var(--background-3);
-  }
-}
-
-.background-accent {
-  background-color: var(--accent-color);
-}
-
-.xl\:background-accent {
-  @media (width >= 80rem) {
-    background-color: var(--accent-color);
-  }
-}
-
-.border-color-1 {
-  border-color: var(--background-1);
-}
-
-.xl\:border-color-1 {
-  @media (width >= 80rem) {
-    border-color: var(--background-1);
-  }
-}
-
-.border-color-2 {
-  border-color: var(--background-2);
-}
-
-.xl\:border-color-2 {
-  @media (width >= 80rem) {
-    border-color: var(--background-2);
-  }
-}
-
-.border-color-3 {
-  border-color: var(--background-3);
-}
-
-.xl\:border-color-3 {
-  @media (width >= 80rem) {
-    border-color: var(--background-3);
-  }
-}
-
 .border-color-accent {
   border-color: var(--text-color);
-}
-
-.xl\:border-color-accent {
-  @media (width >= 80rem) {
-    border-color: var(--text-color);
-  }
 }
 
 [data-title] {

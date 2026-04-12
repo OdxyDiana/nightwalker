@@ -1,10 +1,12 @@
 module.exports = {
-  content: [
-    './src/**/*.html',
-    './src/**/*.js'
-  ],
+  darkMode: "class",
+  content: ["./src/**/*.html", "./src/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "background-1": "rgb(var(--color-background-1))",
+      },
+    },
   },
   plugins: [],
-}
+};
