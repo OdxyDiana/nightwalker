@@ -64,19 +64,17 @@
   color: var(--text-color);
 }
 
-@layer components {
-  .surface-1 {
-    @apply border border-solid background-1 border-color-3;
-  }
+@utility surface-1 {
+  @apply border border-solid background-1 border-color-3;
+}
 
-  .surface-2 {
-    @apply border border-solid background-2 border-color-3;
-  }
+@utility surface-2 {
+  @apply border border-solid background-2 border-color-3;
+}
 
-  .surface-3 {
-    @apply border border-solid background-3 border-color-1;
-  }
-  .surface4 {
-    @apply border border-solid background-2 border-color-1;
-  }
+@utility surface-3 {
+  @apply border border-solid background-3 border-color-1;
+}
+@utility surface4 {
+  @apply border border-solid background-2 border-color-1;
 }

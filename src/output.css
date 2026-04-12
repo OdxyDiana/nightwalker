@@ -509,6 +509,30 @@
     border-bottom-right-radius: var(--radius-sm);
     border-bottom-left-radius: var(--radius-sm);
   }
+  .surface-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--background-3);
+    background-color: var(--background-1);
+  }
+  .surface-2 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--background-3);
+    background-color: var(--background-2);
+  }
+  .surface-3 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--background-1);
+    background-color: var(--background-3);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -543,9 +567,6 @@
   }
   .background-2 {
     background-color: var(--background-2);
-  }
-  .background-3 {
-    background-color: var(--background-3);
   }
   .bg-amber-500 {
     background-color: var(--color-amber-500);
@@ -1463,6 +1484,16 @@
       border-radius: var(--radius-sm);
     }
   }
+  .xl\:surface-2 {
+    @media (width >= 80rem) {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+      --tw-border-style: solid;
+      border-style: solid;
+      border-color: var(--background-3);
+      background-color: var(--background-2);
+    }
+  }
   .xl\:border {
     @media (width >= 80rem) {
       border-style: var(--tw-border-style);
@@ -1483,11 +1514,6 @@
   .xl\:border-color-1 {
     @media (width >= 80rem) {
       border-color: var(--background-1);
-    }
-  }
-  .xl\:background-2 {
-    @media (width >= 80rem) {
-      background-color: var(--background-2);
     }
   }
   .xl\:bg-transparent {
@@ -1687,40 +1713,6 @@
   --color-val-2: #d6d6d6;
   --color-val-3: #c9c9c9;
   --color-val-text: #1c1d1f;
-}
-@layer components {
-  .surface-1 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    --tw-border-style: solid;
-    border-style: solid;
-    border-color: var(--background-3);
-    background-color: var(--background-1);
-  }
-  .surface-2 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    --tw-border-style: solid;
-    border-style: solid;
-    border-color: var(--background-3);
-    background-color: var(--background-2);
-  }
-  .surface-3 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    --tw-border-style: solid;
-    border-style: solid;
-    border-color: var(--background-1);
-    background-color: var(--background-3);
-  }
-  .surface4 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    --tw-border-style: solid;
-    border-style: solid;
-    border-color: var(--background-1);
-    background-color: var(--background-2);
-  }
 }
 @property --tw-border-style {
   syntax: "*";
