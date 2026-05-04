@@ -113,6 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  addProfileFieldsToHeader();
-  addClassToProfileFields();
+  // addProfileFieldsToHeader();
+  // addClassToProfileFields();
 });
