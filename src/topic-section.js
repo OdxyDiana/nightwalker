@@ -139,6 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  // addPostFieldsToHeaderAndFooter();
-  // addClassToPostFields();
+  addPostFieldsToHeaderAndFooter();
+  addClassToPostFields();
 });

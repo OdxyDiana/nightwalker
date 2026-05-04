@@ -5,11 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("nav a.nav-icon.dark-theme")
     .addEventListener("click", () => changeTheme("dark"));
-    
-  addPostFieldsToHeaderAndFooter();
-  addClassToPostFields();
-  addProfileFieldsToHeader();
-  addClassToProfileFields();
 });
 
 const changeTheme = (theme) => {
