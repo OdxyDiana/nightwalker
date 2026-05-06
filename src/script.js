@@ -1,20 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("nav a.nav-icon.light-theme")
-    .addEventListener("click", () => changeLightTheme());
+    .addEventListener("click", () => changeTheme("light"));
   document
     .querySelector("nav a.nav-icon.dark-theme")
-    .addEventListener("click", () => changeDarkTheme());
+    .addEventListener("click", () => changeTheme("dark"));
 });
 
-const changeDarkTheme = () => {
-  document.documentElement.setAttribute("data-theme", "dark");
-  localStorage.setItem("data-theme", "dark");
-};
-
-const changeLightTheme = () => {
-  document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("data-theme", "light");
+const changeTheme = (theme) => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("data-theme", theme);
 };
 
 const getThemeInLocalStorage = () => {
@@ -24,6 +19,7 @@ const getThemeInLocalStorage = () => {
     themeLocalStorage ? themeLocalStorage : "dark",
   );
 };
+
 (() => getThemeInLocalStorage())();
 
 const addPostFieldsToHeaderAndFooter = () => {
