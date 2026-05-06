@@ -145,7 +145,7 @@ img {
 
 #post-header {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto auto auto;
   gap: 8px;
 }
@@ -155,31 +155,6 @@ img {
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: auto auto auto;
   gap: 8px;
-}
-
-#post-wrapper {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: auto auto auto auto auto auto auto;
-  gap: 8px;
-}
-
-#post-footer {
-  grid-template-areas:
-    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
-    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
-    "pareja pareja pareja reputacion reputacion inventario inventario inventario inventario quote quote";
-}
-
-#post-wrapper {
-  grid-template-areas:
-    "nickname nickname nickname nickname apodo apodo grupo fans personaje personaje personaje"
-    "posts posts wons wons apodo apodo medallero medallero personaje personaje personaje"
-    "fecha fecha fecha permalink empresa edad medallero medallero personaje personaje personaje"
-    "avatar avatar avatar enlaces post-content post-content post-content post-content post-content post-content post-content"
-    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
-    "pareja pareja pareja nivelreputacion nivelreputacion inventario inventario inventario inventario quote quote"
-    "pareja pareja pareja reputacion reputacion inventario inventario inventario inventario quote quote";
 }
 
 .post-author-name {
@@ -208,6 +183,9 @@ img {
 .post-author-field.post-field-personaje {
   grid-column: 9 / 12;
   grid-row: 1 / span 3;
+  max-width: fit-content;
+  max-height: fit-content;
+  overflow: hidden;
 }
 
 .post-author-field.post-field-personaje .post-author-field-content {
@@ -268,17 +246,17 @@ img {
 }
 
 .post-author-field.post-field-pareja {
-  grid-column: 1 / 4;
-  grid-row: 5 / span 2;
+  grid-column: 1 / 2;
+  grid-row: 5 / span 3;
 }
 
 .post-author-field.post-field-nivelreputacion {
-  grid-column: 4 / 6;
+  grid-column: 2 / 4;
   grid-row: 5;
 }
 
 .post-author-field.post-field-reputacion {
-  grid-column: 4 / 6;
+  grid-column: 2 / 4;
   grid-row: 7;
 }
 
