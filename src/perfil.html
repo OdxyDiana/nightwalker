@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nightwalker</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .profile-field-reputacion { grid-column: span 4; grid-row: 1; }
+      .profile-field-post { grid-column: span 4; grid-row: 1; }
+      .profile-field-wons { grid-column: span 4; grid-row: 1; }
+
+      .profile-field-edad { grid-column: span 4; grid-row: 2; }
+      .profile-field-grupo { grid-column: span 4; grid-row: 2; }
+      .profile-field-empresa { grid-column: span 4; grid-row: 2; }
+
+      .profile-field-apodos { grid-column: span 8; grid-row: 3; }
+      .profile-field-personaje { grid-column: 11 / span 2; grid-row: 1 / span 3; }
+
+      .profile-field-awards { grid-column: span 12; grid-row: 4; }
+      .profile-field-medallas { grid-column: span 12; grid-row: 5; }
+      .profile-field-pases { grid-column: span 12; grid-row: 6; }
+      .profile-field-inventario { grid-column: span 12; grid-row: 7; }
+    </style>
     <script src="script.js"></script>
       <script src="profile-section.js"></script>
   </head>
@@ -276,14 +293,14 @@
                       </div>
               </div>
                <div id="profile-info" class="grid grid-cols-12 xl:gap-5 gap-3"></div>
-               <template id="profile-field-template" class="contents">
-                <div class="profile-field-container">
-                  <div class="profile-field-label hidden">
-                    <span class="label">Mensajes :</span>
-                    </div>
-                  <div class="profile-field-content">1234</div>
-                </div>
-              </template>
+                <template id="profile-field-template" class="contents">
+                 <div class="profile-field-container surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-center flex flex-col justify-center items-center">
+                   <div class="profile-field-label hidden">
+                     <span class="label">Mensajes :</span>
+                     </div>
+                   <div class="profile-field-content w-full">1234</div>
+                 </div>
+               </template>
             </div>
 
           </div>
