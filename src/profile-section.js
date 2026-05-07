@@ -1,5 +1,9 @@
 const profileData = [
   {
+    author: "TEN LEECHAIYAPORNKUL",
+    avatarSrc: "https://images2.imgbox.com/0c/77/494XeWpw_o.png",
+    fields: [
+  {
     label: "Reputacion:",
     content: "22540",
   },
@@ -88,6 +92,8 @@ than to <strong><font color="#E89988">be with you all the time.</font></strong><
     label: "Fecha de inscripción *:",
     content: `24/11/2017`,
   },
+    ]
+  }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -98,19 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!!wrapper) {
       const template = document.getElementById("profile-field-template");
 
-      if (!!template) {
-        profileData.reverse().forEach((data) => {
-          let clone = document.importNode(template.content, true);
-          let container = clone.querySelector(".profile-field-container");
+       if (!!template) {
+         const user = profileData[0];
+         
+         const nickname = document.getElementById("profile-nickname");
+         if (nickname) nickname.textContent = user.author;
+         
+         const avatarImg = document.querySelector("#profile-avatar img");
+         if (avatarImg) avatarImg.src = user.avatarSrc;
 
-          container.querySelector(".profile-field-label span").textContent =
-            data.label;
-          container.querySelector(".profile-field-content").innerHTML =
-            data.content;
+         user.fields.slice().reverse().forEach((data) => {
+           let clone = document.importNode(template.content, true);
+           let container = clone.querySelector(".profile-field-container");
 
-          profileInfo.append(clone);
-        });
-      }
+           container.querySelector(".profile-field-label span").textContent =
+             data.label;
+           container.querySelector(".profile-field-content").innerHTML =
+             data.content;
+
+           profileInfo.append(clone);
+         });
+       }
     }
   }
   addProfileFieldsToHeader();
