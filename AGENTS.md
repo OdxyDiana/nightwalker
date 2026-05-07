@@ -1,60 +1,25 @@
-# Nightwalker Project - AGENTS.MD
+# Proyecto Nightwalker - AGENTS.md
 
-## Technology Stack
+## Stack Tecnológico
+- Tailwind CSS 4 (configuración basada en CSS)
+- JavaScript Vanilla
+- Node.js
 
-- CSS framework: Tailwind CSS
-- JavaScript for frontend interactions
-- Node.js environment
+## Estructura y Construcción
+- `src/`: Todos los archivos fuente (HTML, CSS, JS).
+- `src/input.css` $\rightarrow$ `src/output.css`: Gestionado mediante Tailwind CLI.
+- **Comandos**:
+  - `npm run build:css`: Minifica y construye el CSS.
+  - `npm run watch:css`: Observa y construye el CSS automáticamente.
 
-## Project Structure
+## Detalles de Implementación
+- **Cambio de Tema**: Utiliza el atributo `data-theme` en el elemento `<html>` (valores: `light`, `dark`).
+- **Persistencia**: La preferencia de tema se guarda en `localStorage` como `data-theme`.
+- **Lógica del DOM**: `src/script.js` gestiona el tema global y la distribución dinámica de campos para posts y perfiles.
+- **Lógica de Componentes**: Comportamientos especializados en `topic-section.js`, `profile-section.js` y `forum-section.js`.
 
-- Source files in `src/` directory
-- Multiple .html files for different pages
-- CSS files: input.css (source), output.css (generated)
-- JavaScript files: topic-section.js, profile-section.js, forum-section.js, script.js
-
-## Build Process
-
-- Uses Tailwind CSS for styling
-- CSS build command: `npm run build:css`
-- CSS watch command: `npm run watch:css`
-- JavaScript files for components: topic-section.js, profile-section.js, forum-section.js, script.js
-
-## Development Workflow
-
-- Run `npm run watch:css` to watch for changes in CSS files
-- The build process automatically generates output.css from input.css
-- JavaScript files handle DOM manipulation and user interactions
-- Theme switching supported between light and dark themes
-
-## Commands
-
-- `npm run build:css` - Build CSS using Tailwind
-- `npm run watch:css` - Watch CSS files for changes
-- `npm run dev` - Development server
-
-## Important Files
-
-- src/script.js - Main JavaScript file handling theme switching and DOM manipulations
-- src/input.css - Source CSS file with Tailwind directives
-- tailwind.config.js - Tailwind configuration
-- package.json - Project dependencies and scripts configuration
-
-## Common Patterns
-
-- HTML files use Tailwind CSS classes for styling
-- JavaScript files implement interactive behaviors (theme switching, DOM manipulation)
-- The project uses a custom theme switcher implementation with data-theme attribute
-
-## Workflow Guidelines
-
-As a frontend senior developer:
-
-- Never work in develop
-- Never push develop branch
-- Don't do merge/pull request on your own
-- Don't refactor previous code without asking for permission
-
-## Skills use
-
-- Check if you need writing permission. If you need it but you are in plan mode, block and notify the user.
+## Guías de Flujo de Trabajo
+- Nunca trabajar ni hacer push a la rama `develop`.
+- No realizar merges ni pull requests de forma independiente.
+- No refactorizar código existente sin permiso explícito.
+- **Modo de Edición**: Si el agente se encuentra en "Plan Mode", debe notificar al usuario y solicitar el cambio a "Build Mode" antes de intentar cualquier escritura o modificación de archivos.
