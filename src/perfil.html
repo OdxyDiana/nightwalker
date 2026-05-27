@@ -5,44 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nightwalker</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .profile-field-reputacion { grid-column: span 4; grid-row: 1; }
-      .profile-field-post { grid-column: span 4; grid-row: 1; }
-      .profile-field-wons { grid-column: span 4; grid-row: 1; }
-
-      .profile-field-edad { grid-column: span 4; grid-row: 2; }
-      .profile-field-grupo { grid-column: span 4; grid-row: 2; }
-      .profile-field-empresa { grid-column: span 4; grid-row: 2; }
-
-      .profile-field-apodos { grid-column: span 8; grid-row: 3; }
-      .profile-field-personaje { grid-column: 11 / span 2; grid-row: 1 / span 3; }
-
-      .profile-field-awards { grid-column: span 12; grid-row: 4; }
-      .profile-field-medallas { grid-column: span 12; grid-row: 5; }
-      .profile-field-pases { grid-column: span 12; grid-row: 6; }
-      .profile-field-inventario { grid-column: span 12; grid-row: 7; }
-    </style>
     <script src="script.js"></script>
       <script src="profile-section.js"></script>
   </head>
   <body class="background-2 p-5">
     <div
       id="wrap"
-      class="container surface-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+      class="container surface-1 text-color mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
     >
       <header>
         <nav
           class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
         >
           <div
-            class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+            class="surface-1 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
           >
             <div
               id="header-user"
               class="user-anon flex justify-start items-center"
             >
               <div
-                class="w-[50px] h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
+                class="w-[50px] h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center box-content"
               >
                 <img
                   src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
@@ -57,39 +40,39 @@
             >
               <a
                 href="/"
-                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center"
                 data-title="Índice"
               >
                 <i class="ph-fill ph-house"></i>
               </a>
               <a
                 href="/memberlist"
-                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center"
                 data-title="Idols"
               >
                 <i class="ph-fill ph-user-list"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                class="nav-icon p-2 surface-2 rounded-sm text-color dark-theme theme-selector flex align-center"
                 data-title="Modo oscuro"
               >
                 <i class="ph-fill ph-moon-stars"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                class="nav-icon p-2 surface-2 rounded-sm text-color light-theme theme-selector flex align-center"
                 data-title="Modo claro"
               >
                 <i class="ph-fill ph-sun-dim"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border"
                 data-title="Conéctate"
                 href="/login?connexion"
               >
                 <i class="ph-fill ph-sign-in"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border"
                 data-title="Registrate"
                 href="/register"
               >
@@ -99,7 +82,7 @@
           </div>
           <div
             id="breadcrump"
-            class="text-[0px] z-1 surface-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"
+            class="text-[0px] z-1 surface-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-x border-b border-t-0 xl:mb-10 mb-5"
           >
             &nbsp;::&nbsp;
             <a
@@ -118,11 +101,11 @@
 
         <div
           id="tablon"
-          class="surface-2 rounded-sm border border-color-3 xl:p-5 p-2 grid grid-cols-12 gap-3 xl:gap-5"
+          class="surface-2 rounded-sm xl:p-5 p-2 grid grid-cols-12 gap-3 xl:gap-5"
         >
           <a
             href="/"
-            class="block w-full xl:w-auto p-5 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+            class="block w-full xl:w-auto p-5 surface-3 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
           >
             <img
               src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
@@ -132,7 +115,7 @@
             />
           </a>
           <div
-            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+            class="surface-3 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
           >
             <h3
               class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -141,7 +124,7 @@
             </h3>
           </div>
           <div
-            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+            class="surface-3 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
           >
             <h3
               class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -151,7 +134,7 @@
           </div>
           <div class="contents">
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+              class="surface-3 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
             >
               <h3
                 class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -160,7 +143,7 @@
               </h3>
             </div>
             <div
-              class="surface-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+              class="surface-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
             >
               <a href="/" target="_blank" class="text-color">
                 <i class="ph-fill ph-password"></i>
@@ -188,7 +171,7 @@
               </a>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
+              class="surface-3 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
             >
               <h3
                 class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -244,7 +227,7 @@
               </script>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+              class="surface-3 rounded-sm p-2 row-span-1 col-span-3"
             >
               <h3
                 class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -253,10 +236,10 @@
               </h3>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+              class="surface-3 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
             ></div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+              class="surface-3 rounded-sm p-2 row-span-1 col-span-9"
             >
               <h3
                 class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
@@ -269,17 +252,18 @@
       </header>
 
       <main class="mt-10">
-        <div id="profile-main" class="surface-2 border border-color-3 border-solid mx-auto rounded-sm xl:p-5 p-3">
-          <div id="profile-grid" class="grid grid-cols-12 xl:gap-5 gap-2">
-            <div id="profile-header" class="grid grid-cols-12 xl:gap-5 gap-2 col-span-12 col-start-1">
+        <div id="profile-main" class="surface-2 border mx-auto rounded-sm xl:p-5 p-3">
+          <div id="profile-grid" class="grid grid-cols-12 gap-3 surface-3 xl:p-5 p-3 rounded-sm">
+            <div id="profile-header" class="grid grid-cols-12 gap-2 p-2 col-span-12 col-start-1 surface-2 border-color-1 rounded-sm">
             </div>
-            <div id="profile-nickname" class="surface-1 border border-color-3 border-solid rounded-sm xl:p-5 p-3 text-center text-3xl col-span-12 row-start-2 uppercase text-bold">
+            <div id="profile-nickname" class="surface-2 border-color-1 rounded-sm xl:p-5 p-3 text-center text-3xl col-span-12 row-start-2 uppercase text-bold">
               Nickname
             </div>
-            <div id="profile-body" class="grid grid-cols-12 xl:gap-5 gap-3 surface-1 border border-color-3 border-solid rounded-sm xl:p-5 p-3 col-span-12 row-start-3">
-              <div id="profile-avatar-rank" class="flex flex-col gap-2 xl:gap-5 justify-start items-center col-span-2 row-span-6 ">
+            <div id="profile-body" class="grid grid-cols-12 gap-2 surface-2 border-color-1 rounded-sm xl:p-5 p-3 col-span-12 row-start-3">
+              <div id="profile-actions-buttons-container" class="col-span-6 col-start-7 surface-1  rounded-sm xl:p-5 p-3"></div>
+              <div id="profile-avatar-rank" class="contents">
                 <div
-                        id="profile-avatar" class="border border-color-1 text-center rounded-sm w-full h-auto overflow-hidden"
+                        id="profile-avatar" class="text-center rounded-sm border border-color-3 w-full h-auto overflow-hidden col-span-3 row-span-6 col-start-1 row-start-1"
                       >
                         <img
                           class="max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]" src="https://images2.imgbox.com/0c/77/494XeWpw_o.png" alt="Avatar"
@@ -287,14 +271,14 @@
                       </div>
 
                       <div
-                        class="p-2 xl:p-5 post-author-rank surface-2 border border-color-3 rounded-sm uppercase w-full text-center"
+                        class="p-2 xl:p-5 post-author-rank surface-1 rounded-sm uppercase w-full text-center col-span-3 row-start-7"
                       >
                         Idol
                       </div>
               </div>
-               <div id="profile-info" class="grid grid-cols-12 xl:gap-5 gap-3"></div>
+               <div id="profile-info" class="contents"></div>
                 <template id="profile-field-template" class="contents">
-                 <div class="profile-field-container surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-center flex flex-col justify-center items-center">
+                 <div class="profile-field-container surface-1  rounded-sm p-2 xl:p-3 text-center flex flex-col justify-center items-center">
                    <div class="profile-field-label hidden">
                      <span class="label">Mensajes :</span>
                      </div>
