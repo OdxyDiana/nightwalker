@@ -279,3 +279,163 @@ img {
   border: 1px solid var(--background-1);
   border-radius: var(--radius-sm);
 }
+
+/** PERFILES USUARIOS **/
+.profile-field-quote {
+  grid-column: span 4;
+  grid-row: 1;
+}
+.profile-field-portada {
+  grid-column: span 8;
+  grid-row: 1;
+}
+.profile-field-portada img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color-3);
+  opacity: 50%;
+}
+.profile-field-fecha-de-inscripción {
+  grid-column: 4 / span 3;
+  grid-row: 1;
+}
+.profile-field-apodos {
+  grid-column: 4 / span 3;
+  grid-row: 2 / span 2;
+}
+.profile-field-post {
+  grid-column: 4 / span 1;
+  grid-row: 4 / span 1;
+}
+.profile-field-post .profile-field-content::after {
+  content: " posts";
+}
+.profile-field-wons {
+  grid-column: 5 / span 1;
+  grid-row: 4 / span 1;
+}
+.profile-field-wons .profile-field-content::after {
+  content: " wons";
+}
+.profile-field-edad {
+  grid-column: 6 / span 1;
+  grid-row: 4 / span 1;
+}
+.profile-field-edad .profile-field-content::after {
+  content: " años";
+}
+.profile-field-pases {
+  grid-column: 4 / span 3;
+  grid-row: 5 / span 3;
+}
+.profile-field-grupo {
+  grid-column: 7 / span 3;
+  grid-row: 2 / span 1;
+}
+.profile-field-empresa {
+  grid-column: 7 / span 3;
+  grid-row: 3 / span 1;
+}
+.profile-field-fans {
+  grid-column: 7 / span 3;
+  grid-row: 4 / span 1;
+}
+.profile-field-personaje {
+  grid-column: 10 / span 3;
+  grid-row: 2 / span 3;
+}
+.profile-field-personaje img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+}
+.profile-field-nivelreputacion {
+  grid-column: 7 / span 3;
+  grid-row: 5 / span 2;
+}
+.profile-field-nivelreputacion .profile-field-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.profile-field-definicionrep {
+  grid-column: 10 / span 3;
+  grid-row: 5 / span 2;
+}
+.profile-field-reputacion {
+  grid-column: 7 / span 6;
+  grid-row: 7 / span 1;
+}
+.profile-field-reputacion .profile-field-content::after {
+  content: " pts de reputación";
+}
+.profile-field-recuerdos {
+  grid-column: 1 / span 3;
+  grid-row: 8 / span 2;
+}
+.profile-field-recuerdos .profile-field-content {
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+.profile-field-recuerdos .profile-field-content table {
+  width: 100%;
+  border-spacing: var(--spacing);
+  display: flex;
+}
+.profile-field-pareja {
+  grid-column: 4 / span 3;
+  grid-row: 8 / span 2;
+}
+.profile-field-pareja img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+}
+.profile-field-awards {
+  grid-column: 7 / span 6;
+  grid-row: 8 / span 1;
+}
+.profile-field-medallas {
+  grid-column: 7 / span 6;
+  grid-row: 9 / span 1;
+}
+.profile-field-medallas .profile-field-content {
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+.profile-field-medallas .profile-field-content table {
+  display: inline-flex;
+}
+.profile-field-medallas .profile-field-content table tr {
+  display: inline-flex;
+}
+.profile-field-medallas .profile-field-content table tr td {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: calc(var(--spacing) * 10);
+}
+.profile-field-inventario {
+  grid-column: 1 / span 12;
+  grid-row: 10 / span 1;
+}
+.profile-field-inventario .profile-field-content {
+  max-height: 150px;
+  overflow-y: auto;
+}
+.profile-field-inventario .profile-field-content table {
+  width: 100%;
+  border-spacing: var(--spacing);
+}

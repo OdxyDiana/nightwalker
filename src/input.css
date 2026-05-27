@@ -49,15 +49,15 @@
 }
 
 @utility border-color-1 {
-  border-color: var(--background-1);
+  border-color: var(--border-color-1);
 }
 
 @utility border-color-2 {
-  border-color: var(--background-2);
+  border-color: var(--border-color-2);
 }
 
 @utility border-color-3 {
-  border-color: var(--background-3);
+  border-color: var(--border-color-3);
 }
 
 @utility text-color {
