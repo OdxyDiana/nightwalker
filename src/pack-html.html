@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightwalker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="forum-section.js"></script>
+  </head>
+  <body class="background-2 p-5">
+    <div
+      id="wrap"
+      class="container surface-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+    >
+      <header>
+        <nav
+          class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
+        >
+          <div
+            class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+          >
+            <div
+              id="header-user"
+              class="user-anon flex justify-start items-center"
+            >
+              <div
+                class="w-[50px] h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
+              >
+                <img
+                  src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                  alt="Anonymous"
+                  class="w-[50px] h-[50px] border-color-3 border object-cover object-center rounded-sm opacity-50"
+                />
+              </div>
+              <span class="uppercase font-bold ml-[10px]">Anonymous</span>
+            </div>
+            <div
+              class="navbar-buttons flex justify-center gap-2 items-center p-2"
+            >
+              <a
+                href="/"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Índice"
+              >
+                <i class="ph-fill ph-house"></i>
+              </a>
+              <a
+                href="/memberlist"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Idols"
+              >
+                <i class="ph-fill ph-user-list"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo oscuro"
+              >
+                <i class="ph-fill ph-moon-stars"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo claro"
+              >
+                <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Conéctate"
+                href="/login?connexion"
+              >
+                <i class="ph-fill ph-sign-in"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Registrate"
+                href="/register"
+              >
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            id="breadcrump"
+            class="text-[0px] z-1 surface-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"
+          >
+            &nbsp;::&nbsp;
+            <a
+              href="/c1-nombre-de-la-categoria-1"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Nombre de la categoría 1</span></a
+            >
+            &nbsp;::&nbsp;
+            <a
+              href="/f3-expedientes"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Expedientes</span></a
+            >
+          </div>
+        </nav>
+
+        <div
+          id="tablon"
+          class="surface-2 rounded-sm border border-color-3 xl:p-5 p-2 grid grid-cols-12 gap-2 xl:gap-5"
+        >
+          <a
+            href="/"
+            class="block w-full xl:w-auto p-5 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+          >
+            <img
+              src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
+              alt="Nigthwalker"
+              loading="lazy"
+              class="opacity-50 rounded-sm w-full h-auto border border-color-1"
+            />
+          </a>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+          >
+            <h3
+              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+            >
+              Notificaciones
+            </h3>
+          </div>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+          >
+            <h3
+              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+            >
+              Cuentas
+            </h3>
+          </div>
+          <div class="contents">
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              >
+                Últimos temas
+              </h3>
+            </div>
+            <div
+              class="surface-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+            >
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              >
+                Calendario
+              </h3>
+              <calendario-app [calendario]="calendario"></calendario-app>
+              <script>
+                const calendario = {
+                  noticias: [
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                  ],
+                };
+              </script>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              >
+                Staff
+              </h3>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+            ></div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              >
+                Búsquedas
+              </h3>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-10">
+        <div id="topic">
+          <div id="topic-actions">
+            <div class="flex justify-between gap-2 xl:gap-3">
+              <div class="flex gap-2 xl:gap-3">
+                <a
+                  href="/"
+                  class="surface-2 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm uppercase flex items-center font-bold text-lg"
+                  ><i class="ph ph-file-plus"></i> Nuevo Tema</a
+                >
+                <a
+                  href="/"
+                  class="surface-2 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm uppercase flex items-center font-bold text-lg"
+                  ><i class="ph ph-file-plus"></i> Nueva respuesta</a
+                >
+              </div>
+              <div
+                class="surface-2 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm flex gap-2 xl:gap-3 items-center xl:text-xl text-md"
+              >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  ><i class="ph ph-caret-line-left"></i
+                ></a>
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >1</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >2</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >3</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >...</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >10</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  >11</a
+                >
+                <a
+                  href=""
+                  class="surface-1 border border-color-3 p-2 py-1 xl:p-5 xl:py-2 rounded-sm"
+                  ><i class="ph ph-caret-line-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            id="topic-body"
+            class="p-2 xl:p-5 surface-2 border border-color-3 rounded-sm my-2 xl:my-5"
+          >
+            <h3
+              id="post-title"
+              class="p-2 xl:p-5 surface-1 border border-color-3 uppercase rounded-sm text-center mb-2 xl:mb-5 text-2xl xl:text-3xl font-extrabold"
+            >
+              Titulo del tema carajo
+            </h3>
+            <div
+              id="post-wrapper"
+              class="p-2 xl:p-5 mb-2 xl:mb-5 surface-1 border border-color-3 rounded-sm"
+            >
+              <div class="post-profile">
+                <div
+                  id="post-header"
+                  class="p-2 xl:p-5 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-5"
+                >
+                  <div class="post-author-field-container contents">
+                    <div
+                      class="post-author-name p-2 xl:p-5 surface-3 border border-color-1 rounded-sm text-center uppercase"
+                    >
+                      <a href="/" class="opacity-50"
+                        ><span style="color: #000099"
+                          ><strong>Ten Leechaiyapornkul</strong></span
+                        >
+                      </a>
+                    </div>
+                    <div
+                      class="post-fecha surface-3 p-2 xl:p-5 border border-color-1 rounded-sm"
+                    >
+                      10 de feb, 2026, 14:45
+                    </div>
+                    <div
+                      class="post-permalink surface-3 p-2 xl:p-5 border border-color-1 rounded-sm text-center"
+                    >
+                      <i class="ph ph-link-simple"></i>
+                    </div>
+                  </div>
+
+                  <template id="post-author-fields-template">
+                    <div
+                      class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase"
+                    >
+                      <div class="post-author-field-label hidden">
+                        <span class="label">Wons *:</span>
+                      </div>
+                      <div
+                        class="post-author-field-content max-h-[100px] overflow-auto"
+                      >
+                        66630
+                      </div>
+                    </div>
+                  </template>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-personaje"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Personaje:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <img src="https://2img.net/i.imgur.com/dvRXhqL.png" />
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-edad"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Edad *:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      28
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-grupo"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Grupo:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      NCT
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-fans"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Fans:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      NCTZEN/VALENTINES
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-empresa"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Empresa:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      SM Entertainment
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-apodos"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Apodos:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      Woojae | Jeffrey | J | Valentine Boy | Erotic Body |
+                      Cachorro | JaeJae | Frambuesita | Yoonie | Wan Wan |
+                      Cereza | Principito | Eros
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-medallas"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Medallas:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <div align="center">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td title="Fantastic Baby">
+                                <img
+                                  src="https://2img.net/i.imgur.com/6yjZYdU.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 6yjZYdU"
+                                />
+                              </td>
+                              <td title="A Few Years Later">
+                                <img
+                                  src="https://2img.net/i.imgur.com/w8KangP.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh W8KangP"
+                                />
+                              </td>
+                              <td title="Into The New World">
+                                <img
+                                  src="https://2img.net/i.imgur.com/t5PEICW.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh T5PEICW"
+                                />
+                              </td>
+                              <td title="Running Man">
+                                <img
+                                  src="https://2img.net/i.imgur.com/czLCjkh.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CzLCjkh"
+                                />
+                              </td>
+                              <td title="Bboom Bboom">
+                                <img
+                                  src="https://2img.net/i.imgur.com/T8xTI0U.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh T8xTI0U"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Still Alive: Bronce">
+                                <img
+                                  src="https://2img.net/i.imgur.com/izGvV3v.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh IzGvV3v"
+                                />
+                              </td>
+                              <td title="I'm The Best">
+                                <img
+                                  src="https://2img.net/i.imgur.com/CVv2qj2.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CVv2qj2"
+                                />
+                              </td>
+                              <td title="Blood, Sweet &amp; Tears">
+                                <img
+                                  src="https://2img.net/i.imgur.com/XidL1Fh.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh XidL1Fh"
+                                />
+                              </td>
+                              <td title="Love Scenario">
+                                <img
+                                  src="https://2img.net/i.imgur.com/qELyPGd.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh QELyPGd"
+                                />
+                              </td>
+                              <td title="Gotta Be You">
+                                <img
+                                  src="https://2img.net/i.imgur.com/229ea4E.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 229ea4E"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="I'm Him">
+                                <img
+                                  src="https://2img.net/i.imgur.com/rM4QbLK.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh RM4QbLK"
+                                />
+                              </td>
+                              <td title="Call me Baby">
+                                <img
+                                  src="https://2img.net/i.imgur.com/iWce4wU.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh IWce4wU"
+                                />
+                              </td>
+                              <td title="Still alive: plata">
+                                <img
+                                  src="https://2img.net/i.imgur.com/cVxO79K.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CVxO79K"
+                                />
+                              </td>
+                              <td title="Idol Battle">
+                                <img
+                                  src="https://2img.net/i.imgur.com/cWFcJNY.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CWFcJNY"
+                                />
+                              </td>
+                              <td title="Spring Days: Day">
+                                <img
+                                  src="https://2img.net/i.imgur.com/HDKAYS7.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh HDKAYS7"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Spring Days: Night">
+                                <img
+                                  src="https://2img.net/i.imgur.com/z9clLXe.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Z9clLXe"
+                                />
+                              </td>
+                              <td title="Inkigayo: Triple Crown">
+                                <img
+                                  src="https://2img.net/i.imgur.com/O93Y5OJ.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh O93Y5OJ"
+                                />
+                              </td>
+                              <td title="Still Alive: Oro">
+                                <img
+                                  src="https://2img.net/i.imgur.com/gtYl0e5.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh GtYl0e5"
+                                />
+                              </td>
+                              <td title="New Journey To The West">
+                                <img
+                                  src="https://2img.net/i.imgur.com/Hwk9vuh.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Hwk9vuh"
+                                />
+                              </td>
+                              <td title="Infinity Challenge: Bronce">
+                                <img
+                                  src="https://2img.net/i.imgur.com/8HaoPJf.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 8HaoPJf"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Real men: CEO">
+                                <img
+                                  src="https://2img.net/i.imgur.com/AVDYWRk.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh AVDYWRk"
+                                />
+                              </td>
+                              <td title="Don't Mess With Me">
+                                <img
+                                  src="https://2img.net/i.imgur.com/5EDJVBk.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 5EDJVBk"
+                                />
+                              </td>
+                              <td title="Navidad 2019">
+                                <img
+                                  src="https://2img.net/i.imgur.com/R7XQXUm.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh R7XQXUm"
+                                />
+                              </td>
+                              <td title="Running Man 03">
+                                <img
+                                  src="https://2img.net/i.imgur.com/czLCjkh.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CzLCjkh"
+                                />
+                              </td>
+                              <td title="Kpop Star">
+                                <img
+                                  src="https://2img.net/i.imgur.com/TjeDOfB.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh TjeDOfB"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Infinity Challenge: Oro">
+                                <img
+                                  src="https://2img.net/i.imgur.com/cQAGhfi.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh CQAGhfi"
+                                />
+                              </td>
+                              <td title="Law of the Jungle: Patagonia">
+                                <img
+                                  src="https://2img.net/i.imgur.com/kO1DMjj.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh KO1DMjj"
+                                />
+                              </td>
+                              <td title="Produce 101">
+                                <img
+                                  src="https://2img.net/i.imgur.com/KWz6W3j.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh KWz6W3j"
+                                />
+                              </td>
+                              <td title="We Got Married: Season 1">
+                                <img
+                                  src="https://2img.net/i.imgur.com/ZZHuW66.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh ZZHuW66"
+                                />
+                              </td>
+                              <td title="Kiss Kiss '21">
+                                <img
+                                  src="https://2img.net/i.imgur.com/mMwiBF6.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh MMwiBF6"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Medalla Especial de Verano">
+                                <img
+                                  src="https://2img.net/i.imgur.com/VOqvh5w.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh VOqvh5w"
+                                />
+                              </td>
+                              <td title="More&amp;More: Bronce">
+                                <img
+                                  src="https://2img.net/i.imgur.com/0jJvJTi.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 0jJvJTi"
+                                />
+                              </td>
+                              <td title="More&amp;More: Plata">
+                                <img
+                                  src="https://2img.net/i.imgur.com/jzxwuws.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Jzxwuws"
+                                />
+                              </td>
+                              <td title="More&amp;More: Oro">
+                                <img
+                                  src="https://2img.net/i.imgur.com/LbVgIGj.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh LbVgIGj"
+                                />
+                              </td>
+                              <td title="Good Luck">
+                                <img
+                                  src="https://2img.net/i.imgur.com/v1fIgKQ.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh V1fIgKQ"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Married To The Music">
+                                <img
+                                  src="https://2img.net/i.imgur.com/SHiVNVT.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh SHiVNVT"
+                                />
+                              </td>
+                              <td title="Squid Game '22">
+                                <img
+                                  src="https://2img.net/i.imgur.com/twqj6Py.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Twqj6Py"
+                                />
+                              </td>
+                              <td title="Valentine's Friend">
+                                <img
+                                  src="https://2img.net/i.imgur.com/hqje6SO.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Hqje6SO"
+                                />
+                              </td>
+                              <td title="LOTJ: Yucatán">
+                                <img
+                                  src="https://2img.net/i.imgur.com/aN3uxhA.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh AN3uxhA"
+                                />
+                              </td>
+                              <td title="Copa de Quidditch">
+                                <img
+                                  src="https://2img.net/i.imgur.com/XlhPO9B.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh XlhPO9B"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Oops I did it again!">
+                                <img
+                                  src="https://2img.net/i.imgur.com/MyVpp3G.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh MyVpp3G"
+                                />
+                              </td>
+                              <td title="Summer Deluxe">
+                                <img
+                                  src="https://2img.net/i.imgur.com/h8orIjo.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh H8orIjo"
+                                />
+                              </td>
+                              <td title="Paparazzi">
+                                <img
+                                  src="https://2img.net/i.imgur.com/eJDJphx.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh EJDJphx"
+                                />
+                              </td>
+                              <td title="Money">
+                                <img
+                                  src="https://2img.net/i.imgur.com/zTRbMmE.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh ZTRbMmE"
+                                />
+                              </td>
+                              <td title="Fighter VIP">
+                                <img
+                                  src="https://2img.net/i.imgur.com/3JmEUVE.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 3JmEUVE"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Battle Trip 2023: Japón">
+                                <img
+                                  src="https://2img.net/i.imgur.com/mTjRWeB.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh MTjRWeB"
+                                />
+                              </td>
+                              <td title="Dance the night away: Summer ‘23">
+                                <img
+                                  src="https://2img.net/i.imgur.com/Gp8B9JV.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Gp8B9JV"
+                                />
+                              </td>
+                              <td title="BT: Summer ‘23 Bali, Indonesia">
+                                <img
+                                  src="https://2img.net/i.imgur.com/4zO0klD.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 4zO0klD"
+                                />
+                              </td>
+                              <td title="Monster">
+                                <img
+                                  src="https://2img.net/i.imgur.com/ic7TUtD.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh Ic7TUtD"
+                                />
+                              </td>
+                              <td title="How People Move">
+                                <img
+                                  src="https://2img.net/i.imgur.com/GlSDj4k.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh GlSDj4k"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Christmas Time ‘23">
+                                <img
+                                  src="https://2img.net/i.imgur.com/44TZB4j.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh 44TZB4j"
+                                />
+                              </td>
+                              <td title="Seollal 2024">
+                                <img
+                                  src="https://2img.net/i.imgur.com/GHGSxvJ.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh GHGSxvJ"
+                                />
+                              </td>
+                              <td
+                                title="Battle Trip: Save the world '24, Indonesia"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/YcMYZgd.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh YcMYZgd"
+                                />
+                              </td>
+                              <td title="The magic of Christmas Time">
+                                <img
+                                  src="https://2img.net/i.imgur.com/A6ZocSI.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh A6ZocSI"
+                                />
+                              </td>
+                              <td title="'Happy Lunar New Year!'">
+                                <img
+                                  src="https://2img.net/i.imgur.com/EspCGEn.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh EspCGEn"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td title="Battle Trip: Azores">
+                                <img
+                                  src="https://2img.net/i.imgur.com/IJ3ZOFf.png"
+                                  alt="viendo un Perfil - Jung Yoon Oh IJ3ZOFf"
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-post"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Post *:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      3045
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-wons"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Wons *:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      66630
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="post-content"
+                  class="flex flex-row gap-2 xl:gap-5 my-2 xl:my-5"
+                >
+                  <div
+                    class="post-author p-2 xl:p-5 surface-2 border border-color-3 rounded-sm flex flex-col gap-2 xl:gap-5 justify-start items-center"
+                  >
+                    <div
+                      class="post-author-avatar border border-color-1 rounded-sm w-full h-auto overflow-hidden"
+                    >
+                      <img
+                        class="max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]"
+                        src="https://2img.net/i.imgur.com/YrTi1Su.png"
+                      />
+                    </div>
+
+                    <div
+                      class="p-2 xl:p-5 post-author-rank surface-1 border border-color-3 rounded-sm uppercase w-full text-center"
+                    >
+                      Idol
+                    </div>
+                  </div>
+                  <div
+                    id="post-buttons"
+                    class="flex flex-col justify-between gap-4 px-4 border border-color-3 surface-2 rounded-sm"
+                  >
+                    <div class="post-buttons flex flex-col gap-2 xl:gap-3">
+                      <span>
+                        <img
+                          id="post_mq99_230"
+                          src="https://2img.net/i/fa/prosilver/icon_multiquote_off_en.png"
+                          alt="Seleccionar/ Deseleccionar  multicitación"
+                          title="Seleccionar/ Deseleccionar  multicitación"
+                          onclick="togglePostMultiQuote(this)" /></span
+                      ><span
+                        ><a href="/post?p=230&amp;mode=quote"
+                          ><img
+                            src="https://2img.net/i/fa/prosilver/icon_post_quote_en.png"
+                            class="i_icon_quote"
+                            alt="Responder citando"
+                            title="Responder citando" /></a></span
+                      ><span
+                        ><a href="/post?p=230&amp;mode=editpost"
+                          ><img
+                            src="https://2img.net/i/fa/prosilver/icon_post_edit_en.png"
+                            class="i_icon_edit"
+                            alt="Editar/Borrar este mensaje"
+                            title="Editar/Borrar este mensaje" /></a></span
+                      ><span
+                        ><a
+                          href="/post?p=230&amp;tid=b21ca5a301466945407e90854ad6a3f8&amp;mode=delete"
+                          ><img
+                            src="https://2img.net/i/fa/prosilver/icon_post_delete.gif"
+                            class="i_icon_delete"
+                            alt="Borrar este mensaje"
+                            title="Borrar este mensaje" /></a></span
+                      ><span
+                        ><a
+                          href="/modcp?mode=ip&amp;p=230&amp;t=99&amp;tid=b21ca5a301466945407e90854ad6a3f8"
+                          ><img
+                            src="https://2img.net/i/fa/prosilver/icon_post_info.gif"
+                            class="i_icon_ip"
+                            alt="Ver la dirección IP del autor"
+                            title="Ver la dirección IP del autor" /></a
+                      ></span>
+                    </div>
+                    <div
+                      class="post-author-content-buttons flex flex-col gap-2 xl:gap-3 pb-4"
+                    >
+                      <a
+                        href="/u1"
+                        class="profile-icon ph-fill"
+                        title="Ver perfil de usuario"
+                        ><img
+                          src="https://2img.net/i/fa/awesomebb/icon_user_profile.png"
+                          class="i_icon_profile"
+                          alt="Ver perfil de usuario"
+                          loading="lazy" /></a
+                      ><a
+                        href="/privmsg?mode=post&amp;u=1"
+                        class="profile-icon ph-fill"
+                        title="Enviar mensaje privado"
+                        ><img
+                          src="https://2img.net/i/fa/awesomebb/icon_contact_pm.png"
+                          class="i_icon_pm"
+                          alt="Enviar mensaje privado"
+                          loading="lazy" /></a
+                      ><a href="/profile?mode=email&amp;u=1"
+                        ><img
+                          src="https://2img.net/i/fa/awesomebb/icon_contact_email.png"
+                          alt="Enviar email"
+                          title="Enviar email"
+                          loading="lazy" /></a
+                      ><a
+                        href="https://nightwalker-theme.foroactivo.com"
+                        title="Visitar el sitio web del autor"
+                        target="_blank"
+                        rel="nofollow"
+                        ><img
+                          src="https://placehold.co/0?text=ficha"
+                          alt="https://nightwalker-theme.foroactivo.com"
+                      /></a>
+                    </div>
+                  </div>
+                  <div
+                    class="post-content p-2 xl:p-5 surface-2 border border-color-3 rounded-sm flex-1"
+                  >
+                    <!-- BEGIN POST INFO -->
+
+                    <div
+                      class="surface-3 p-2 xl:p-5 border border-color-1 rounded-sm flex flex-col gap-2 xl:gap-5 w-full mx-auto"
+                    >
+                      <h3
+                        class="surface-2 p-2 xl:p-5 border border-color-1 rounded-sm text-center uppercase font-bold text-2xl tracking-widest"
+                      >
+                        Título Principal
+                      </h3>
+
+                      <div class="flex flex-col gap-2">
+                        <div
+                          class="surface-2 p-2 border border-color-1 rounded-sm flex flex-col gap-2"
+                        >
+                          <h4
+                            class="surface-1 p-2 border rounded-sm text-center uppercase font-semibold text-xl tracking-wider"
+                          >
+                            <i
+                              class="ph-fill ph-baseball-helmet text-color-accent"
+                            ></i>
+                            Título Apartado
+                          </h4>
+                          <div
+                            class="surface-3 p-2 border border-color-1 rounded-sm text-left text-base/5 opacity-90"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Nullam hendrerit turpis dolor, nec aliquam
+                            sapien blandit ut. Vestibulum lorem quam, viverra
+                            eleifend molestie quis, molestie at ante. Vestibulum
+                            at accumsan dolor. Aenean eget gravida orci. In
+                            tempus, dui rhoncus sodales pulvinar, ligula turpis
+                            ultrices nunc, nec tincidunt elit turpis id diam.
+                          </div>
+                        </div>
+
+                        <div
+                          class="surface-2 p-2 border border-color-1 rounded-sm flex flex-col gap-2"
+                        >
+                          <h4
+                            class="surface-1 p-2 border rounded-sm text-center uppercase font-semibold text-xl tracking-wider"
+                          >
+                            <i
+                              class="ph-fill ph-lightning text-color-accent"
+                            ></i>
+                            Título Apartado
+                          </h4>
+                          <div
+                            class="surface-3 p-2 border border-color-1 rounded-sm text-left text-base/5 opacity-90"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Nullam hendrerit turpis dolor, nec aliquam
+                            sapien blandit ut. Vestibulum lorem quam, viverra
+                            eleifend molestie quis, molestie at ante. Vestibulum
+                            at accumsan dolor. Aenean eget gravida orci. In
+                            tempus, dui rhoncus sodales pulvinar, ligula turpis
+                            ultrices nunc, nec tincidunt elit turpis id diam.
+
+                            <div
+                              class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-start pt-2"
+                            >
+                              <div
+                                class="md:col-span-2 md:sticky lg:top-4 lg:pr-2 pt-2 pb-1 lg:p-0 flex items-center lg:justify-end justify-center lg:h-full lg:min-h-16 lg:border-r lg:border-b-0 border-r-0 border-b border-color-2 text-right"
+                              >
+                                <h5
+                                  class="text-lg uppercase font-medium tracking-widest opacity-70 pl-3 md:pl-0"
+                                >
+                                  Subtítulo de bloque
+                                </h5>
+                              </div>
+
+                              <!-- El bloque de texto principal: Ocupa las 3 columnas restantes -->
+                              <p class="lg:col-span-3 opacity-90 text-justify">
+                                Donec porta, ipsum vitae tincidunt molestie,
+                                nunc ex accumsan sapien, sed condimentum mi dui
+                                sit amet leo. In eget ligula non odio fermentum
+                                pharetra. Fusce quis ipsum ut justo imperdiet
+                                bibendum. In imperdiet ut enim non luctus. Sed
+                                cursus leo diam, eu aliquam orci rutrum
+                                fermentum. In ac elit id ex egestas porttitor
+                                non in metus. Etiam luctus lacus sed tincidunt
+                                porttitor.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="surface-2 p-2 border border-color-1 rounded-sm flex flex-col gap-2"
+                        >
+                          <h4
+                            class="surface-1 p-2 border rounded-sm text-center uppercase font-semibold text-xl tracking-wider"
+                          >
+                            <i
+                              class="ph-fill ph-champagne text-color-accent"
+                            ></i>
+                            Título Apartado
+                          </h4>
+                          <div
+                            class="surface-3 p-2 border border-color-1 rounded-sm text-left text-base/5 opacity-90"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Nullam hendrerit turpis dolor, nec aliquam
+                            sapien blandit ut. Vestibulum lorem quam, viverra
+                            eleifend molestie quis, molestie at ante. Vestibulum
+                            at accumsan dolor. Aenean eget gravida orci. In
+                            tempus, dui rhoncus sodales pulvinar, ligula turpis
+                            ultrices nunc, nec tincidunt elit turpis id diam.
+
+                            <div
+                              class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-start pt-2"
+                            >
+                              <div
+                                class="md:col-span-2 md:sticky lg:top-4 lg:pr-2 pt-2 pb-1 lg:p-0 flex items-center lg:justify-end justify-center lg:h-full lg:min-h-16 lg:border-r lg:border-b-0 border-r-0 border-b border-color-2 text-right"
+                              >
+                                <h5
+                                  class="text-lg uppercase font-medium tracking-widest opacity-70 pl-3 md:pl-0"
+                                >
+                                  Subtítulo de bloque
+                                </h5>
+                              </div>
+
+                              <!-- El bloque de texto principal: Ocupa las 3 columnas restantes -->
+                              <p class="lg:col-span-3 opacity-90 text-justify">
+                                Donec porta, ipsum vitae tincidunt molestie,
+                                nunc ex accumsan sapien, sed condimentum mi dui
+                                sit amet leo. In eget ligula non odio fermentum
+                                pharetra. Fusce quis ipsum ut justo imperdiet
+                                bibendum. In imperdiet ut enim non luctus. Sed
+                                cursus leo diam, eu aliquam orci rutrum
+                                fermentum. In ac elit id ex egestas porttitor
+                                non in metus. Etiam luctus lacus sed tincidunt
+                                porttitor.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FIN POST INFO-->
+                  </div>
+                </div>
+                <div
+                  id="post-footer"
+                  class="p-2 xl:p-5 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-5"
+                >
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-reputacion"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Reputacion:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      22540
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-quote"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Quote:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <div align="center">
+                        I can't think<br />
+                        of any <i>greater happiness</i><br />
+                        than to
+                        <strong
+                          ><font color="#E89988"
+                            >be with you all the time.</font
+                          ></strong
+                        ><br />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-pareja"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Pareja:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <img
+                        src="https://2img.net/i.imgur.com/aRqZWAy.png"
+                        alt="viendo un Perfil - Jung Yoon Oh ARqZWAy"
+                        title=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-inventario"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">Inventario:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <div align="center">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td
+                                title="Café: Regalo de Lee Dong Wook → 'Siento haberme olvidado el café aquella última vez, pero aquí tienes uno para las largas horas de trabajo.'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/wGUJ18s.png"
+                                  alt="viendo un Perfil - CEO WGUJ18s"
+                                />
+                              </td>
+                              <td
+                                title="Calcetín: Regalo de Park Ji Hoon → 'Usted se merece todos los regalos del mundo ㅋㅋㅋ, por ello se que lo necesitara. Aunque también quiero creer que se vera bonito si tan solo lo cuelga en su chimenea. ¡¡Feliz Navidad!! ♡'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/S0Ne3aj.png"
+                                  alt="viendo un Perfil - CEO S0Ne3aj"
+                                />
+                              </td>
+                              <td
+                                title="Champagne: Regalo de Yoo Si Ah → 'Merry Christmas!!'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/SURlaVe.png"
+                                  alt="viendo un Perfil - CEO SURlaVe"
+                                />
+                              </td>
+                              <td
+                                title="Café: Regalo de Xu Ming Hao → 'Aquí tiene su café, bien cargado pero aún más merecido.'"
+                              >
+                                <img
+                                  src="https://2img.net/imgur.com/wGUJ18s.png"
+                                  alt="viendo un Perfil - CEO WGUJ18s"
+                                />
+                              </td>
+                              <td
+                                title="Peluche de cabra: Regalo de Lee Dong Min → 'Una disculpa por todos aquellos golpes que tuvo que recibir en nombre del tiro al blanco. ¡Gracias! Señor Ceo.'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/NblQ3wI.png"
+                                  alt="viendo un Perfil - CEO NblQ3wI"
+                                />
+                              </td>
+                              <td
+                                title="Peluche de cabra: Regalo de Kim Min Seok → 'Querido CEO: se que le encantan las cabras, así que esta es de mi para usted ^^'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/NblQ3wI.png"
+                                  alt="viendo un Perfil - CEO NblQ3wI"
+                                />
+                              </td>
+                              <td
+                                title="Latte: Regalo de Yoon Jeong Han → 'Una bebida caliente con este frío siempre viene de fábula. Debe cuidarse mucho, porque si no, ¿quién me va a salvar de las vergüenzas? Feliz Navidad~'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/OZtdlgG.png"
+                                  alt="viendo un Perfil - CEO OZtdlgG"
+                                />
+                              </td>
+                              <td
+                                title="Galletas de jengibre: Regalo de Yoon Jeong Han → 'Para acompañar el café, estas galletas son una delicia. Espero que las disfrute y recuerde siempre lo enormemente agradecido que estoy. Feliz Navidad~'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/Y6i7rM8.png"
+                                  alt="viendo un Perfil - CEO Y6i7rM8"
+                                />
+                              </td>
+                              <td
+                                title="Vino deluxe: Regalo de Yoon Jeong Han → 'Uno necesita relajarse después de los quebraderos de cabeza que le damos a veces. Tómese una copa y disfrute.'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/0mrrVx0.png"
+                                  alt="viendo un Perfil - CEO 0mrrVx0"
+                                />
+                              </td>
+                              <td
+                                title="F3 Ice cream: Regalo de Kim Min Seok → 'Querido CEO: Este heladito es para que lo disfrute en estos días calurosos, gracias por su gran trabajo'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/egFr9MJ.png"
+                                  alt="viendo un Perfil - CEO EgFr9MJ"
+                                />
+                              </td>
+                              <td
+                                title="Baesuk: Regalo de Kim Min Seok → 'Querido CEO: feliz aniversario de F3, esperemos que podamos festejar muchos aniversarios más, reciba este rico ponche, para festejar Chuseok también.'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/CSyRtZt.png"
+                                  alt="viendo un Perfil - CEO CSyRtZt"
+                                />
+                              </td>
+                              <td
+                                title="US red stars: Regalo de Kim Min Seok → 'Querido CEO: le deseo una feliz navidad y un maravilloso año nuevo, que sus lindas cabras tenga mucha salud y gracias por su gran trabajo este año también'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/cGhuNO9.png"
+                                  alt="viendo un Perfil - CEO CGhuNO9"
+                                />
+                              </td>
+                              <td
+                                title="Lemon soda: Regalo de Kim Min Seok → 'Querido CEO, para que te refresques luego de un arduo trabajo, gracias por trabajar duro'"
+                              >
+                                <img
+                                  src="https://2img.net/i.imgur.com/0ONYBdX.png"
+                                  alt="viendo un Perfil - CEO 0ONYBdX"
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase post-field-nivelreputacion"
+                  >
+                    <div class="post-author-field-label hidden">
+                      <span class="label">NivelReputacion:</span>
+                    </div>
+                    <div
+                      class="post-author-field-content max-h-[100px] overflow-auto"
+                    >
+                      <img
+                        src="https://2img.net/i.imgur.com/C8FYC5r.png"
+                        alt="viendo un Perfil - Jung Yoon Oh C8FYC5r"
+                      />
+                      <img
+                        src="https://2img.net/i.imgur.com/WpJAZy9.png"
+                        alt="viendo un Perfil - Jung Yoon Oh WpJAZy9"
+                      />
+                      <img
+                        src="https://2img.net/i.imgur.com/B5B7roC.png"
+                        alt="viendo un Perfil - Jung Yoon Oh B5B7roC"
+                      /><img
+                        src="https://2img.net/i.imgur.com/eCpFjoQ.png"
+                        alt="viendo un Perfil - Jung Yoon Oh ECpFjoQ"
+                      />
+                      <img
+                        src="https://2img.net/i.imgur.com/6tTixRC.png"
+                        alt="viendo un Perfil - Jung Yoon Oh 6tTixRC"
+                      /><img
+                        src="https://2img.net/i.imgur.com/m6WGnhH.png"
+                        alt="viendo un Perfil - Jung Yoon Oh M6WGnhH"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div
+          id="afiliaciones"
+          class="surface-2 border border-color-3 flex flex-row gap-2 rounded-sm p-2 xl:p-5 mt-10 w-full"
+        >
+          <div
+            class="surface-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-1/4"
+          ></div>
+          <div
+            class="surface-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-3/4 gap-2 flex flex-col"
+          >
+            <div class="flex flex-row gap-2">
+              <div
+                class="surface-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
+              ></div>
+              <div
+                class="surface-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
+              ></div>
+            </div>
+            <div
+              class="surface-2 p-2 rounded-sm border border-color-1 flex basis-full gap-2 xl:gap-5 xl:p-5 flex-wrap"
+            >
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
