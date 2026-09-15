@@ -24,8 +24,9 @@ Package manager is **pnpm** (`pnpm-lock.yaml` / `pnpm-workspace.yaml` are canoni
 
 - `pnpm run build:css` — compile and minify `src/input.css` → `src/output.css` via Tailwind CLI.
 - `pnpm run watch:css` — same, watching for changes.
+- `pnpm run dev` — serves `src/*.html` via Vite (`vite.config.mjs`, `root: 'src'`, `appType: 'mpa'`) with live reload. Run alongside `watch:css` in a separate terminal — Vite doesn't run the Tailwind build itself. Navigate directly to a page path, e.g. `http://localhost:5173/tema.html`.
 
-There is no test suite (`npm test` is the unconfigured npm stub) and no lint/format tooling configured. There's no dev-server script; HTML pages are viewed directly, e.g. via the VS Code Live Preview extension (`.vscode/settings.json` defaults to previewing `src/perfil.html`).
+There is no test suite (`npm test` is the unconfigured npm stub) and no lint/format tooling configured. HTML pages can also still be viewed directly via the VS Code Live Preview extension (`.vscode/settings.json` defaults to previewing `src/perfil.html`).
 
 ## Architecture
 
