@@ -86,6 +86,68 @@ img {
   font-size: initial;
 }
 
+/** CALENDARIO **/
+#calendario {
+  .calendar-nav-button:hover,
+  .calendar-day:hover {
+    border-color: var(--accent-color);
+  }
+  .calendar-nav-group {
+    overflow: hidden;
+    & > * + * {
+      border-left: 1px solid var(--app-val-1);
+    }
+    & .calendar-nav-button:hover {
+      color: var(--accent-color);
+    }
+  }
+  .calendar-title:focus-within {
+    border-color: var(--accent-color);
+  }
+  .calendar-month-select option {
+    background-color: var(--app-val-3);
+    color: var(--app-text);
+    text-transform: none;
+  }
+  .calendar-year-input {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  .calendar-day.is-today {
+    border-color: var(--accent-color);
+    font-weight: bold;
+  }
+  .calendar-day.has-news {
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  .calendar-day-dot {
+    background-color: var(--accent-color);
+  }
+  .calendar-day.is-selected {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+  }
+  .calendar-day.is-selected .calendar-day-dot {
+    background-color: #fff;
+  }
+  .calendar-news-item {
+    border-left-width: 3px;
+  }
+  .calendar-news-item.is-highlighted {
+    border-color: var(--accent-color);
+  }
+  .calendar-news-title[href]:hover {
+    color: var(--accent-color);
+  }
+}
+
 /** CATEGORIAS **/
 .forum-section {
   .icon-no-new,
