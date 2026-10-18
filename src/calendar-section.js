@@ -95,7 +95,7 @@ const buildCalendarHeader = () => {
 
   const monthSelect = document.createElement("select");
   monthSelect.className =
-    "calendar-month-select max-w-full min-w-0 appearance-none bg-transparent h-8 pl-2 pr-6 text-color uppercase font-bold text-sm cursor-pointer focus:outline-none";
+    "calendar-month-select max-w-full min-w-0 appearance-none bg-transparent h-8 pl-2 pr-6 text-color uppercase font-bold text-sm focus:outline-none";
   monthSelect.setAttribute("aria-label", "Mes");
   getMonthNames().forEach((name, month) => {
     const option = document.createElement("option");
