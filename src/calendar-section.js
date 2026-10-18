@@ -62,7 +62,7 @@ const createCalendarButton = (icon, label, onClick) => {
   const button = document.createElement("button");
   button.type = "button";
   button.className =
-    "calendar-nav-button p-1 surface-3 rounded-sm text-color flex items-center justify-center cursor-pointer";
+    "calendar-nav-button h-8 w-8 flex items-center justify-center text-color cursor-pointer";
   button.setAttribute("aria-label", label);
   button.innerHTML = `<i class="ph ph-${icon}"></i>`;
   button.addEventListener("click", onClick);
@@ -91,11 +91,11 @@ const selectDay = (dateKey) => {
 const buildCalendarHeader = () => {
   const header = document.createElement("div");
   header.className =
-    "flex flex-wrap items-center justify-between gap-1 mb-2";
+    "calendar-header flex flex-wrap items-center justify-between gap-2 mb-2";
 
   const monthSelect = document.createElement("select");
   monthSelect.className =
-    "calendar-month-select min-w-0 surface-3 rounded-sm text-color p-1 cursor-pointer";
+    "calendar-month-select w-full min-w-0 appearance-none bg-transparent h-8 pl-2 pr-6 text-color uppercase font-bold text-sm cursor-pointer focus:outline-none";
   monthSelect.setAttribute("aria-label", "Mes");
   getMonthNames().forEach((name, month) => {
     const option = document.createElement("option");
@@ -112,7 +112,7 @@ const buildCalendarHeader = () => {
   yearInput.min = CALENDAR_MIN_YEAR;
   yearInput.max = CALENDAR_MAX_YEAR;
   yearInput.className =
-    "calendar-year-input surface-3 rounded-sm text-color p-1 w-[5em]";
+    "calendar-year-input shrink-0 bg-transparent h-8 w-[4em] px-1 text-center text-color font-bold text-sm focus:outline-none";
   yearInput.setAttribute("aria-label", "Año");
   yearInput.addEventListener("change", () => {
     const year = Number(yearInput.value);
@@ -127,21 +127,37 @@ const buildCalendarHeader = () => {
     }
   });
 
-  const title = document.createElement("div");
-  title.className = "flex min-w-0 items-center justify-center gap-1";
-  title.append(monthSelect, yearInput);
+  const monthWrapper = document.createElement("div");
+  monthWrapper.className = "relative flex min-w-0 flex-1 items-center";
+  const caret = document.createElement("i");
+  caret.className =
+    "ph ph-caret-down absolute right-2 text-xs pointer-events-none";
+  monthWrapper.append(monthSelect, caret);
 
-  header.append(
+  const title = document.createElement("div");
+  title.className =
+    "calendar-title calendar-nav-group flex min-w-0 items-center surface-3 rounded-sm basis-full order-first @xs:basis-auto @xs:order-none";
+  title.append(monthWrapper, yearInput);
+
+  const prevGroup = document.createElement("div");
+  prevGroup.className = "calendar-nav-group flex surface-3 rounded-sm";
+  prevGroup.append(
     createCalendarButton("caret-double-left", "Año anterior", () =>
       changeMonth(-12),
     ),
     createCalendarButton("caret-left", "Mes anterior", () => changeMonth(-1)),
-    title,
+  );
+
+  const nextGroup = document.createElement("div");
+  nextGroup.className = "calendar-nav-group flex surface-3 rounded-sm";
+  nextGroup.append(
     createCalendarButton("caret-right", "Mes siguiente", () => changeMonth(1)),
     createCalendarButton("caret-double-right", "Año siguiente", () =>
       changeMonth(12),
     ),
   );
+
+  header.append(prevGroup, title, nextGroup);
 
   calendarState.elements.monthSelect = monthSelect;
   calendarState.elements.yearInput = yearInput;
@@ -225,7 +241,7 @@ const renderCalendarDays = () => {
 
 const buildCalendarGrid = () => {
   const wrapper = document.createElement("div");
-  wrapper.className = "calendar-month min-w-0 surface-2 rounded-sm p-2";
+  wrapper.className = "calendar-month @container min-w-0 surface-2 rounded-sm p-2";
 
   const weekdays = document.createElement("div");
   weekdays.className =
