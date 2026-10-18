@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <script src="forum-section.js"></script>
+    <script src="calendar-section.js"></script>
   </head>
   <body class="background-2 p-5">
     <div
@@ -178,49 +179,42 @@
               >
                 Calendario
               </h3>
-              <calendario-app [calendario]="calendario"></calendario-app>
+              <div id="calendario" class="grid gap-2 xl:grid-cols-2 m-2"></div>
               <script>
                 const calendario = {
                   noticias: [
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2026-10-03",
+                      titulo: "Apertura del foro",
+                      noticia: "Nightwalker abre sus puertas. ¡Bienvenidas, idols!",
+                      enlace: "/t1-apertura",
                     },
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2026-10-18",
+                      titulo: "Comeback de temporada",
+                      noticia: "Las empresas anuncian sus comebacks de otoño.",
+                      enlace: "/t2-comebacks",
                     },
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2026-10-18",
+                      titulo: "Nuevas medallas",
+                      noticia: "Ya podéis pedir las medallas del evento de octubre.",
                     },
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2026-10-31",
+                      titulo: "Evento de Halloween",
+                      noticia: "Fiesta de disfraces en Coex Mall.",
+                      enlace: "/t3-halloween",
                     },
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2026-11-12",
+                      titulo: "Gala de premios",
+                      noticia: "Votaciones abiertas para la gala anual.",
                     },
                     {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
-                    },
-                    {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
-                    },
-                    {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
-                    },
-                    {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
-                    },
-                    {
-                      fecha: "dd/MM/YYYY",
-                      noticia: "Blablabla pasó tal y cual",
+                      fecha: "2027-01-01",
+                      titulo: "Año nuevo",
+                      noticia: "Reset de wons y nueva temporada de reputación.",
                     },
                   ],
                 };
