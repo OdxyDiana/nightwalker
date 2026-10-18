@@ -95,7 +95,7 @@ const buildCalendarHeader = () => {
 
   const monthSelect = document.createElement("select");
   monthSelect.className =
-    "calendar-month-select w-full min-w-0 appearance-none bg-transparent h-8 pl-2 pr-6 text-color uppercase font-bold text-sm cursor-pointer focus:outline-none";
+    "calendar-month-select max-w-full min-w-0 appearance-none bg-transparent h-8 pl-2 pr-6 text-color uppercase font-bold text-sm cursor-pointer focus:outline-none";
   monthSelect.setAttribute("aria-label", "Mes");
   getMonthNames().forEach((name, month) => {
     const option = document.createElement("option");
@@ -128,7 +128,7 @@ const buildCalendarHeader = () => {
   });
 
   const monthWrapper = document.createElement("div");
-  monthWrapper.className = "relative flex min-w-0 flex-1 items-center";
+  monthWrapper.className = "relative flex min-w-0 items-center";
   const caret = document.createElement("i");
   caret.className =
     "ph ph-caret-down absolute right-2 text-xs pointer-events-none";
@@ -136,8 +136,13 @@ const buildCalendarHeader = () => {
 
   const title = document.createElement("div");
   title.className =
-    "calendar-title calendar-nav-group flex min-w-0 items-center surface-3 rounded-sm basis-full order-first @xs:flex-1 @xs:order-none";
+    "calendar-title calendar-nav-group flex min-w-0 max-w-full items-center surface-3 rounded-sm";
   title.append(monthWrapper, yearInput);
+
+  const titleWrapper = document.createElement("div");
+  titleWrapper.className =
+    "calendar-title-wrapper flex min-w-0 justify-center basis-full order-first @xs:basis-0 @xs:flex-1 @xs:order-none";
+  titleWrapper.append(title);
 
   const prevGroup = document.createElement("div");
   prevGroup.className = "calendar-nav-group flex surface-3 rounded-sm";
@@ -157,7 +162,7 @@ const buildCalendarHeader = () => {
     ),
   );
 
-  header.append(prevGroup, title, nextGroup);
+  header.append(prevGroup, titleWrapper, nextGroup);
 
   calendarState.elements.monthSelect = monthSelect;
   calendarState.elements.yearInput = yearInput;
