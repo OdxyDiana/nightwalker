@@ -136,7 +136,7 @@ const buildCalendarHeader = () => {
 
   const title = document.createElement("div");
   title.className =
-    "calendar-title calendar-nav-group flex min-w-0 max-w-full items-center surface-3 rounded-sm";
+    "calendar-title calendar-nav-group flex w-full min-w-0 items-center justify-center surface-3 rounded-sm";
   title.append(monthWrapper, yearInput);
 
   const titleWrapper = document.createElement("div");
@@ -310,7 +310,7 @@ const createNewsItem = (item) => {
 
 const buildNewsPanel = () => {
   const wrapper = document.createElement("div");
-  wrapper.className = "calendar-news min-w-0 surface-2 rounded-sm p-2 flex flex-col";
+  wrapper.className = "calendar-news min-w-0 xl:h-0 xl:min-h-full surface-2 rounded-sm p-2 flex flex-col";
 
   const title = document.createElement("h4");
   title.className = "text-center uppercase font-bold mb-2";
@@ -318,7 +318,7 @@ const buildNewsPanel = () => {
 
   const list = document.createElement("ul");
   list.className =
-    "calendar-news-list relative flex flex-col gap-2 overflow-y-auto max-h-[320px]";
+    "calendar-news-list relative flex flex-1 min-h-0 flex-col gap-2 overflow-y-auto max-h-[320px] xl:max-h-none pr-2";
 
   if (calendarState.news.length) {
     list.append(...calendarState.news.map(createNewsItem));
