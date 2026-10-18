@@ -247,7 +247,9 @@ const buildCalendarGrid = () => {
   todayButton.textContent = "Hoy";
   todayButton.addEventListener("click", () => {
     const today = new Date();
+    calendarState.selected = null;
     goToMonth(today.getFullYear(), today.getMonth());
+    selectDay(toDateKey(today.getFullYear(), today.getMonth(), today.getDate()));
   });
 
   wrapper.append(buildCalendarHeader(), weekdays, days, todayButton);
