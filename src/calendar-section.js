@@ -136,7 +136,7 @@ const buildCalendarHeader = () => {
 
   const title = document.createElement("div");
   title.className =
-    "calendar-title calendar-nav-group flex min-w-0 items-center surface-3 rounded-sm basis-full order-first @xs:basis-auto @xs:order-none";
+    "calendar-title calendar-nav-group flex min-w-0 items-center surface-3 rounded-sm basis-full order-first @xs:flex-1 @xs:order-none";
   title.append(monthWrapper, yearInput);
 
   const prevGroup = document.createElement("div");
