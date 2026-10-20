@@ -1050,13 +1050,9 @@ img {
   .profile-field-pareja {
     aspect-ratio: auto;
   }
-  /* Los premios marcan el alto de su fila: se enseñan enteros, sin scroll */
-  .profile-field-awards .profile-field-content {
-    max-height: none;
-  }
-  /* Los pases, en una franja baja: se ven dos filas y el resto con scroll */
-  .profile-field-pases .profile-field-content {
-    max-height: calc(var(--spacing) * 21);
+  /* Premios y pases, en franjas bajas: se ve una fila y el resto con scroll */
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-content {
+    max-height: calc(var(--spacing) * 11);
   }
   /* El avatar se queda en su tamaño natural; las filas de al lado suman su alto */
   #profile-avatar {
@@ -1257,4 +1253,88 @@ img {
   #profile-body :is(.profile-field-nivelreputacion, .profile-field-reputacion, .profile-field-pases, .profile-field-recuerdos) {
     grid-column: span 3;
   }
+}
+
+/* Título de los campos de imágenes, como los títulos de caja del resto del foro.
+   La etiqueta la pone el foro; aquí solo se muestra y se le cambia el texto */
+:is(
+    .profile-field-nivelreputacion,
+    .profile-field-recuerdos,
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-inventario
+  ) {
+  justify-content: flex-start;
+}
+:is(
+    .profile-field-nivelreputacion,
+    .profile-field-recuerdos,
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-inventario
+  )
+  .profile-field-label {
+  display: block;
+  width: 100%;
+  margin-bottom: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  background-color: var(--background-2);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+  font-size: 0;
+}
+:is(
+    .profile-field-nivelreputacion,
+    .profile-field-recuerdos,
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-inventario
+  )
+  .profile-field-label::before {
+  display: block;
+  font-size: var(--text-xs);
+  line-height: var(--text-xs--line-height);
+  font-weight: 700;
+}
+@media (width >= 80rem) {
+  :is(
+      .profile-field-nivelreputacion,
+      .profile-field-recuerdos,
+      .profile-field-medallas,
+      .profile-field-awards,
+      .profile-field-pases,
+      .profile-field-inventario
+    )
+    .profile-field-label {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  /* Con el título, junto al avatar solo caben dos filas de medallas; el resto, con scroll */
+  .profile-field-medallas .profile-field-content {
+    max-height: calc(var(--spacing) * 22);
+  }
+  /* Las que rellenan su caja empiezan debajo del título (relleno + título + separación) */
+  :is(.profile-field-nivelreputacion, .profile-field-recuerdos) .profile-field-content {
+    top: calc(var(--spacing) * 14 + 2px);
+  }
+}
+.profile-field-nivelreputacion .profile-field-label::before {
+  content: "Insignias";
+}
+.profile-field-recuerdos .profile-field-label::before {
+  content: "Recuerdos";
+}
+.profile-field-medallas .profile-field-label::before {
+  content: "Medallas";
+}
+.profile-field-awards .profile-field-label::before {
+  content: "Premios";
+}
+.profile-field-pases .profile-field-label::before {
+  content: "Pases";
+}
+.profile-field-inventario .profile-field-label::before {
+  content: "Inventario";
 }
