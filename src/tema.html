@@ -262,65 +262,37 @@
 
       <main class="mt-10">
         <div id="topic">
-          <div id="topic-actions">
-            <div class="flex justify-between gap-2 xl:gap-3">
-              <div class="flex gap-2 xl:gap-3">
-                <a
-                  href="/"
-                  class="surface-2 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm uppercase flex items-center font-bold text-lg"
-                  ><i class="ph ph-file-plus"></i> Nuevo Tema</a
-                >
-                <a
-                  href="/"
-                  class="surface-2 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm uppercase flex items-center font-bold text-lg"
-                  ><i class="ph ph-file-plus"></i> Nueva respuesta</a
-                >
-              </div>
-              <div
-                class="surface-2 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm flex gap-2 xl:gap-3 items-center xl:text-xl text-md"
+          <div
+            id="topic-actions"
+            class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 xl:gap-3"
+          >
+            <div class="grid grid-cols-2 sm:flex gap-2 xl:gap-3">
+              <a
+                href="/"
+                class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-xs sm:text-sm font-bold"
+                ><i class="ph-fill ph-file-plus text-base"></i>
+                <span>Nuevo tema</span></a
               >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  ><i class="ph ph-caret-line-left"></i
-                ></a>
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >1</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >2</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >3</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >...</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >10</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  >11</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-                  ><i class="ph ph-caret-line-right"></i
-                ></a>
-              </div>
+              <a
+                href="/"
+                class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-xs sm:text-sm font-bold"
+                ><i class="ph-fill ph-arrow-bend-up-left text-base"></i>
+                <span>Nueva respuesta</span></a
+              >
             </div>
+            <nav
+              class="flex flex-wrap items-center justify-center gap-1 text-xs font-bold"
+              aria-label="Paginación"
+            >
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Primera página"><i class="ph ph-caret-line-left text-sm"></i></a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2 border-(--accent-color)! text-color-accent" aria-current="page">1</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">2</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">3</a>
+              <span class="min-w-8 h-8 flex items-center justify-center">…</span>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">10</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">11</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Última página"><i class="ph ph-caret-line-right text-sm"></i></a>
+            </nav>
           </div>
           <div
             id="topic-body"
@@ -344,17 +316,17 @@
                   >
                     <div class="post-author-field-container contents">
                       <div
-                        class="post-author-name p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase"
+                        class="post-author-name p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase flex items-center justify-center font-bold"
                       >
-                        <a href="/" class="opacity-50"> Nickname </a>
+                        <a href="/"> Nickname </a>
                       </div>
                       <div
-                        class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm"
+                        class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm flex items-center justify-center text-center"
                       >
                         10 de feb, 2026, 14:45
                       </div>
                       <div
-                        class="post-permalink surface-3 p-2 xl:p-3 border border-color-1 rounded-sm text-center"
+                        class="post-permalink surface-3 p-2 xl:p-3 border border-color-1 rounded-sm text-center flex items-center justify-center"
                       >
                         <i class="ph ph-link-simple"></i>
                       </div>
@@ -362,13 +334,13 @@
 
                     <template id="post-author-fields-template">
                       <div
-                        class="post-author-field surface-3 p-1 xl:p-3 border border-color-1 rounded-sm text-center uppercase"
+                        class="post-author-field surface-3 p-2 xl:p-3 border border-color-1 rounded-sm text-center uppercase flex flex-col justify-center"
                       >
                         <div class="post-author-field-label hidden">
                           <span class="label">Mensajes :</span>
                         </div>
                         <div
-                          class="post-author-field-content max-h-[100px] overflow-auto"
+                          class="post-author-field-content max-h-[100px] overflow-auto break-words"
                         >
                           5689
                         </div>
@@ -377,7 +349,7 @@
                   </div>
                   <div
                     id="post-content"
-                    class="flex flex-row gap-2 xl:gap-3 my-2 xl:my-3"
+                    class="flex flex-col xl:flex-row gap-2 xl:gap-3 my-2 xl:my-3"
                   >
                     <div
                       class="post-author p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex flex-col gap-2 xl:gap-3 justify-start items-center"
@@ -386,7 +358,7 @@
                         class="post-author-avatar border border-color-1 rounded-sm w-full h-auto overflow-hidden"
                       >
                         <img
-                          class="max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]"
+                          class="block mx-auto max-h-[280px] xl:max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]"
                         />
                       </div>
 
@@ -398,88 +370,25 @@
                     </div>
                     <div
                       id="post-buttons"
-                      class="flex flex-col justify-between gap-4 px-4 border border-color-3 surface-2 rounded-sm"
+                      class="flex flex-row xl:flex-col flex-wrap justify-center xl:justify-between gap-2 xl:gap-3 p-2 xl:p-3 border border-color-3 surface-2 rounded-sm"
                     >
-                      <div class="post-buttons flex flex-col gap-2 xl:gap-3">
-                        <span>
-                          <img
-                            id="post_mq99_230"
-                            src="https://2img.net/i/fa/prosilver/icon_multiquote_off_en.png"
-                            alt="Seleccionar/ Deseleccionar  multicitación"
-                            title="Seleccionar/ Deseleccionar  multicitación"
-                            onclick="togglePostMultiQuote(this)" /></span
-                        ><span
-                          ><a href="/post?p=230&amp;mode=quote"
-                            ><img
-                              src="https://2img.net/i/fa/prosilver/icon_post_quote_en.png"
-                              class="i_icon_quote"
-                              alt="Responder citando"
-                              title="Responder citando" /></a></span
-                        ><span
-                          ><a href="/post?p=230&amp;mode=editpost"
-                            ><img
-                              src="https://2img.net/i/fa/prosilver/icon_post_edit_en.png"
-                              class="i_icon_edit"
-                              alt="Editar/Borrar este mensaje"
-                              title="Editar/Borrar este mensaje" /></a></span
-                        ><span
-                          ><a
-                            href="/post?p=230&amp;tid=b21ca5a301466945407e90854ad6a3f8&amp;mode=delete"
-                            ><img
-                              src="https://2img.net/i/fa/prosilver/icon_post_delete.gif"
-                              class="i_icon_delete"
-                              alt="Borrar este mensaje"
-                              title="Borrar este mensaje" /></a></span
-                        ><span
-                          ><a
-                            href="/modcp?mode=ip&amp;p=230&amp;t=99&amp;tid=b21ca5a301466945407e90854ad6a3f8"
-                            ><img
-                              src="https://2img.net/i/fa/prosilver/icon_post_info.gif"
-                              class="i_icon_ip"
-                              alt="Ver la dirección IP del autor"
-                              title="Ver la dirección IP del autor" /></a
-                        ></span>
-                      </div>
-                      <div
-                        class="post-author-content-buttons flex flex-col gap-2 xl:gap-3 pb-4"
-                      >
-                        <a
-                          href="/u1"
-                          class="profile-icon ph-fill"
-                          title="Ver perfil de usuario"
-                          ><img
-                            src="https://2img.net/i/fa/awesomebb/icon_user_profile.png"
-                            class="i_icon_profile"
-                            alt="Ver perfil de usuario"
-                            loading="lazy" /></a
-                        ><a
-                          href="/privmsg?mode=post&amp;u=1"
-                          class="profile-icon ph-fill"
-                          title="Enviar mensaje privado"
-                          ><img
-                            src="https://2img.net/i/fa/awesomebb/icon_contact_pm.png"
-                            class="i_icon_pm"
-                            alt="Enviar mensaje privado"
-                            loading="lazy" /></a
-                        ><a href="/profile?mode=email&amp;u=1"
-                          ><img
-                            src="https://2img.net/i/fa/awesomebb/icon_contact_email.png"
-                            alt="Enviar email"
-                            title="Enviar email"
-                            loading="lazy" /></a
-                        ><a
-                          href="https://nightwalker-theme.foroactivo.com"
-                          title="Visitar el sitio web del autor"
-                          target="_blank"
-                          rel="nofollow"
-                          ><img
-                            src="https://placehold.co/0?text=ficha"
-                            alt="https://nightwalker-theme.foroactivo.com"
-                        /></a>
-                      </div>
+                      <div class="post-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
+                          <a href="/post?p=230&amp;mode=editpost" title="Editar"><img src="https://2img.net/i/fa/prosilver/icon_post_edit_en.png" alt="Editar" /></a>
+                          <a href="/post?p=230&amp;mode=quote" title="Citar"><img src="https://2img.net/i/fa/prosilver/icon_post_quote_en.png" alt="Citar" /></a>
+                          <a href="/post?p=230&amp;mode=like" title="Me gusta"><img src="https://2img.net/i/fa/prosilver/icon_post_like.png" alt="Me gusta" /></a>
+                          <a href="/report?p=230" title="Reportar"><img src="https://2img.net/i/fa/prosilver/icon_post_report.png" alt="Reportar" /></a>
+                        </div>
+                        <div
+                          class="post-author-content-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3"
+                        >
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 background-3 border border-color-1 rounded-sm hover:border-(--accent-color)" title="Expediente" aria-label="Expediente"><i class="ph-fill ph-identification-card block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 background-3 border border-color-1 rounded-sm hover:border-(--accent-color)" title="Cronología" aria-label="Cronología"><i class="ph-fill ph-clock-counter-clockwise block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 background-3 border border-color-1 rounded-sm hover:border-(--accent-color)" title="Relaciones" aria-label="Relaciones"><i class="ph-fill ph-users-three block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 background-3 border border-color-1 rounded-sm hover:border-(--accent-color)" title="Instagram" aria-label="Instagram"><i class="ph-fill ph-instagram-logo block text-base leading-none"></i></a>
+                        </div>
                     </div>
                     <div
-                      class="post-content p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex-1"
+                      class="post-content p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex-1 min-w-0"
                     >
                       PRUEBAAAAAAAAAAAAAAAAAA
                     </div>

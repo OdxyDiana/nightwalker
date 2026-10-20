@@ -141,4 +141,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   addPostFieldsToHeaderAndFooter();
   addClassToPostFields();
+  addProfileToggle();
 });
+
+// En móvil la ficha del personaje se pliega tras un botón para no agobiar
+const addProfileToggle = () => {
+  document.querySelectorAll(".post-profile").forEach((profile) => {
+    const header = profile.querySelector("#post-header");
+    if (!header || header.querySelector(".post-profile-toggle")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className =
+      "post-profile-toggle xl:hidden flex items-center justify-center gap-2 p-2 surface-3 border border-color-1 rounded-sm uppercase text-xs font-bold cursor-pointer hover:border-(--accent-color)";
+    button.setAttribute("aria-expanded", "false");
+    button.innerHTML =
+      '<i class="ph-fill ph-caret-down transition-transform"></i><span>Ver ficha</span>';
+
+    button.addEventListener("click", () => {
+      const isOpen = profile.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+      button.querySelector("span").textContent = isOpen
+        ? "Ocultar ficha"
+        : "Ver ficha";
+    });
+
+    header.append(button);
+  });
+};

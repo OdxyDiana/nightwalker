@@ -13,14 +13,21 @@
 /** MODO OSCURO **/
 [data-theme="dark"] {
   --accent-color: var(--dark-theme-accent-color);
+  color-scheme: dark;
 }
 
 /** MODO CLARO**/
 [data-theme="light"] {
   --accent-color: var(--light-theme-accent-color);
+  color-scheme: light;
 }
 
 /** GENERAL **/
+/* Barras de desplazamiento finas y con el color de acento en toda la web */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+}
 img {
   opacity: 50%;
 }
@@ -367,15 +374,15 @@ img {
 }
 .post-author-field.post-field-pareja {
   grid-column: 1 / 4;
-  grid-row: 5 / span 3;
+  grid-row: 1 / span 3;
 }
 .post-author-field.post-field-nivelreputacion {
   grid-column: 4 / 6;
-  grid-row: 5;
+  grid-row: 1;
 }
 .post-author-field.post-field-reputacion {
   grid-column: 4 / 6;
-  grid-row: 7;
+  grid-row: 3;
 }
 .post-author-field.post-field-reputacion::after {
   content: " pts de reputación";
@@ -386,11 +393,11 @@ img {
 }
 .post-author-field.post-field-inventario {
   grid-column: 6 / 10;
-  grid-row: 5 / span 3;
+  grid-row: 1 / span 3;
 }
 .post-author-field.post-field-quote {
   grid-column: 10 / 12;
-  grid-row: 5 / span 3;
+  grid-row: 1 / span 3;
 }
 .post-author-field.post-field-grupo {
   grid-column: 7 / 8;
@@ -399,21 +406,267 @@ img {
 .post-content {
   grid-column: 5 / 12;
   grid-row: 4;
+  /* Palabras o enlaces muy largos no rompen el ancho de la página */
+  overflow-wrap: anywhere;
 }
 
 #post-buttons a img,
 #post-buttons img {
   display: none;
 }
-#post-buttons a::after {
+#post-buttons .post-buttons a::after {
   content: "\eb9a";
   display: block;
   font-family: var(--font-phosphor-fill);
   font-size: 16px;
+  line-height: 1;
   background-color: var(--background-3);
-  padding: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 2);
   border: 1px solid var(--background-1);
   border-radius: var(--radius-sm);
+}
+#post-buttons .post-buttons a:hover::after {
+  border-color: var(--accent-color);
+}
+/* Un icono para cada acción del post (los botones los genera el foro como imágenes) */
+#post-buttons .post-buttons a[href*="mode=editpost"]::after {
+  content: "\e3b4";
+}
+#post-buttons .post-buttons a[href*="mode=quote"]::after {
+  content: "\e660";
+}
+#post-buttons .post-buttons a[href*="like"]::after {
+  content: "\e2a8";
+}
+#post-buttons .post-buttons a[href*="report"]::after {
+  content: "\e244";
+}
+#post-buttons .post-buttons a[href*="mode=delete"]::after {
+  content: "\e4a6";
+}
+#post-buttons .post-buttons a[href*="mode=ip"]::after {
+  content: "\e2ce";
+}
+
+/* Escritorio: las fotos del personaje y de la pareja rellenan su hueco sin cambiar el alto de la cabecera ni del pie */
+@media (width >= 80rem) {
+  #post-header > .post-field-personaje,
+  #post-footer > .post-field-pareja {
+    position: relative;
+    max-width: none;
+    max-height: none;
+  }
+  #post-header > .post-field-personaje .post-author-field-content,
+  #post-footer > .post-field-pareja .post-author-field-content {
+    position: absolute;
+    inset: calc(var(--spacing) * 3);
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    overflow: hidden;
+  }
+  #post-header > .post-field-personaje .post-author-field-content img,
+  #post-footer > .post-field-pareja .post-author-field-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Móvil y tablet: cabecera y pie del perfil en una rejilla sencilla */
+@media (width < 80rem) {
+  #post-header {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+  #post-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+  #post-header > *,
+  #post-header .post-author-field-container > *,
+  #post-footer > * {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  #post-header .post-author-name {
+    grid-column: span 4;
+    order: 1;
+  }
+  #post-header .post-fecha {
+    grid-column: span 3;
+    order: 2;
+  }
+  #post-header .post-permalink {
+    grid-column: span 1;
+    order: 3;
+  }
+  #post-header > .post-field-personaje,
+  #post-footer > .post-field-pareja {
+    position: relative;
+    max-width: none;
+    max-height: none;
+  }
+  #post-header > .post-field-personaje {
+    grid-row: span 4;
+    order: 4;
+  }
+  #post-header > .post-field-personaje .post-author-field-content,
+  #post-footer > .post-field-pareja .post-author-field-content {
+    position: absolute;
+    inset: calc(var(--spacing) * 2);
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    overflow: hidden;
+  }
+  #post-header > .post-field-personaje .post-author-field-content img,
+  #post-footer > .post-field-pareja .post-author-field-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #post-header > .post-field-grupo {
+    order: 5;
+  }
+  #post-header > .post-field-fans {
+    order: 6;
+  }
+  #post-header > .post-field-empresa {
+    order: 7;
+  }
+  #post-header > .post-field-edad {
+    order: 8;
+  }
+  #post-header > .post-field-post {
+    order: 9;
+  }
+  #post-header > .post-field-wons {
+    order: 10;
+  }
+  #post-header > .post-field-apodos {
+    grid-column: span 4;
+    order: 11;
+  }
+  #post-header > .post-field-medallas {
+    grid-column: span 4;
+    order: 12;
+  }
+  #post-footer > .post-field-pareja {
+    grid-column: span 1;
+    grid-row: span 3;
+    order: 1;
+  }
+  #post-footer > .post-field-nivelreputacion {
+    grid-column: span 1;
+    order: 2;
+  }
+  #post-footer > .post-field-reputacion {
+    grid-column: span 1;
+    order: 3;
+  }
+  #post-footer > .post-field-quote {
+    grid-column: span 1;
+    order: 4;
+  }
+  #post-footer > .post-field-inventario {
+    order: 5;
+  }
+}
+
+/* Móvil y tablet: la ficha del personaje se pliega tras el botón «Ver ficha» */
+@media (width < 80rem) {
+  .post-profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .post-profile > #post-header {
+    order: 1;
+  }
+  .post-profile > #post-footer {
+    order: 2;
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .post-profile > #post-content {
+    order: 3;
+  }
+  .post-profile:not(.is-open) #post-header > .post-author-field,
+  .post-profile:not(.is-open) > #post-footer {
+    display: none;
+  }
+  #post-header > .post-profile-toggle {
+    grid-column: span 4;
+    order: 3;
+  }
+  .post-profile.is-open .post-profile-toggle i {
+    rotate: 180deg;
+  }
+}
+
+/* Móvil: tres columnas (avatar estrecho y recortado, botones y mensaje) */
+@media (width < 40rem) {
+  #post-content > .post-author {
+    width: 5.5rem;
+    flex-shrink: 0;
+  }
+  #post-content > .post-author .post-author-avatar {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+  }
+  #post-content > .post-author .post-author-avatar img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+  #post-content > .post-author .post-author-rank {
+    font-size: var(--text-xs);
+  }
+}
+
+/* Móvil y tablet: avatar, botones y mensaje en fila, como en escritorio */
+@media (width < 80rem) {
+  #post-content {
+    flex-direction: row;
+  }
+  #post-content > #post-buttons,
+  #post-content > #post-buttons > div {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  #post-content > #post-buttons {
+    justify-content: space-between;
+  }
+}
+
+/* Móvil muy estrecho: en vez de tres columnas, avatar con los botones al lado y el mensaje debajo */
+@media (width < 25rem) {
+  #post-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  #post-content > .post-author {
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+  }
+  #post-content > #post-buttons {
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #post-content > .post-content {
+    grid-column: 1 / -1;
+  }
 }
 
 /** PERFILES USUARIOS **/
