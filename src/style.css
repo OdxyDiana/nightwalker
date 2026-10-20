@@ -1212,6 +1212,45 @@ img {
     max-height: calc(var(--spacing) * 37);
     overflow-y: auto;
   }
+  /* Campos de imágenes más bajos: premios y pases enseñan una fila; medallas, dos; inventario, tres */
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-content {
+    max-height: calc(var(--spacing) * 11);
+  }
+  .profile-field-medallas .profile-field-content {
+    max-height: calc(var(--spacing) * 22);
+  }
+  .profile-field-inventario .profile-field-content {
+    max-height: calc(var(--spacing) * 33);
+  }
+}
+
+/* Móvil: el avatar solo y a su tamaño natural, el rango debajo a todo el ancho y el resto a dos columnas */
+@media (width < 48rem) {
+  #profile-body #profile-avatar {
+    grid-column: span 4;
+    grid-row: auto;
+    display: flex;
+    justify-content: center;
+  }
+  #profile-avatar img {
+    position: static;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+  #profile-body .post-author-rank {
+    grid-column: span 4;
+    order: 3;
+  }
+  /* Recuerdos y pases a todo el ancho, que en media columna no caben */
+  #profile-body :is(.profile-field-pases, .profile-field-recuerdos) {
+    grid-column: span 4;
+  }
+  /* Premios y pases enseñan dos filas, que en móvil caben pocos por fila */
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-content {
+    max-height: calc(var(--spacing) * 22);
+  }
 }
 
 /* Tablet: seis columnas; el avatar mantiene su proporción y los datos se reparten a su lado de dos en dos */
