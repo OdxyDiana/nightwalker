@@ -193,6 +193,12 @@ img {
   .switch-account-error {
     color: var(--accent-color);
   }
+  /* En la modal, los botones del selector usan el borde de la modal */
+  .switch-account-avatar,
+  .switch-account-forget,
+  .switch-account-add {
+    border-color: var(--border-color-3);
+  }
 }
 
 .switch-account-list {

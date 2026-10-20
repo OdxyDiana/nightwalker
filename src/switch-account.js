@@ -402,7 +402,7 @@ const createAccountItem = (account, currentId) => {
   const button = document.createElement("button");
   button.type = "button";
   button.className =
-    "switch-account-avatar block w-[60px] h-[60px] p-[3px] surface-2 rounded-sm cursor-pointer";
+    "switch-account-avatar block w-[60px] h-[60px] p-[3px] surface-2 border-color-1 rounded-sm cursor-pointer";
   button.dataset.title = account.username;
   button.setAttribute(
     "aria-label",
@@ -439,7 +439,7 @@ const createAccountItem = (account, currentId) => {
   const forget = document.createElement("button");
   forget.type = "button";
   forget.className =
-    "switch-account-forget absolute -top-1 -right-1 w-6 h-6 flex items-center justify-center surface-1 rounded-full text-xs text-color cursor-pointer";
+    "switch-account-forget absolute -top-1 -right-1 w-6 h-6 flex items-center justify-center surface-1 border-color-1 rounded-full text-xs text-color cursor-pointer";
   forget.setAttribute("aria-label", `Olvidar la cuenta ${account.username}`);
   forget.innerHTML = '<i class="ph ph-x"></i>';
   forget.addEventListener("click", () => handleForgetAccount(account));
@@ -455,7 +455,7 @@ const createAddAccountItem = () => {
   const button = document.createElement("button");
   button.type = "button";
   button.className =
-    "switch-account-add w-[60px] h-[60px] flex items-center justify-center surface-2 rounded-sm text-2xl text-color cursor-pointer";
+    "switch-account-add w-[60px] h-[60px] flex items-center justify-center surface-2 border-color-1 rounded-sm text-2xl text-color cursor-pointer";
   button.setAttribute("aria-label", "Añadir cuenta");
   button.innerHTML = '<i class="ph ph-plus"></i>';
   button.addEventListener("click", () => openSwitchAccountModal());
