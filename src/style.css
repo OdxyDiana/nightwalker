@@ -362,7 +362,8 @@ img {
   max-width: max-content;
   max-height: 100%;
 }
-.post-author-field.post-field-personaje .post-author-field-content img {
+.post-author-field.post-field-personaje .post-author-field-content img,
+.post-author-field.post-field-pareja .post-author-field-content img {
   height: 100%;
   border: 1px solid var(--background-1);
   border-radius: var(--radius-sm);
@@ -758,6 +759,24 @@ img {
   #post-content > .post-content {
     grid-column: 1 / -1;
   }
+}
+
+/* Cada post es su propia caja; entre ellas, la misma separación que el relleno de fuera */
+.post-profile + .post-profile {
+  margin-top: calc(var(--spacing) * 2);
+}
+@media (width >= 80rem) {
+  .post-profile + .post-profile {
+    margin-top: calc(var(--spacing) * 3);
+  }
+}
+
+/* Alternancia de posts: los pares se colocan en espejo (perfil y botones a la derecha) */
+.post-profile:nth-of-type(even) :is(#post-header, #post-content, #post-footer) {
+  direction: rtl;
+}
+.post-profile:nth-of-type(even) :is(#post-header, #post-content, #post-footer) * {
+  direction: ltr;
 }
 
 /** PERFILES USUARIOS **/

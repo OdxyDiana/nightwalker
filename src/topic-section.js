@@ -108,7 +108,55 @@ document.addEventListener("DOMContentLoaded", () => {
       let templateTopic = topic.querySelector("#post-template");
 
       if (templateTopic) {
-        postContent.reverse().forEach((post) => {
+        // Prueba de alternancia: repetimos el post de ejemplo cambiando los textos de cada uno
+        const demoVariants = [
+          {},
+          {
+            author: `<span style="color:#990033"><strong>Kim Min Seok</strong></span> `,
+            "Reputacion:": "8120",
+            "Edad *:": "24",
+            "Grupo:": "EXO",
+            "Fans:": "EXO-L",
+            "Empresa:": "F3 Entertainment",
+            "Apodos:": "Xiumin | Baozi | Minnie | Sargento",
+            "Quote:": `<div align="center">Que nadie me despierte<br>si esto es un <i>sueño</i>.</div>`,
+            "Post *:": "912",
+            "Wons *:": "12300",
+          },
+          {
+            author: `<span style="color:#006633"><strong>Yoon Jeong Han</strong></span> `,
+            "Reputacion:": "15400",
+            "Edad *:": "30",
+            "Grupo:": "SEVENTEEN",
+            "Fans:": "CARAT",
+            "Empresa:": "Pledis Entertainment",
+            "Apodos:": "Angel | Hannie | Jeonghannie",
+            "Quote:": `<div align="center"><strong>Nada</strong> es casualidad,<br>todo es <font color="#88AAE8">caos ordenado</font>.</div>`,
+            "Post *:": "2210",
+            "Wons *:": "40500",
+          },
+          {
+            author: `<span style="color:#663399"><strong>Yoo Si Ah</strong></span> `,
+            "Reputacion:": "3050",
+            "Edad *:": "21",
+            "Grupo:": "Solista",
+            "Fans:": "SIAHLIGHTS",
+            "Empresa:": "Starship Entertainment",
+            "Apodos:": "Sia | Conejita",
+            "Quote:": `<div align="center">Merry <i>everything</i>!</div>`,
+            "Post *:": "187",
+            "Wons *:": "5400",
+          },
+        ];
+        const demoPosts = demoVariants.map((variant) => ({
+          ...postContent[0],
+          author: variant.author ?? postContent[0].author,
+          fields: postContent[0].fields.map((field) => ({
+            ...field,
+            content: variant[field.label] ?? field.content,
+          })),
+        }));
+        demoPosts.reverse().forEach((post) => {
           let clone = document.importNode(templateTopic.content, true);
           let postProfile = clone.querySelector(".post-profile");
 
