@@ -51,10 +51,14 @@ const addPostFieldsToHeaderAndFooter = () => {
       field,
       ".post-author-field-label .label",
     );
+    // Cada campo va a la cabecera o al pie de su propio post
+    const profile = field.closest(".post-profile");
+    const postHeader = profile?.querySelector("#post-header") ?? header;
+    const postFooter = profile?.querySelector("#post-footer") ?? footer;
     if (headerFields.includes(labelText)) {
-      header.appendChild(field);
+      postHeader.appendChild(field);
     } else if (footerFields.includes(labelText)) {
-      footer.appendChild(field);
+      postFooter.appendChild(field);
     }
   });
 };
