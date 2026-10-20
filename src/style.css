@@ -1453,3 +1453,40 @@ img {
 .birthday-list a:hover {
   border-color: var(--accent-color);
 }
+
+/** LEYENDA DE GRUPOS **/
+/* Colores provisionales de cada grupo. Son de luminosidad media para que se lean en modo oscuro y en claro,
+   porque el foro pinta los nombres con un único color por grupo (el que se pone en el panel) */
+:root {
+  --group-1: oklch(72% 0.13 85); /* Prensa */
+  --group-2: oklch(64% 0.12 245); /* Boyband */
+  --group-3: oklch(70% 0.13 350); /* Girlband */
+  --group-4: oklch(64% 0.13 295); /* Solistas */
+  --group-5: oklch(66% 0.1 190); /* Actores */
+  --group-6: oklch(64% 0.14 20); /* Actrices */
+  --group-7: oklch(70% 0.13 55); /* Modelos */
+  --group-8: oklch(68% 0.12 145); /* Ciudadanos */
+  --group-9: oklch(56% 0.04 60); /* Ausentes */
+  --group-10: oklch(52% 0.01 260); /* Inactivos */
+}
+/* Cada grupo es un bloque de su color, con el icono y el nombre encima */
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  background-color: var(--group-color);
+  border-radius: var(--radius-sm);
+  color: oklch(15% 0 0 / 85%);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: filter 0.2s;
+}
+.legend-item i {
+  font-size: var(--text-base);
+}
+.legend-item:hover {
+  filter: brightness(1.12);
+}
