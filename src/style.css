@@ -262,6 +262,36 @@ img {
   }
 }
 
+/* Avatar del último mensaje: tamaño fijo (10:16) y su columna se ajusta a él */
+.forum-section {
+  /* 60px de foto + relleno p-2 a cada lado + borde (en escritorio el relleno es p-3) */
+  --avatar-w: calc(60px + var(--spacing) * 4 + 2px);
+  --avatar-gap: calc(var(--spacing) * 2);
+  --avatar-half: calc((var(--avatar-w) - var(--avatar-gap)) / 2);
+}
+/* Viviendas, Parques y Coex Mall: el avatar solo aparece en escritorio */
+@media (width >= 80rem) {
+  .forum-section:has(.desc3),
+  .forum-section:has(.desc4) {
+    grid-template-columns: repeat(11, minmax(0, 1fr)) var(--avatar-w);
+  }
+  .forum-section:has(.desc5) {
+    grid-template-columns: var(--avatar-w) repeat(11, minmax(0, 1fr));
+  }
+}
+@media (width >= 80rem) {
+  .forum-section {
+    --avatar-w: calc(60px + var(--spacing) * 6 + 2px);
+    --avatar-gap: calc(var(--spacing) * 3);
+  }
+  .forum-section:has(.desc1) {
+    grid-template-columns: var(--avatar-half) var(--avatar-half) repeat(10, minmax(0, 1fr));
+  }
+  .forum-section:has(.desc2) {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) var(--avatar-half) var(--avatar-half) repeat(4, minmax(0, 1fr));
+  }
+}
+
 /**LISTADO TEMAS**/
 .topic-list-container {
   .icon-no-new,
