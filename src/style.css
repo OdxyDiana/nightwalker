@@ -297,7 +297,7 @@ img {
 #post-footer {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
 }
 
 .post-author-name {
@@ -374,7 +374,7 @@ img {
 }
 .post-author-field.post-field-pareja {
   grid-column: 1 / 4;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
 }
 .post-author-field.post-field-nivelreputacion {
   grid-column: 4 / 6;
@@ -382,7 +382,7 @@ img {
 }
 .post-author-field.post-field-reputacion {
   grid-column: 4 / 6;
-  grid-row: 3;
+  grid-row: 2;
 }
 .post-author-field.post-field-reputacion::after {
   content: " pts de reputación";
@@ -393,11 +393,53 @@ img {
 }
 .post-author-field.post-field-inventario {
   grid-column: 6 / 10;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
 }
 .post-author-field.post-field-quote {
   grid-column: 10 / 12;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+/* Insignias del nivel de reputación: rejilla que llena todo el ancho; se ve una fila y el resto con scroll */
+.post-author-field.post-field-nivelreputacion .post-author-field-content {
+  max-height: calc(var(--spacing) * 14);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: var(--spacing);
+}
+/* Medallas e inventario: la tabla del foro pasa a ser una rejilla que llena todo el ancho */
+.post-author-field.post-field-medallas .post-author-field-content table,
+.post-author-field.post-field-medallas .post-author-field-content tbody,
+.post-author-field.post-field-medallas .post-author-field-content tr,
+.post-author-field.post-field-inventario .post-author-field-content table,
+.post-author-field.post-field-inventario .post-author-field-content tbody,
+.post-author-field.post-field-inventario .post-author-field-content tr {
+  display: contents;
+}
+.post-author-field.post-field-medallas .post-author-field-content > div,
+.post-author-field.post-field-inventario .post-author-field-content > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.5rem, 1fr));
+  justify-items: center;
+  gap: var(--spacing);
+}
+.post-author-field.post-field-medallas .post-author-field-content td,
+.post-author-field.post-field-inventario .post-author-field-content td {
+  display: block;
+  padding: 0;
+}
+
+/* Insignias, medallas e inventario: el scroll avanza fila a fila, sin dejar imágenes cortadas arriba */
+.post-author-field.post-field-nivelreputacion .post-author-field-content,
+.post-author-field.post-field-medallas .post-author-field-content,
+.post-author-field.post-field-inventario .post-author-field-content {
+  scroll-snap-type: y mandatory;
+}
+.post-author-field.post-field-nivelreputacion .post-author-field-content img,
+.post-author-field.post-field-medallas .post-author-field-content td,
+.post-author-field.post-field-inventario .post-author-field-content td {
+  scroll-snap-align: start;
 }
 .post-author-field.post-field-grupo {
   grid-column: 7 / 8;
@@ -414,7 +456,7 @@ img {
 #post-buttons img {
   display: none;
 }
-#post-buttons .post-buttons a::after {
+#post-buttons .post-buttons a::before {
   content: "\eb9a";
   display: block;
   font-family: var(--font-phosphor-fill);
@@ -425,26 +467,26 @@ img {
   border: 1px solid var(--background-1);
   border-radius: var(--radius-sm);
 }
-#post-buttons .post-buttons a:hover::after {
+#post-buttons .post-buttons a:hover::before {
   border-color: var(--accent-color);
 }
 /* Un icono para cada acción del post (los botones los genera el foro como imágenes) */
-#post-buttons .post-buttons a[href*="mode=editpost"]::after {
+#post-buttons .post-buttons a[href*="mode=editpost"]::before {
   content: "\e3b4";
 }
-#post-buttons .post-buttons a[href*="mode=quote"]::after {
+#post-buttons .post-buttons a[href*="mode=quote"]::before {
   content: "\e660";
 }
-#post-buttons .post-buttons a[href*="like"]::after {
+#post-buttons .post-buttons a[href*="like"]::before {
   content: "\e2a8";
 }
-#post-buttons .post-buttons a[href*="report"]::after {
+#post-buttons .post-buttons a[href*="report"]::before {
   content: "\e244";
 }
-#post-buttons .post-buttons a[href*="mode=delete"]::after {
+#post-buttons .post-buttons a[href*="mode=delete"]::before {
   content: "\e4a6";
 }
-#post-buttons .post-buttons a[href*="mode=ip"]::after {
+#post-buttons .post-buttons a[href*="mode=ip"]::before {
   content: "\e2ce";
 }
 
@@ -471,6 +513,25 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  /* Los campos de varias filas hacen scroll usando toda su caja, centrados si caben */
+  #post-header > .post-field-apodos,
+  #post-header > .post-field-medallas,
+  #post-footer > .post-field-inventario,
+  #post-footer > .post-field-quote {
+    position: relative;
+  }
+  #post-header > .post-field-apodos .post-author-field-content,
+  #post-header > .post-field-medallas .post-author-field-content,
+  #post-footer > .post-field-inventario .post-author-field-content,
+  #post-footer > .post-field-quote .post-author-field-content {
+    position: absolute;
+    inset: calc(var(--spacing) * 3);
+    max-height: none;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
   }
 }
 
