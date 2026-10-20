@@ -315,6 +315,41 @@ img {
     border-color: var(--background-3);
   }
 }
+/* Botones de afiliados: centrados y repartidos en filas */
+.affiliate-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+}
+.affiliate {
+  display: block;
+  padding: var(--spacing);
+  background-color: var(--background-2);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+}
+.affiliate img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.affiliate:hover {
+  border-color: var(--accent-color);
+}
+/* Créditos: en escritorio, a dos columnas para que no sean un bloque tan alto */
+.credits {
+  display: grid;
+  gap: calc(var(--spacing) * 2);
+  line-height: 1.6;
+}
+@media (width >= 80rem) {
+  .credits {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing) * 6);
+  }
+}
 
 /** PERFILES POSTS **/
 
