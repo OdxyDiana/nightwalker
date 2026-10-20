@@ -6,6 +6,7 @@
     <title>Nightwalker</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="switch-account.js"></script>
       <script src="profile-section.js"></script>
   </head>
   <body class="background-2 p-5">
@@ -63,6 +64,14 @@
                 data-title="Modo claro"
               >
                 <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border"
+                data-title="Cambiar cuenta"
+                href="/login"
+                data-switch-account-open
+              >
+                <i class="ph-fill ph-user-switch"></i>
               </a>
               <a
                 class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border"
@@ -290,5 +299,90 @@
           </div>
         </div>
         </main>
+    <dialog
+      id="switch-account-modal"
+      class="switch-account-modal surface-1 text-color rounded-sm"
+      aria-labelledby="switch-account-title"
+    >
+      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-5" hidden>
+        <h3
+          id="switch-account-picker-title"
+          class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
+        >
+          Cuentas
+        </h3>
+        <div class="switch-account-list"></div>
+        <button
+          type="button"
+          data-switch-account-close
+          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+        >
+          Cerrar
+        </button>
+      </div>
+      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-5" novalidate>
+        <h3
+          id="switch-account-title"
+          class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
+        >
+          Conectar cuenta
+        </h3>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm uppercase font-bold">Usuario</span>
+          <input
+            name="username"
+            type="text"
+            autocomplete="username"
+            autocapitalize="off"
+            spellcheck="false"
+            required
+            class="switch-account-input surface-2 rounded-sm p-2 text-color"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm uppercase font-bold">Contraseña</span>
+          <input
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="switch-account-input surface-2 rounded-sm p-2 text-color"
+          />
+        </label>
+        <p class="switch-account-error text-sm font-bold" role="alert" hidden></p>
+        <p class="text-xs opacity-75 flex gap-1 items-start">
+          <i class="ph-fill ph-lock-simple mt-[2px]"></i>
+          La contraseña se guarda cifrada y solo en este dispositivo.
+        </p>
+        <div class="flex gap-2 justify-end">
+          <button
+            type="button"
+            data-switch-account-close
+            class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="switch-account-button switch-account-submit surface-3 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+          >
+            Conectar
+          </button>
+        </div>
+      </form>
+      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-5" hidden>
+        <p class="text-sm">
+          Este navegador no permite guardar cuentas de forma segura.
+          <a href="/login" class="text-color-accent font-bold">Conéctate desde el login del foro</a>.
+        </p>
+        <button
+          type="button"
+          data-switch-account-close
+          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+        >
+          Cerrar
+        </button>
+      </div>
+    </dialog>
   </body>
 </html>
