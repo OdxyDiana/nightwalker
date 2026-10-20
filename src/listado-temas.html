@@ -261,56 +261,28 @@
       </header>
 
       <main class="mt-10">
-        <div class="flex justify-between">
+        <div
+          class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 xl:gap-3"
+        >
           <a
             href="/"
-            class="surface-2 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm uppercase flex items-center font-bold text-lg"
-            ><i class="ph ph-file-plus"></i> Nuevo Tema</a
+            class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-xs font-bold"
+            ><i class="ph-fill ph-file-plus text-base"></i>
+            <span>Nuevo tema</span></a
           >
-          <div
-            class="surface-2 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm flex gap-2 xl:gap-3 items-center xl:text-xl text-md"
+          <nav
+            class="flex flex-wrap items-center justify-center gap-1 text-xs font-bold"
+            aria-label="Paginación"
           >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              ><i class="ph ph-caret-line-left"></i
-            ></a>
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >1</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >2</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >3</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >...</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >10</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              >11</a
-            >
-            <a
-              href=""
-              class="surface-1 border border-color-3 p-2 py-1 xl:p-3 xl:py-2 rounded-sm"
-              ><i class="ph ph-caret-line-right"></i
-            ></a>
-          </div>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Primera página"><i class="ph ph-caret-line-left text-sm"></i></a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2 border-(--accent-color)! text-color-accent" aria-current="page">1</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">2</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">3</a>
+              <span class="min-w-8 h-8 flex items-center justify-center">…</span>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">10</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">11</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Última página"><i class="ph ph-caret-line-right text-sm"></i></a>
+          </nav>
         </div>
 
         <div
@@ -352,44 +324,31 @@
                 Mier 26 Mayo 2024 - 23:59
               </div>
               <div
-                class="col-start-2 col-span-4 xl:row-start-2 xl:col-start-9 xl:col-span-9 surface-2 rounded-sm p-1 xl:p-3 border border-color-1 flex justify-evenly gap-1 xl:gap-3"
+                class="col-start-2 col-span-4 xl:row-start-2 xl:col-start-9 xl:col-span-9 surface-2 rounded-sm p-1 xl:p-3 border border-color-1 flex flex-wrap items-center justify-center gap-1" aria-label="Páginas del tema" role="navigation"
               >
+                <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold" aria-label="Primera página"><i class="ph ph-caret-line-left text-xs"></i></a>
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                  ><i class="ph ph-caret-line-left text-xs"></i
-                ></a>
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >1</a
                 >
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >2</a
                 >
+                <span class="min-w-6 xl:min-w-7 flex items-center justify-center text-xs">…</span>
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                  >...</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >5</a
                 >
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >6</a
                 >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                >
-                  <i class="ph ph-caret-line-right text-xs"></i
-                ></a>
+                <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold" aria-label="Última página"><i class="ph ph-caret-line-right text-xs"></i></a>
               </div>
               <div
                 class="col-start-6 col-span-4 xl:row-start-2 xl:col-start-1 xl:col-span-8 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 flex justify-evenly items-center xl:justify-center gap-2 xl:gap-3"
@@ -455,44 +414,31 @@
                 Mier 26 Mayo 2024 - 23:59
               </div>
               <div
-                class="col-start-2 col-span-4 xl:row-start-2 xl:col-start-9 xl:col-span-9 surface-2 rounded-sm p-1 xl:p-3 border border-color-1 flex justify-evenly gap-1 xl:gap-3"
+                class="col-start-2 col-span-4 xl:row-start-2 xl:col-start-9 xl:col-span-9 surface-2 rounded-sm p-1 xl:p-3 border border-color-1 flex flex-wrap items-center justify-center gap-1" aria-label="Páginas del tema" role="navigation"
               >
+                <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold" aria-label="Primera página"><i class="ph ph-caret-line-left text-xs"></i></a>
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                  ><i class="ph ph-caret-line-left text-xs"></i
-                ></a>
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >1</a
                 >
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >2</a
                 >
+                <span class="min-w-6 xl:min-w-7 flex items-center justify-center text-xs">…</span>
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                  >...</a
-                >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >5</a
                 >
                 <a
                   href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
+                  class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold"
                   >6</a
                 >
-                <a
-                  href=""
-                  class="surface-1 border border-color-3 p-1 xl:px-3 rounded-sm text-xs"
-                >
-                  <i class="ph ph-caret-line-right text-xs"></i
-                ></a>
+                <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-6 h-6 xl:min-w-7 xl:h-7 px-1 text-xs font-bold" aria-label="Última página"><i class="ph ph-caret-line-right text-xs"></i></a>
               </div>
               <div
                 class="col-start-6 col-span-4 xl:row-start-2 xl:col-start-1 xl:col-span-8 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 flex justify-evenly items-center xl:justify-center gap-2 xl:gap-3"
