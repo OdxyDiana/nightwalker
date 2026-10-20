@@ -75,6 +75,3 @@
 @utility surface-3 {
   @apply border border-solid background-3 border-color-1;
 }
-@utility surface4 {
-  @apply border border-solid background-2 border-color-1;
-}
