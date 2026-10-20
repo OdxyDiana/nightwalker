@@ -246,7 +246,7 @@ const renderCalendarDays = () => {
 
 const buildCalendarGrid = () => {
   const wrapper = document.createElement("div");
-  wrapper.className = "calendar-month @container min-w-0 surface-2 rounded-sm p-2";
+  wrapper.className = "calendar-month @container min-w-0 surface-2 border-color-1 rounded-sm p-2";
 
   const weekdays = document.createElement("div");
   weekdays.className =
@@ -310,7 +310,7 @@ const createNewsItem = (item) => {
 
 const buildNewsPanel = () => {
   const wrapper = document.createElement("div");
-  wrapper.className = "calendar-news min-w-0 xl:h-0 xl:min-h-full surface-2 rounded-sm p-2 flex flex-col";
+  wrapper.className = "calendar-news min-w-0 xl:h-0 xl:min-h-full surface-2 border-color-1 rounded-sm p-2 flex flex-col";
 
   const title = document.createElement("h4");
   title.className = "text-center uppercase font-bold mb-2 text-sm md:text-base";
