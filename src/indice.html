@@ -131,7 +131,7 @@
             class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
           >
             <h3
-              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
             >
               Notificaciones
             </h3>
@@ -140,7 +140,7 @@
             class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
           >
             <h3
-              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
             >
               Cuentas
             </h3>
@@ -151,7 +151,7 @@
               class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
               >
                 Últimos temas
               </h3>
@@ -196,7 +196,7 @@
               class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-12 xl:col-span-9 col-start-1"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
               >
                 Calendario
               </h3>
@@ -245,7 +245,7 @@
               class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
               >
                 Staff
               </h3>
@@ -257,7 +257,7 @@
               class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 m-0 md:m-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base"
               >
                 Búsquedas
               </h3>
@@ -380,22 +380,27 @@
           class="flex flex-col surface-2 border border-color-3 rounded-sm p-2 xl:p-5 mt-10"
         >
           <div
-            class="surface-1 border border-color-3 rounded-sm flex flex-row justify-between xl:mb-5 xl:p-5 mb-3 p-2 text-color"
+            class="surface-1 border border-color-3 rounded-sm grid grid-cols-5 gap-2 xl:mb-5 mb-3 p-2"
           >
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold">
+              <i class="ph-fill ph-envelope-simple text-lg lg:text-base"></i>
+              <span class="hidden lg:inline">Mensajes sin leer</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold">
+              <i class="ph-fill ph-chat-circle-dots text-lg lg:text-base"></i>
+              <span class="hidden lg:inline">Sin respuesta</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold">
+              <i class="ph-fill ph-fire text-lg lg:text-base"></i>
+              <span class="hidden lg:inline">Temas activos</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold">
+              <i class="ph-fill ph-ranking text-lg lg:text-base"></i>
+              <span class="hidden lg:inline">Top posteadores</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold">
+              <i class="ph-fill ph-cookie text-lg lg:text-base"></i>
+              <span class="hidden lg:inline">Borrar cookies</span>
             </a>
           </div>
           <div class="flex flex-row xl:gap-5 gap-3 mb-3 xl:mb-5">

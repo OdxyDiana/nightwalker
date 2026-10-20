@@ -313,7 +313,7 @@ const buildNewsPanel = () => {
   wrapper.className = "calendar-news min-w-0 xl:h-0 xl:min-h-full surface-2 rounded-sm p-2 flex flex-col";
 
   const title = document.createElement("h4");
-  title.className = "text-center uppercase font-bold mb-2";
+  title.className = "text-center uppercase font-bold mb-2 text-sm md:text-base";
   title.textContent = "Noticias";
 
   const list = document.createElement("ul");
