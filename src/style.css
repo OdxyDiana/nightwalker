@@ -1329,7 +1329,8 @@ img {
   }
 }
 
-/* Título de los campos de imágenes, como los títulos de caja del resto del foro.
+/* Título de los campos de imágenes, como los títulos del resto del foro: barra con icono de acento.
+   En escritorio, las franjas bajas (premios y pases) llevan la etiqueta al lado, como en el índice.
    La etiqueta la pone el foro; aquí solo se muestra y se le cambia el texto */
 :is(
     .profile-field-nivelreputacion,
@@ -1350,7 +1351,10 @@ img {
     .profile-field-inventario
   )
   .profile-field-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
   width: 100%;
   margin-bottom: calc(var(--spacing) * 2);
   padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
@@ -1359,6 +1363,7 @@ img {
   border-radius: var(--radius-sm);
   font-size: 0;
 }
+/* Icono (antes) y texto (después) de cada título */
 :is(
     .profile-field-nivelreputacion,
     .profile-field-recuerdos,
@@ -1368,7 +1373,20 @@ img {
     .profile-field-inventario
   )
   .profile-field-label::before {
-  display: block;
+  font-family: var(--font-phosphor-fill);
+  font-size: var(--text-base);
+  line-height: 1;
+  color: var(--accent-color);
+}
+:is(
+    .profile-field-nivelreputacion,
+    .profile-field-recuerdos,
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-inventario
+  )
+  .profile-field-label::after {
   font-size: var(--text-xs);
   line-height: var(--text-xs--line-height);
   font-weight: 700;
@@ -1393,23 +1411,65 @@ img {
   :is(.profile-field-nivelreputacion, .profile-field-recuerdos) .profile-field-content {
     top: calc(var(--spacing) * 14 + 2px);
   }
+  /* Franjas bajas (premios y pases): etiqueta al lado, con el icono grande arriba y el texto pequeño debajo */
+  :is(.profile-field-awards, .profile-field-pases) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: calc(var(--spacing) * 3);
+  }
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-label {
+    flex-direction: column;
+    gap: var(--spacing);
+    width: auto;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-label::before {
+    font-size: var(--text-2xl);
+  }
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-label::after {
+    font-size: 0.625rem;
+  }
+  :is(.profile-field-awards, .profile-field-pases) .profile-field-content {
+    flex: 1;
+    align-self: center;
+  }
 }
 .profile-field-nivelreputacion .profile-field-label::before {
+  content: "\e606";
+}
+.profile-field-nivelreputacion .profile-field-label::after {
   content: "Insignias";
 }
 .profile-field-recuerdos .profile-field-label::before {
+  content: "\e836";
+}
+.profile-field-recuerdos .profile-field-label::after {
   content: "Recuerdos";
 }
 .profile-field-medallas .profile-field-label::before {
+  content: "\e320";
+}
+.profile-field-medallas .profile-field-label::after {
   content: "Medallas";
 }
 .profile-field-awards .profile-field-label::before {
+  content: "\e67e";
+}
+.profile-field-awards .profile-field-label::after {
   content: "Premios";
 }
 .profile-field-pases .profile-field-label::before {
+  content: "\e490";
+}
+.profile-field-pases .profile-field-label::after {
   content: "Pases";
 }
 .profile-field-inventario .profile-field-label::before {
+  content: "\e922";
+}
+.profile-field-inventario .profile-field-label::after {
   content: "Inventario";
 }
 

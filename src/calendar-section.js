@@ -311,10 +311,8 @@ const createNewsItem = (item) => {
 const buildNewsPanel = () => {
   const wrapper = document.createElement("div");
   wrapper.className = "calendar-news min-w-0 xl:h-0 xl:min-h-full surface-2 border-color-1 rounded-sm p-2 flex flex-col";
-
-  const title = document.createElement("h4");
-  title.className = "text-center uppercase font-bold mb-2 text-sm md:text-base";
-  title.textContent = "Noticias";
+  // Sin título visible: el bloque ya va dentro de la caja «Calendario»
+  wrapper.setAttribute("aria-label", "Noticias");
 
   const list = document.createElement("ul");
   list.className =
@@ -330,7 +328,7 @@ const buildNewsPanel = () => {
   }
 
   calendarState.elements.newsList = list;
-  wrapper.append(title, list);
+  wrapper.append(list);
   return wrapper;
 };
 
