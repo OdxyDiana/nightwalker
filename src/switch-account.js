@@ -1,8 +1,6 @@
 const SWITCH_ACCOUNT_DB_NAME = "nightwalker-cuentas";
 const SWITCH_ACCOUNT_DB_VERSION = 1;
 const SWITCH_ACCOUNT_KEY_ID = "principal";
-const SWITCH_ACCOUNT_DEFAULT_AVATAR =
-  "https://images2.imgbox.com/0c/77/494XeWpw_o.png";
 const SWITCH_ACCOUNT_DEFAULT_ROUTES = {
   login: "/login",
   logout: "/login?logout=1",
@@ -413,12 +411,23 @@ const createAccountItem = (account, currentId) => {
       : `Cambiar a ${account.username}`,
   );
 
-  const image = document.createElement("img");
-  image.src = account.avatar || SWITCH_ACCOUNT_DEFAULT_AVATAR;
-  image.alt = "";
-  image.loading = "lazy";
-  image.className = "w-full h-full object-cover object-center rounded-sm";
-  button.append(image);
+  // Sin avatar (o si la imagen no carga) se muestra un icono
+  const icon = document.createElement("span");
+  icon.className =
+    "w-full h-full flex items-center justify-center text-2xl text-color";
+  icon.innerHTML = '<i class="ph-fill ph-user"></i>';
+
+  if (account.avatar) {
+    const image = document.createElement("img");
+    image.src = account.avatar;
+    image.alt = "";
+    image.loading = "lazy";
+    image.className = "w-full h-full object-cover object-center rounded-sm";
+    image.addEventListener("error", () => image.replaceWith(icon));
+    button.append(image);
+  } else {
+    button.append(icon);
+  }
   button.addEventListener("click", () => {
     if (account.id !== currentId) handleAccountClick(account);
   });
