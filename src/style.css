@@ -285,14 +285,12 @@ img {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto auto auto;
-  gap: 8px;
 }
 
 #post-footer {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: auto auto auto;
-  gap: 8px;
 }
 
 .post-author-name {
