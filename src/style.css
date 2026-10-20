@@ -779,7 +779,28 @@ img {
   direction: ltr;
 }
 
+
 /** PERFILES USUARIOS **/
+/* Si el nombre viene con su color, las líneas del título salen del propio nombre y toman ese color;
+   si no, se quedan las líneas de acento del título */
+#profile-nickname:has(> span[style*="color"])::before,
+#profile-nickname:has(> span[style*="color"])::after {
+  display: none;
+}
+#profile-nickname > span[style*="color"] {
+  display: contents;
+}
+#profile-nickname > span[style*="color"]::before,
+#profile-nickname > span[style*="color"]::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: calc(var(--spacing) * 48);
+  background-image: linear-gradient(to right, transparent, currentColor);
+}
+#profile-nickname > span[style*="color"]::after {
+  background-image: linear-gradient(to left, transparent, currentColor);
+}
 .profile-field-quote {
   grid-column: span 4;
   grid-row: 1;
@@ -789,15 +810,23 @@ img {
   grid-row: 1;
 }
 .profile-field-portada img {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color-3);
+  border: 1px solid var(--background-1);
   opacity: 50%;
 }
 .profile-field-fecha-de-inscripción {
-  grid-column: 4 / span 3;
+  grid-column: 1 / span 3;
   grid-row: 1;
+}
+#profile-actions-buttons-container {
+  grid-column: 4 / span 9;
+  grid-row: 1;
+}
+.profile-field-fecha-de-inscripción .profile-field-content::before {
+  content: "Miembro desde ";
 }
 .profile-field-apodos {
   grid-column: 4 / span 3;
@@ -825,8 +854,8 @@ img {
   content: " años";
 }
 .profile-field-pases {
-  grid-column: 4 / span 3;
-  grid-row: 5 / span 3;
+  grid-column: 7 / span 3;
+  grid-row: 8 / span 1;
 }
 .profile-field-grupo {
   grid-column: 7 / span 3;
@@ -842,99 +871,348 @@ img {
 }
 .profile-field-personaje {
   grid-column: 10 / span 3;
-  grid-row: 2 / span 3;
-}
-.profile-field-personaje img {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--border-color-3);
-  border-radius: var(--radius-sm);
+  grid-row: 2 / span 4;
 }
 .profile-field-nivelreputacion {
-  grid-column: 7 / span 3;
-  grid-row: 5 / span 2;
-}
-.profile-field-nivelreputacion .profile-field-content {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing);
-  justify-content: center;
-  flex-wrap: wrap;
+  grid-column: 4 / span 3;
+  grid-row: 6 / span 1;
 }
 .profile-field-definicionrep {
   grid-column: 10 / span 3;
-  grid-row: 5 / span 2;
+  grid-row: 8 / span 1;
 }
 .profile-field-reputacion {
-  grid-column: 7 / span 6;
-  grid-row: 7 / span 1;
+  grid-column: 7 / span 3;
+  grid-row: 5 / span 1;
 }
 .profile-field-reputacion .profile-field-content::after {
   content: " pts de reputación";
 }
 .profile-field-recuerdos {
-  grid-column: 1 / span 3;
-  grid-row: 8 / span 2;
-}
-.profile-field-recuerdos .profile-field-content {
-  max-height: 150px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing);
-}
-.profile-field-recuerdos .profile-field-content table {
-  width: 100%;
-  border-spacing: var(--spacing);
-  display: flex;
+  grid-column: 4 / span 3;
+  grid-row: 7 / span 2;
 }
 .profile-field-pareja {
-  grid-column: 4 / span 3;
-  grid-row: 8 / span 2;
-}
-.profile-field-pareja img {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--border-color-3);
-  border-radius: var(--radius-sm);
+  grid-column: 1 / span 3;
+  grid-row: 7 / span 2;
 }
 .profile-field-awards {
   grid-column: 7 / span 6;
-  grid-row: 8 / span 1;
+  grid-row: 7 / span 1;
 }
 .profile-field-medallas {
   grid-column: 7 / span 6;
-  grid-row: 9 / span 1;
-}
-.profile-field-medallas .profile-field-content {
-  max-height: 150px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing);
-}
-.profile-field-medallas .profile-field-content table {
-  display: inline-flex;
-}
-.profile-field-medallas .profile-field-content table tr {
-  display: inline-flex;
-}
-.profile-field-medallas .profile-field-content table tr td {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: calc(var(--spacing) * 10);
+  grid-row: 6 / span 1;
 }
 .profile-field-inventario {
   grid-column: 1 / span 12;
-  grid-row: 10 / span 1;
+  grid-row: 9 / span 1;
 }
+
+/* Fotos del personaje y de la pareja: rellenan su hueco sin cambiar el alto de las filas */
+.profile-field-personaje,
+.profile-field-pareja {
+  position: relative;
+}
+.profile-field-personaje .profile-field-content,
+.profile-field-pareja .profile-field-content {
+  position: absolute;
+  inset: calc(var(--spacing) * 2);
+  width: auto;
+}
+.profile-field-personaje img,
+.profile-field-pareja img,
+#profile-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--background-1);
+  border-radius: var(--radius-sm);
+}
+
+/* Insignias del nivel de reputación: rejilla que llena todo el ancho */
+.profile-field-nivelreputacion .profile-field-content {
+  max-height: calc(var(--spacing) * 14);
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: var(--spacing);
+}
+/* Medallas, premios, pases, recuerdos e inventario: la tabla del foro pasa a ser una rejilla que llena todo el ancho */
+:is(
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-recuerdos,
+    .profile-field-inventario
+  )
+  .profile-field-content
+  :is(table, tbody, tr) {
+  display: contents;
+}
+:is(
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-inventario
+  )
+  .profile-field-content
+  > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.5rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: var(--spacing);
+}
+/* Los recuerdos son tiras anchas: una por fila */
+.profile-field-recuerdos .profile-field-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing);
+}
+:is(
+    .profile-field-medallas,
+    .profile-field-awards,
+    .profile-field-pases,
+    .profile-field-recuerdos,
+    .profile-field-inventario
+  )
+  .profile-field-content
+  td {
+  display: block;
+  padding: 0;
+}
+.profile-field-container img {
+  max-width: 100%;
+}
+
+/* El scroll avanza fila a fila, sin dejar imágenes cortadas arriba */
+:is(
+    .profile-field-nivelreputacion,
+    .profile-field-medallas,
+    .profile-field-pases,
+    .profile-field-recuerdos,
+    .profile-field-inventario
+  )
+  .profile-field-content {
+  scroll-snap-type: y mandatory;
+}
+.profile-field-nivelreputacion .profile-field-content img,
+:is(
+    .profile-field-medallas,
+    .profile-field-pases,
+    .profile-field-recuerdos,
+    .profile-field-inventario
+  )
+  .profile-field-content
+  td {
+  scroll-snap-align: start;
+}
+.profile-field-medallas .profile-field-content,
+.profile-field-awards .profile-field-content,
+.profile-field-pases .profile-field-content,
 .profile-field-inventario .profile-field-content {
-  max-height: 150px;
+  max-height: calc(var(--spacing) * 37);
   overflow-y: auto;
 }
-.profile-field-inventario .profile-field-content table {
-  width: 100%;
-  border-spacing: var(--spacing);
+/* Las zonas con scroll dejan un poco de aire a la derecha para que la barra no quede pegada al contenido */
+:is(
+    .profile-field-apodos,
+    .profile-field-quote,
+    .profile-field-definicionrep,
+    .profile-field-nivelreputacion,
+    .profile-field-awards,
+    .profile-field-medallas,
+    .profile-field-pases,
+    .profile-field-recuerdos,
+    .profile-field-inventario
+  )
+  .profile-field-content {
+  padding-inline-end: calc(var(--spacing) * 2);
+}
+
+/* Escritorio: los campos de varias filas hacen scroll usando toda su caja, centrados si caben */
+@media (width >= 80rem) {
+  /* El avatar se queda en su tamaño natural; las filas de al lado suman su alto */
+  #profile-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #profile-avatar img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+  .profile-field-personaje .profile-field-content,
+  .profile-field-pareja .profile-field-content {
+    inset: calc(var(--spacing) * 3);
+  }
+  :is(
+      .profile-field-apodos,
+      .profile-field-recuerdos,
+      .profile-field-quote,
+      .profile-field-definicionrep
+    ) {
+    position: relative;
+  }
+  :is(
+      .profile-field-apodos,
+      .profile-field-recuerdos,
+      .profile-field-quote,
+      .profile-field-definicionrep
+    )
+    .profile-field-content {
+    position: absolute;
+    inset: calc(var(--spacing) * 3);
+    width: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+  }
+}
+
+/* Móvil y tablet: rejilla sencilla de cuatro columnas, con el avatar y sus datos al lado */
+@media (width < 80rem) {
+  #profile-header > *,
+  #profile-body > *,
+  #profile-body .contents > * {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  #profile-body {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: dense;
+  }
+  #profile-body .profile-field-fecha-de-inscripción {
+    order: 0;
+  }
+  #profile-actions-buttons-container {
+    order: 1;
+  }
+  #profile-body #profile-avatar {
+    position: relative;
+    grid-column: span 2;
+    grid-row: span 4;
+    order: 2;
+  }
+  #profile-avatar img {
+    position: absolute;
+    inset: calc(var(--spacing) * 2);
+    /* Una imagen no se estira con inset: hay que darle el tamaño del hueco */
+    width: calc(100% - var(--spacing) * 4);
+    height: calc(100% - var(--spacing) * 4);
+    aspect-ratio: auto;
+  }
+  #profile-body :is(
+      .profile-field-grupo,
+      .profile-field-empresa,
+      .profile-field-fans,
+      .profile-field-edad
+    ) {
+    grid-column: span 2;
+    order: 3;
+  }
+  #profile-body .profile-field-grupo {
+    order: 4;
+  }
+  #profile-body .profile-field-empresa {
+    order: 5;
+  }
+  #profile-body .profile-field-fans {
+    order: 6;
+  }
+  #profile-body .profile-field-edad {
+    order: 7;
+  }
+  #profile-body .post-author-rank {
+    grid-column: span 2;
+    order: 8;
+  }
+  #profile-body :is(.profile-field-post, .profile-field-wons) {
+    grid-column: span 1;
+    order: 9;
+  }
+  #profile-body .profile-field-wons {
+    order: 10;
+  }
+  #profile-body :is(.profile-field-personaje, .profile-field-pareja) {
+    grid-column: span 2;
+    aspect-ratio: 1;
+    order: 11;
+  }
+  #profile-body .profile-field-apodos {
+    grid-column: span 2;
+    order: 12;
+  }
+  #profile-body :is(.profile-field-nivelreputacion, .profile-field-reputacion) {
+    order: 13;
+  }
+  #profile-body .profile-field-definicionrep {
+    grid-column: span 2;
+    order: 14;
+  }
+  #profile-body .profile-field-pareja {
+    order: 15;
+  }
+  #profile-body :is(.profile-field-awards, .profile-field-medallas) {
+    order: 16;
+  }
+  #profile-body :is(.profile-field-pases, .profile-field-recuerdos) {
+    grid-column: span 2;
+    order: 17;
+  }
+  #profile-body .profile-field-inventario {
+    order: 18;
+  }
+  /* Los textos que acompañan a una foto ocupan su mismo alto y hacen scroll si no caben */
+  :is(.profile-field-apodos, .profile-field-definicionrep) {
+    position: relative;
+  }
+  :is(.profile-field-apodos, .profile-field-definicionrep) .profile-field-content {
+    position: absolute;
+    inset: calc(var(--spacing) * 2);
+    width: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+  }
+  :is(.profile-field-pases, .profile-field-recuerdos) .profile-field-content {
+    max-height: calc(var(--spacing) * 37);
+    overflow-y: auto;
+  }
+}
+
+/* Tablet: seis columnas; el avatar mantiene su proporción y los datos se reparten a su lado de dos en dos */
+@media (48rem <= width < 80rem) {
+  #profile-body {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  #profile-body #profile-avatar {
+    grid-row: span 4;
+  }
+  #profile-avatar img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 10 / 16;
+  }
+  #profile-body :is(.profile-field-post, .profile-field-wons) {
+    grid-column: span 2;
+  }
+  #profile-body .post-author-rank {
+    grid-column: span 4;
+  }
+  #profile-body :is(.profile-field-apodos, .profile-field-definicionrep) {
+    grid-column: span 4;
+  }
+  #profile-body :is(.profile-field-nivelreputacion, .profile-field-reputacion, .profile-field-pases, .profile-field-recuerdos) {
+    grid-column: span 3;
+  }
 }
