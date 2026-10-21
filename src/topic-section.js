@@ -202,7 +202,7 @@ const addProfileToggle = () => {
     const button = document.createElement("button");
     button.type = "button";
     button.className =
-      "post-profile-toggle xl:hidden flex items-center justify-center gap-2 p-2 surface-3 border border-color-1 rounded-sm uppercase text-xs font-bold cursor-pointer hover:border-(--accent-color)";
+      "post-profile-toggle xl:hidden flex items-center justify-center gap-2 p-2 surface-1 border border-color-3 rounded-sm uppercase text-xs font-bold cursor-pointer hover:border-(--accent-color)";
     button.setAttribute("aria-expanded", "false");
     button.innerHTML =
       '<i class="ph-fill ph-caret-down transition-transform"></i><span>Ver más</span>';

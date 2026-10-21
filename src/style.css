@@ -188,7 +188,6 @@ img {
     }
   }
   .switch-account-button {
-    min-height: 44px;
     &:hover:not(:disabled) {
       border-color: var(--accent-color);
     }
@@ -528,9 +527,9 @@ img {
   font-family: var(--font-phosphor-fill);
   font-size: 16px;
   line-height: 1;
-  background-color: var(--background-3);
+  background-color: var(--background-1);
   padding: calc(var(--spacing) * 2);
-  border: 1px solid var(--background-1);
+  border: 1px solid var(--border-color-3);
   border-radius: var(--radius-sm);
 }
 #post-buttons .post-buttons a:hover::before {
