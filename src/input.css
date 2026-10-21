@@ -29,9 +29,9 @@
 }
 
 [data-theme="light"] {
-  --color-val-1: #dcdcdc; /* Valores para modo claro */
+  --color-val-1: #c9c9c9; /* Valores para modo claro: como en oscuro, cada nivel anidado es más claro */
   --color-val-2: #d6d6d6;
-  --color-val-3: #c9c9c9;
+  --color-val-3: #dcdcdc;
   --color-val-text: #1c1d1f;
 }
 
@@ -74,7 +74,4 @@
 
 @utility surface-3 {
   @apply border border-solid background-3 border-color-1;
-}
-@utility surface4 {
-  @apply border border-solid background-2 border-color-1;
 }

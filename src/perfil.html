@@ -110,11 +110,11 @@
 
         <div
           id="tablon"
-          class="surface-2 rounded-sm xl:p-5 p-2 grid grid-cols-12 gap-3 xl:gap-5"
+          class="surface-2 rounded-sm xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3"
         >
           <a
             href="/"
-            class="block w-full xl:w-auto p-5 surface-3 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+            class="block w-full xl:w-auto p-2 xl:p-3 surface-3 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
           >
             <img
               src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
@@ -261,41 +261,66 @@
       </header>
 
       <main class="mt-10">
-        <div id="profile-main" class="surface-2 border mx-auto rounded-sm xl:p-5 p-3">
-          <div id="profile-grid" class="grid grid-cols-12 gap-3 surface-3 xl:p-5 p-3 rounded-sm">
-            <div id="profile-header" class="grid grid-cols-12 gap-2 p-2 col-span-12 col-start-1 surface-2 border-color-1 rounded-sm">
+        <div id="profile-main" class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm">
+          <h3
+            id="profile-nickname"
+            class="p-5 xl:p-10 surface-1 border border-color-3 uppercase rounded-sm text-center mb-2 xl:mb-3 text-2xl xl:text-3xl font-extrabold flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)"
+          >
+            Nickname
+          </h3>
+          <div id="profile-grid" class="flex flex-col gap-2 xl:gap-3">
+            <div id="profile-header" class="grid grid-cols-12 gap-2 xl:gap-3">
             </div>
-            <div id="profile-nickname" class="surface-2 border-color-1 rounded-sm xl:p-5 p-3 text-center text-3xl col-span-12 row-start-2 uppercase text-bold">
-              Nickname
-            </div>
-            <div id="profile-body" class="grid grid-cols-12 gap-2 surface-2 border-color-1 rounded-sm xl:p-5 p-3 col-span-12 row-start-3">
-              <div id="profile-actions-buttons-container" class="col-span-6 col-start-7 surface-1  rounded-sm xl:p-5 p-3"></div>
+            <div id="profile-body" class="grid grid-cols-12 gap-2 xl:gap-3">
+              <div id="profile-actions-buttons-container" class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 grid grid-cols-5 gap-2 xl:gap-3">
+                <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Mensaje privado">
+                  <i class="ph-fill ph-envelope-simple text-lg md:text-base"></i>
+                  <span class="hidden md:inline">Mensaje privado</span>
+                </a>
+                <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Expediente" aria-label="Expediente">
+                  <i class="ph-fill ph-identification-card text-lg md:text-base"></i>
+                  <span class="hidden md:inline">Expediente</span>
+                </a>
+                <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Cronología" aria-label="Cronología">
+                  <i class="ph-fill ph-clock-counter-clockwise text-lg md:text-base"></i>
+                  <span class="hidden md:inline">Cronología</span>
+                </a>
+                <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Relaciones" aria-label="Relaciones">
+                  <i class="ph-fill ph-users-three text-lg md:text-base"></i>
+                  <span class="hidden md:inline">Relaciones</span>
+                </a>
+                <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Instagram" aria-label="Instagram">
+                  <i class="ph-fill ph-instagram-logo text-lg md:text-base"></i>
+                  <span class="hidden md:inline">Instagram</span>
+                </a>
+              </div>
               <div id="profile-avatar-rank" class="contents">
                 <div
-                        id="profile-avatar" class="text-center rounded-sm border border-color-3 w-full h-auto overflow-hidden col-span-3 row-span-6 col-start-1 row-start-1"
-                      >
-                        <img
-                          class="max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]" src="https://images2.imgbox.com/0c/77/494XeWpw_o.png" alt="Avatar"
-                        />
-                      </div>
-
-                      <div
-                        class="p-2 xl:p-5 post-author-rank surface-1 rounded-sm uppercase w-full text-center col-span-3 row-start-7"
-                      >
-                        Idol
-                      </div>
+                  id="profile-avatar"
+                  class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 col-span-3 row-span-5 col-start-1 row-start-2"
+                >
+                  <img
+                    class="block w-full h-full object-cover rounded-sm aspect-[10/16]"
+                    src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                    alt="Avatar"
+                  />
+                </div>
+                <div
+                  class="p-2 xl:p-3 post-author-rank surface-1 border border-color-3 rounded-sm uppercase w-full text-center flex items-center justify-center col-span-3 col-start-4 row-start-5"
+                >
+                  Idol
+                </div>
               </div>
-               <div id="profile-info" class="contents"></div>
-                <template id="profile-field-template" class="contents">
-                 <div class="profile-field-container surface-1  rounded-sm p-2 xl:p-3 text-center flex flex-col justify-center items-center">
-                   <div class="profile-field-label hidden">
-                     <span class="label">Mensajes :</span>
-                     </div>
-                   <div class="profile-field-content w-full">1234</div>
-                 </div>
-               </template>
+              <div id="profile-info" class="contents"></div>
+              <template id="profile-field-template" class="contents">
+                <div class="profile-field-container surface-3 border border-color-1 rounded-sm p-2 xl:p-3 text-center uppercase text-xs xl:text-sm flex flex-col justify-center items-center min-w-0">
+                  <div class="profile-field-label hidden">
+                    <span class="label">Mensajes :</span>
+                  </div>
+                  <div class="profile-field-content w-full break-words">1234</div>
+                </div>
+              </template>
             </div>
-
           </div>
         </div>
         </main>
@@ -304,7 +329,7 @@
       class="switch-account-modal surface-1 text-color rounded-sm"
       aria-labelledby="switch-account-title"
     >
-      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-5" hidden>
+      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-3" hidden>
         <h3
           id="switch-account-picker-title"
           class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
@@ -315,12 +340,12 @@
         <button
           type="button"
           data-switch-account-close
-          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
         >
           Cerrar
         </button>
       </div>
-      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-5" novalidate>
+      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-3" novalidate>
         <h3
           id="switch-account-title"
           class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
@@ -358,19 +383,19 @@
           <button
             type="button"
             data-switch-account-close
-            class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+            class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            class="switch-account-button switch-account-submit surface-3 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+            class="switch-account-button switch-account-submit flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color-accent uppercase text-xs font-bold cursor-pointer"
           >
             Conectar
           </button>
         </div>
       </form>
-      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-5" hidden>
+      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-3" hidden>
         <p class="text-sm">
           Este navegador no permite guardar cuentas de forma segura.
           <a href="/login" class="text-color-accent font-bold">Conéctate desde el login del foro</a>.
@@ -378,7 +403,7 @@
         <button
           type="button"
           data-switch-account-close
-          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
         >
           Cerrar
         </button>

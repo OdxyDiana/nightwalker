@@ -24,50 +24,53 @@
           >
             <div
               id="header-user"
-              class="user-anon flex justify-start items-center"
+              class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!"
+              data-title="Anonymous"
+              role="group"
+              aria-label="Anonymous"
             >
               <div
-                class="w-[50px] h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
+                class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
               >
                 <img
                   src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
                   alt="Anonymous"
-                  class="w-[50px] h-[50px] border-color-3 border object-cover object-center rounded-sm opacity-50"
+                  class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm"
                 />
               </div>
-              <span class="uppercase font-bold ml-[10px]">Anonymous</span>
+              <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">Anonymous</span>
             </div>
             <div
-              class="navbar-buttons flex justify-center gap-2 items-center p-2"
+              class="navbar-buttons shrink-0 flex justify-center gap-1 sm:gap-2 items-center p-1 sm:p-2"
             >
               <a
                 href="/"
-                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Índice"
               >
                 <i class="ph-fill ph-house"></i>
               </a>
               <a
                 href="/memberlist"
-                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Idols"
               >
                 <i class="ph-fill ph-user-list"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Modo oscuro"
               >
                 <i class="ph-fill ph-moon-stars"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Modo claro"
               >
                 <i class="ph-fill ph-sun-dim"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Cambiar cuenta"
                 href="/login"
                 data-switch-account-open
@@ -75,14 +78,14 @@
                 <i class="ph-fill ph-user-switch"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Conéctate"
                 href="/login?connexion"
               >
                 <i class="ph-fill ph-sign-in"></i>
               </a>
               <a
-                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
                 data-title="Registrate"
                 href="/register"
               >
@@ -111,85 +114,93 @@
 
         <div
           id="tablon"
-          class="surface-2 rounded-sm border border-color-3 xl:p-5 p-2 grid grid-cols-12 gap-2 xl:gap-5"
+          class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3"
         >
           <a
             href="/"
-            class="block w-full xl:w-auto p-5 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+            class="block w-full xl:w-auto p-2 xl:p-3 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
           >
             <img
               src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
               alt="Nigthwalker"
               loading="lazy"
-              class="opacity-50 rounded-sm w-full h-auto border border-color-1"
+              class="rounded-sm w-full h-auto border border-color-1"
             />
           </a>
           <div
-            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
           >
             <h3
-              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
             >
-              Notificaciones
+              <i class="ph-fill ph-bell text-base text-color-accent"></i>Notificaciones
             </h3>
           </div>
           <div
-            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
           >
             <h3
-              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+              class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
             >
-              Cuentas
+              <i class="ph-fill ph-user-switch text-base text-color-accent"></i>Cuentas
             </h3>
-            <div id="switch-account-list" class="switch-account-list m-2"></div>
+            <div id="switch-account-list" class="switch-account-list"></div>
           </div>
           <div class="contents">
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
               >
-                Últimos temas
+                <i class="ph-fill ph-clock-counter-clockwise text-base text-color-accent"></i>Últimos temas
               </h3>
             </div>
             <div
-              class="surface-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+              class="surface-3 grid grid-cols-8 md:grid-cols-4 xl:grid-cols-8 gap-2 xl:gap-3 rounded-sm p-2 xl:p-3 border-color-1 border col-span-12 col-start-1 row-start-4 xl:row-start-3"
             >
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Normas" aria-label="Normas">
+                <i class="ph-fill ph-scroll text-lg md:text-base"></i>
+                <span class="hidden md:inline">Normas</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Ambientación" aria-label="Ambientación">
+                <i class="ph-fill ph-city text-lg md:text-base"></i>
+                <span class="hidden md:inline">Ambientación</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Empresas" aria-label="Empresas">
+                <i class="ph-fill ph-buildings text-lg md:text-base"></i>
+                <span class="hidden md:inline">Empresas</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Grupos" aria-label="Grupos">
+                <i class="ph-fill ph-users-three text-lg md:text-base"></i>
+                <span class="hidden md:inline">Grupos</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Faces" aria-label="Faces">
+                <i class="ph-fill ph-identification-card text-lg md:text-base"></i>
+                <span class="hidden md:inline">Faces</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Tienda" aria-label="Tienda">
+                <i class="ph-fill ph-storefront text-lg md:text-base"></i>
+                <span class="hidden md:inline">Tienda</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Medallas" aria-label="Medallas">
+                <i class="ph-fill ph-medal text-lg md:text-base"></i>
+                <span class="hidden md:inline">Medallas</span>
               </a>
-              <a href="/" target="_blank" class="text-color">
-                <i class="ph-fill ph-password"></i>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Afiliados" aria-label="Afiliados">
+                <i class="ph-fill ph-handshake text-lg md:text-base"></i>
+                <span class="hidden md:inline">Afiliados</span>
               </a>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-12 xl:col-span-9 col-start-1"
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 col-span-12 xl:col-span-9 col-start-1"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
               >
-                Calendario
+                <i class="ph-fill ph-calendar-dots text-base text-color-accent"></i>Calendario
               </h3>
-              <div id="calendario" class="grid gap-2 xl:grid-cols-2 m-2"></div>
+              <div id="calendario" class="grid gap-2 xl:gap-3 xl:grid-cols-2"></div>
               <script>
                 const calendario = {
                   noticias: [
@@ -231,25 +242,26 @@
               </script>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 col-span-12 xl:col-span-3"
             >
               <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
               >
-                Staff
+                <i class="ph-fill ph-shield-star text-base text-color-accent"></i>Staff
               </h3>
             </div>
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 col-span-12 xl:col-span-3 col-start-1"
             ></div>
+            <!-- Búsquedas: franja ancha y baja, con la etiqueta al lado -->
             <div
-              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 col-span-12 xl:col-span-9 flex flex-col md:flex-row gap-2 xl:gap-3"
             >
-              <h3
-                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1 font-bold"
-              >
-                Búsquedas
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-magnifying-glass text-base md:text-2xl text-color-accent"></i>
+                <span>Búsquedas</span>
               </h3>
+              <div class="flex-1 min-h-12"></div>
             </div>
           </div>
         </div>
@@ -258,12 +270,14 @@
       <main class="mt-10">
         <template id="forum-template">
           <div
-            class="forum rounded-sm surface-2 xl:p-5 p-2 border border-color-3 xl:mb-5 mb-3"
+            class="forum rounded-sm surface-2 xl:p-3 p-2 border border-color-3 xl:mb-5 mb-3"
           >
             <div
-              class="forum-header surface-1 xl:p-5 p-2 text-center uppercase rounded-sm xl:mb-5 mb-3 border border-color-3"
+              class="forum-header surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3"
             >
-              <div class="category-title">
+              <div
+                class="category-title flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)"
+              >
                 <h2 class="text-2xl xl:text-3xl font-extrabold">
                   Nombre de la categoría 1
                 </h2>
@@ -276,40 +290,40 @@
         </template>
         <template id="forum-section-template">
           <div
-            class="forum-section col-span-2 row-span-1 gap-2 xl:gap-3 gap-2 grid grid-cols-12 grid-flow-rows group forum_no_new p-2 xl:p-3 rounded-sm surface-3 xl:has-[.desc1]:col-span-1 xl:has-[.desc2]:col-span-1 border border-color-1 relative has-[.desc4]:md:h-100 has-[.desc4]:h-80 has-[.desc5]:md:h-100 has-[.desc5]:h-80"
+            class="forum-section col-span-2 row-span-1 gap-2 xl:gap-3 gap-2 grid grid-cols-12 grid-flow-rows group forum_no_new p-2 xl:p-3 rounded-sm surface-3 xl:has-[.desc1]:col-span-1 xl:has-[.desc2]:col-span-1 border border-color-1 relative has-[.desc4]:xl:h-100 has-[.desc4]:h-80 has-[.desc5]:xl:h-100 has-[.desc5]:h-80 has-[.desc4]:content-end has-[.desc5]:content-end"
           >
             <div
-              class="forum-title col-start-1 row-start-1 col-span-12 row-span-1 text-color-accent uppercase xl:text-xl text-lg font-bold py-2 xl:py-3 border-color-3 rounded-sm group-has-[.desc4]:opacity-75 group-has-[.desc4]:border group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:p-2 group-has-[.desc4]:xl:p-3 group-has-[.desc4]:flex group-has-[.desc4]:xl:gap-3 group-has-[.desc4]:gap-2 group-has-[.desc4]:items-center group-has-[.desc4]:md:col-span-7 group-has-[.desc4]:col-span-12 group-has-[.desc4]:col-start-1 group-has-[.desc4]:md:row-start-7 group-has-[.desc4]:row-start-1 group-has-[.desc5]:opacity-75 group-has-[.desc5]:border group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:flex group-has-[.desc5]:xl:gap-3 group-has-[.desc5]:gap-2 group-has-[.desc5]:items-center group-has-[.desc5]:p-2 group-has-[.desc5]:xl:p-3 group-has-[.desc5]:col-span-8 group-has-[.desc5]:md:col-start-2 group-has-[.desc5]:md:col-span-7 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7"
+              class="forum-title col-start-1 row-start-1 col-span-12 row-span-1 text-color-accent uppercase xl:text-xl text-lg font-bold py-2 xl:py-3 border-color-3 rounded-sm group-has-[.desc4]:border group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:p-2 group-has-[.desc4]:xl:p-3 group-has-[.desc4]:flex group-has-[.desc4]:xl:gap-3 group-has-[.desc4]:gap-2 group-has-[.desc4]:items-center group-has-[.desc4]:xl:col-span-7 group-has-[.desc4]:col-span-12 group-has-[.desc4]:col-start-1 group-has-[.desc4]:xl:row-start-7 group-has-[.desc4]:row-start-1 group-has-[.desc5]:border group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:flex group-has-[.desc5]:xl:gap-3 group-has-[.desc5]:gap-2 group-has-[.desc5]:items-center group-has-[.desc5]:p-2 group-has-[.desc5]:xl:p-3 group-has-[.desc5]:col-span-8 group-has-[.desc5]:xl:col-start-2 group-has-[.desc5]:xl:col-span-7 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7"
             >
               <i
-                class="ph-fill ph-chat-slash border-color-1 border p-2 rounded-sm surface-2 text-color icon-no-new group-has-[.guidebook]:hidden"
+                class="ph-fill ph-chat-slash border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-no-new group-has-[.guidebook]:hidden"
                 data-title="Hay nuevos mensajes"
               ></i>
               <i
-                class="ph-fill ph-chat-dots border-color-1 border p-2 rounded-sm surface-2 text-color icon-new group-has-[.guidebook]:hidden"
+                class="ph-fill ph-chat-dots border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-new group-has-[.guidebook]:hidden"
                 data-title="No hay nuevos mensajes"
               ></i>
               <i
-                class="ph-fill ph-lock border-color-1 border p-2 rounded-sm surface-2 text-color icon-closed group-has-[.guidebook]:hidden"
+                class="ph-fill ph-lock border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-closed group-has-[.guidebook]:hidden"
                 data-title="Foro cerrado"
               ></i>
               <a href="listado-temas.html" data-title="Guidebook">Guidebook</a>
             </div>
             <div class="forum-info contents">
               <div
-                class="flex flex-row items-center justify-center surface-2 border border-color-1 rounded-sm group-has-[.guidebook]:hidden group-has-[.desc1]:col-start-1 group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-start-3 group-has-[.desc2]:row-start-3 group-has-[.desc2]:col-start-9 group-has-[.desc2]:col-span-2 group-has-[.desc3]:row-start-6 group-has-[.desc3]:md:col-start-8 group-has-[.desc3]:col-start-9 group-has-[.desc3]:col-span-2 group-has-[.desc4]:opacity-75 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:md:col-start-8 group-has-[.desc4]:col-start-9 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:opacity-75 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-9 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                class="flex flex-col md:flex-row items-center justify-center text-sm xl:text-base surface-2 border border-color-1 rounded-sm group-has-[.guidebook]:hidden group-has-[.desc1]:col-start-1 group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-start-3 group-has-[.desc2]:row-start-3 group-has-[.desc2]:col-start-9 group-has-[.desc2]:col-span-2 group-has-[.desc3]:row-start-6 group-has-[.desc3]:xl:col-start-8 group-has-[.desc3]:col-start-9 group-has-[.desc3]:col-span-2 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:xl:col-start-8 group-has-[.desc4]:col-start-9 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-9 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
                 data-title="Temas"
               >
-                15 <span class="ph ph ph-chat text-xl ml-1"></span>
+                15 <span class="ph ph ph-chat text-base xl:text-xl md:ml-1"></span>
               </div>
               <div
-                class="flex flex-row items-center justify-center surface-2 border border-color-1 rounded-sm text-color-accent group-has-[.guidebook]:hidden group-has-[.desc1]:row-start-3 group-has-[.desc1]:xl:col-start-5 group-has-[.desc1]:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:xl:col-start-11 group-has-[.desc2]:col-start-11 group-has-[.desc2]:row-start-3 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-span-2 group-has-[.desc3]:md:col-start-10 group-has-[.desc3]:col-start-11 group-has-[.desc4]:opacity-75 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:md:col-start-10 group-has-[.desc4]:col-start-11 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:opacity-75 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-11 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                class="flex flex-col md:flex-row items-center justify-center text-sm xl:text-base surface-2 border border-color-1 rounded-sm text-color-accent group-has-[.guidebook]:hidden group-has-[.desc1]:row-start-3 group-has-[.desc1]:xl:col-start-5 group-has-[.desc1]:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:xl:col-start-11 group-has-[.desc2]:col-start-11 group-has-[.desc2]:row-start-3 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-span-2 group-has-[.desc3]:xl:col-start-10 group-has-[.desc3]:col-start-11 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:xl:col-start-10 group-has-[.desc4]:col-start-11 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-11 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
                 data-title="Mensajes"
               >
-                100 <span class="ph ph ph-chats text-xl ml-1"></span>
+                100 <span class="ph ph ph-chats text-base xl:text-xl md:ml-1"></span>
               </div>
               <div
-                class="relative overflow-hidden hidden xl:block group-has-[.guidebook]:hidden rounded-sm surface-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content group-has-[.desc1]:col-start-1 group-has-[.desc1]:row-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-span-2 group-has-[.desc2]:col-start-7 group-has-[.desc2]:row-start-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:row-span-2 group-has-[.desc3]:row-start-5 group-has-[.desc3]:col-start-12 group-has-[.desc3]:col-span-1 group-has-[.desc3]:row-span-2 group-has-[.desc3]:md:block group-has-[.desc4]:col-start-12 group-has-[.desc4]:row-start-7 group-has-[.desc4]:row-span-2 group-has-[.desc4]:col-span-1 group-has-[.desc4]:md:block group-has-[.desc4]:z-1 group-has-[.desc4]:opacity-75 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7 group-has-[.desc5]:row-span-2 group-has-[.desc5]:col-span-1 group-has-[.desc5]:z-1 group-has-[.desc5]:opacity-75 group-has-[.desc5]:md:block"
+                class="relative overflow-hidden hidden xl:block forum-avatar w-[60px] h-[96px] self-start justify-self-start group-has-[.guidebook]:hidden rounded-sm surface-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content group-has-[.desc1]:col-start-1 group-has-[.desc1]:row-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-span-2 group-has-[.desc2]:col-start-7 group-has-[.desc2]:row-start-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:row-span-2 group-has-[.desc3]:row-start-5 group-has-[.desc3]:col-start-12 group-has-[.desc3]:col-span-1 group-has-[.desc3]:row-span-2 group-has-[.desc3]:xl:block group-has-[.desc4]:col-start-12 group-has-[.desc4]:row-start-7 group-has-[.desc4]:row-span-2 group-has-[.desc4]:col-span-1 group-has-[.desc4]:xl:block group-has-[.desc4]:z-1 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7 group-has-[.desc5]:row-span-2 group-has-[.desc5]:col-span-1 group-has-[.desc5]:z-1 group-has-[.desc5]:xl:block"
               >
                 <div
                   class="absolute rounded-sm border-color-2 inset-0 border xl:border-3 object-center overflow-hidden"
@@ -317,17 +331,17 @@
                   <img
                     src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
                     alt="Avatar"
-                    class="w-full object-center border-color-1 border rounded-sm group-has-[.desc4]:opacity-75 group-has-[.desc5]:opacity-75"
+                    class="w-full h-full object-cover object-center border-color-1 border rounded-sm"
                   />
                 </div>
               </div>
 
               <div
-                class="xl:col-span-10 col-span-12 group-has-[.guidebook]:hidden surface-2 border border-color-1 rounded-sm p-2 xl:p-3 gap-1 text-color flex flex-col xl:flex-row xl:items-center group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:row-start-4 group-has-[.desc2]:col-start-1 group-has-[.desc2]:row-start-4 group-has-[.desc2]:col-span-12 group-has-[.desc3]:md:col-span-7 group-has-[.desc3]:col-span-8 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-start-1 group-has-[.desc4]:col-start-1 group-has-[.desc4]:row-start-8 group-has-[.desc4]:md:col-span-7 group-has-[.desc4]:col-span-8 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:opacity-75 group-has-[.desc5]:opacity-75 group-has-[.desc5]:md:col-start-2 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-8 group-has-[.desc5]:md:col-span-11 group-has-[.desc5]:col-span-12"
+                class="relative xl:col-span-10 col-span-12 group-has-[.guidebook]:hidden surface-2 border border-color-1 rounded-sm p-2 xl:p-3 gap-1 text-color flex flex-col xl:flex-row xl:items-center group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:row-start-4 group-has-[.desc2]:col-start-1 group-has-[.desc2]:row-start-4 group-has-[.desc2]:col-span-12 group-has-[.desc3]:xl:col-span-7 group-has-[.desc3]:col-span-8 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-start-1 group-has-[.desc4]:col-start-1 group-has-[.desc4]:row-start-8 group-has-[.desc4]:xl:col-span-7 group-has-[.desc4]:col-span-8 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc5]:xl:col-start-2 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-8 group-has-[.desc5]:xl:col-span-11 group-has-[.desc5]:col-span-12"
               >
                 <a
                   href="/"
-                  class="xl:grow"
+                  class="xl:grow min-w-0"
                   data-title="Titulo de un tema que ya veremos que tan largo es"
                   ><span
                     class="truncate block xl:max-w-80 group-has-[.desc2]:xl:max-w-70 group-has-[.desc3]:xl:max-w-90 group-has-[.desc5]:xl:max-w-150"
@@ -336,15 +350,15 @@
                   ></a
                 >
                 <span
-                  class="group-has-[.desc1]:xl:hidden flex italic text-xs"
+                  class="group-has-[.desc1]:xl:hidden flex italic text-xs whitespace-nowrap"
                   data-title="Mier 26 Mayo 2024 - 23:59"
                 >
                   Mier 26 Mayo 2024 - 23:59</span
                 >
                 <div
-                  class="flex xl:basis-1/2 xl:justify-end gap-1 items-center group-has-[.desc2]:xl:basis-5/16 group-has-[.desc3]:xl:basis-1/4 group-has-[.desc4]:xl:basis-1/4 group-has-[.desc5]:xl:basis-1/4"
+                  class="flex shrink-0 xl:ml-auto xl:justify-end gap-1 items-center group-has-[.desc2]:xl:basis-5/16 group-has-[.desc3]:xl:basis-1/4 group-has-[.desc4]:xl:basis-1/4 group-has-[.desc5]:xl:basis-1/4"
                 >
-                  <a href="/" class="text-sky-600 font-bold"
+                  <a href="/" class="text-sky-600 font-bold xl:whitespace-nowrap"
                     >Ten Leechaiyapornkul
                   </a>
                   <span
@@ -355,7 +369,7 @@
                   <a
                     href="/"
                     data-title="Último mensaje"
-                    class="last-post-message w-1/12 justify-self-end"
+                    class="last-post-message shrink-0"
                     ><i class="ph-fill ph-paper-plane-tilt"></i
                   ></a>
                 </div>
@@ -366,142 +380,195 @@
 
         <div
           id="estadisticas"
-          class="flex flex-col surface-2 border border-color-3 rounded-sm p-2 xl:p-5 mt-10"
+          class="flex flex-col surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mt-10"
         >
           <div
-            class="surface-1 border border-color-3 rounded-sm flex flex-row justify-between xl:mb-5 xl:p-5 mb-3 p-2 text-color"
+            class="surface-1 border border-color-3 rounded-sm grid grid-cols-5 gap-2 xl:gap-3 xl:mb-3 mb-2 p-2 xl:p-3"
           >
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensajes sin leer" aria-label="Mensajes sin leer">
+              <i class="ph-fill ph-envelope-simple text-lg md:text-base"></i>
+              <span class="hidden md:inline">Mensajes sin leer</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Sin respuesta" aria-label="Sin respuesta">
+              <i class="ph-fill ph-chat-circle-dots text-lg md:text-base"></i>
+              <span class="hidden md:inline">Sin respuesta</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Temas activos" aria-label="Temas activos">
+              <i class="ph-fill ph-fire text-lg md:text-base"></i>
+              <span class="hidden md:inline">Temas activos</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Top posteadores" aria-label="Top posteadores">
+              <i class="ph-fill ph-ranking text-lg md:text-base"></i>
+              <span class="hidden md:inline">Top posteadores</span>
             </a>
-            <a href="/" target="_blank" class="text-3xl">
-              <i class="ph-fill ph-password"></i>
+            <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Borrar cookies" aria-label="Borrar cookies">
+              <i class="ph-fill ph-cookie text-lg md:text-base"></i>
+              <span class="hidden md:inline">Borrar cookies</span>
             </a>
           </div>
-          <div class="flex flex-row xl:gap-5 gap-3 mb-3 xl:mb-5">
+          <div class="flex flex-col xl:flex-row xl:gap-3 gap-2 mb-2 xl:mb-3">
             <div
-              class="xl:flex hidden xl:w-1/4 xl:h-auto overflow-hidden rounded-sm surface-3 xl:p-5 p-2 object-cover object-center border border-color-1 box-content"
+              class="xl:flex hidden xl:w-1/5 xl:h-auto overflow-hidden rounded-sm surface-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content"
             >
               <img
                 src="https://i.pinimg.com/736x/70/f2/a3/70f2a3517a28495857a8dfb2275bcb38.jpg"
                 alt="Quién está en línea"
-                class="w-[300px] h-[400px] xl:w-auto xl:h-auto border-color-1 border object-cover object-center rounded-sm opacity-50"
+                class="w-[300px] h-[400px] xl:w-auto xl:h-auto border-color-1 border object-cover object-center rounded-sm"
               />
             </div>
+            <!-- {L_WHO_IS_ONLINE} y {LOGGED_IN_USER_LIST} -->
             <div
-              class="w-full h-auto xl:w-3/4 rounded-sm surface-3 xl:p-5 p-2 border border-color-1"
-            ></div>
-          </div>
-          <div class="flex xl:flex-row flex-col xl:gap-5 gap-3 xl:mb-5 mb-3">
-            <div
-              class="xl:basis-3/4 overflow-hidden rounded-sm surface-3 xl:p-5 p-2 border border-color-1"
-            ></div>
-            <div
-              class="xl:basis-1/4 h-auto rounded-sm surface-3 xl:p-5 p-2 border border-color-1"
+              id="block-online"
+              class="xl:w-2/5 rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col gap-2 xl:gap-3"
             >
-              <div class="grid grid-cols-6 xl:gap-5 gap-3">
-                <div
-                  class="bg-blue-500 col-span-6 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-orange-300 col-span-3 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-violet-500 col-span-3 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-emerald-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-pink-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-neutral-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-cyan-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-amber-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
-                <div
-                  class="bg-indigo-500 col-span-2 p-5 rounded-sm border border-color-1"
-                ></div>
+              <h3 class="surface-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"><i class="ph-fill ph-users text-base text-color-accent"></i><a href="/viewonline" rel="nofollow" class="hover:text-color-accent">Ahora en línea</a></h3>
+              <div class="online-list online-list-scroll">Usuarios registrados: <a href="/u1"><span class="group-2 usr_grp_clr" style="color:var(--group-2)"><strong>Ten Leechaiyapornkul</strong></span></a>, <a href="/u11"><span class="usr_grp_clr" style="color:var(--group-1)"><strong>Benjamin Evan Ainsworth</strong></span></a>, <a href="/u16"><span class="usr_grp_clr" style="color:var(--group-2)"><strong>Christian Yu</strong></span></a>, <a href="/u20"><span class="usr_grp_clr" style="color:var(--group-3)"><strong>Jackson Wang</strong></span></a>, <a href="/u23"><span class="usr_grp_clr" style="color:var(--group-4)"><strong>Kim Do Hoon</strong></span></a>, <a href="/u25"><span class="usr_grp_clr" style="color:var(--group-5)"><strong>Kim Min Ji</strong></span></a></div>
+            </div>
+            <!-- {L_CONNECTED_MEMBERS} -->
+            <div
+              class="xl:w-2/5 rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col gap-2 xl:gap-3"
+            >
+              <h3 class="surface-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conectados recientemente</h3>
+              <div class="online-list online-list-scroll">Miembros conectados en las últimas 24 horas: <a href="/u2">Alexaundra C Schneiderman</a>, <a href="/u1"><span class="group-2 usr_grp_clr" style="color:var(--group-2)"><strong>Ten Leechaiyapornkul</strong></span></a>, <a href="/u10"><span class="usr_grp_clr" style="color:var(--group-6)"><strong>Bae Hyun Sung</strong></span></a>, <a href="/u11"><span class="usr_grp_clr" style="color:var(--group-1)"><strong>Benjamin Evan Ainsworth</strong></span></a>, <a href="/u12"><span class="usr_grp_clr" style="color:var(--group-7)"><strong>Choi Beom Gyu</strong></span></a>, <a href="/u13"><span class="usr_grp_clr" style="color:var(--group-8)"><strong>Choi Min Ho</strong></span></a>, <a href="/u14"><span class="usr_grp_clr" style="color:var(--group-9)"><strong>Choi Soo Bin</strong></span></a>, <a href="/u15"><span class="usr_grp_clr" style="color:var(--group-10)"><strong>Choi Tae Yang</strong></span></a>, <a href="/u16"><span class="usr_grp_clr" style="color:var(--group-2)"><strong>Christian Yu</strong></span></a>, <a href="/u17"><span class="usr_grp_clr" style="color:var(--group-1)"><strong>Daou Pittaya</strong></span></a>, <a href="/u18"><span class="usr_grp_clr" style="color:var(--group-2)"><strong>Felix Lee</strong></span></a>, <a href="/u19"><span class="usr_grp_clr" style="color:var(--group-3)"><strong>Hwang In Tak</strong></span></a>, <a href="/u20"><span class="usr_grp_clr" style="color:var(--group-3)"><strong>Jackson Wang</strong></span></a>, <a href="/u21"><span class="usr_grp_clr" style="color:var(--group-4)"><strong>Jeon Jung Kook</strong></span></a>, <a href="/u22"><span class="usr_grp_clr" style="color:var(--group-5)"><strong>Jung Taek Woon</strong></span></a>, <a href="/u23"><span class="usr_grp_clr" style="color:var(--group-4)"><strong>Kim Do Hoon</strong></span></a>, <a href="/u24"><span class="usr_grp_clr" style="color:var(--group-6)"><strong>Kim Hyong Seo</strong></span></a>, <a href="/u25"><span class="usr_grp_clr" style="color:var(--group-5)"><strong>Kim Min Ji</strong></span></a>, <a href="/u26"><span class="usr_grp_clr" style="color:var(--group-7)"><strong>Kim Minseok</strong></span></a>, <a href="/u27"><span class="usr_grp_clr" style="color:var(--group-8)"><strong>Kim Seon Woo</strong></span></a>, <a href="/u28"><span class="usr_grp_clr" style="color:var(--group-9)"><strong>Kim Seung Min</strong></span></a>, <a href="/u29"><span class="usr_grp_clr" style="color:var(--group-10)"><strong>Kim Sun Woo</strong></span></a>, <a href="/u30"><span class="usr_grp_clr" style="color:var(--group-1)"><strong>Kwon Soon Young</strong></span></a>, <a href="/u31"><span class="usr_grp_clr" style="color:var(--group-2)"><strong>Lee Chan Young</strong></span></a>, <a href="/u32"><span class="usr_grp_clr" style="color:var(--group-3)"><strong>Lee Leo</strong></span></a>, <a href="/u33"><span class="usr_grp_clr" style="color:var(--group-4)"><strong>Lee Tae Min</strong></span></a>, <a href="/u34"><span class="usr_grp_clr" style="color:var(--group-5)"><strong>Lim Se Jun</strong></span></a>, <a href="/u35"><span class="usr_grp_clr" style="color:var(--group-6)"><strong>Min Yoon Gi</strong></span></a>, <a href="/u36"><span class="usr_grp_clr" style="color:var(--group-7)"><strong>Myung Jae Hyun</strong></span></a>, <a href="/u37"><span class="usr_grp_clr" style="color:var(--group-8)"><strong>Nakamoto Yuta</strong></span></a>, <a href="/u38"><span class="usr_grp_clr" style="color:var(--group-9)"><strong>Nam Ji Hyun</strong></span></a>, <a href="/u39"><span class="usr_grp_clr" style="color:var(--group-10)"><strong>Park Jong Seong</strong></span></a>, <a href="/u40"><span class="usr_grp_clr" style="color:var(--group-1)"><strong>Park Sung Hoon</strong></span></a>, <a href="/u41"><span class="usr_grp_clr" style="color:var(--group-2)"><strong>Riki Hirota</strong></span></a>, <a href="/u42"><span class="usr_grp_clr" style="color:var(--group-3)"><strong>Roseanne Park</strong></span></a>, <a href="/u43"><span class="usr_grp_clr" style="color:var(--group-4)"><strong>Shim Jae Yoon</strong></span></a>, <a href="/u44"><span class="usr_grp_clr" style="color:var(--group-5)"><strong>Tarek Yassin Skylar</strong></span></a>, <a href="/u45"><span class="usr_grp_clr" style="color:var(--group-6)"><strong>Tinnapat Tusnytraitep</strong></span></a> </div>
+            </div>
+          </div>
+          <div class="flex flex-col xl:gap-3 gap-2 xl:mb-3 mb-2">
+            <!-- Estadísticas: {TOTAL_USERS_ONLINE}, {RECORD_USERS} y los datos de usuarios y posts -->
+            <div
+              class="rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col md:flex-row gap-2 xl:gap-3"
+            >
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-chart-bar text-base md:text-2xl text-color-accent"></i>
+                <span>Estadísticas</span>
+              </h3>
+              <div class="stats-list flex-1 grid grid-cols-2 md:grid-cols-6 gap-2 xl:gap-3">
+                <span class="col-span-2 md:col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>Bienvenido, <a href="/" class="text-sky-600">Ten Leechaiyapornkul</a></span></span>
+                <span class="md:col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center" data-title="Posts"><i class="ph-fill ph-chats text-base text-color-accent"></i><span>119227 posts</span></span>
+                <span class="md:col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center" data-title="Idols"><i class="ph-fill ph-users-four text-base text-color-accent"></i><span>135 idols</span></span>
+                <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center" data-title="Conectados"><i class="ph-fill ph-broadcast text-base text-color-accent"></i><span>En total hay <strong>24</strong> usuarios en línea: 5 Registrados, 2 Ocultos y 17 Invitados</span></span>
+                <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center" data-title="Récord"><i class="ph-fill ph-trophy text-base text-color-accent"></i><span>El record de usuarios en línea fue de <strong>679</strong> durante el Dom 17 Mayo - 1:06</span></span>
+              </div>
+            </div>
+            <!-- Leyenda: hecha a mano; cada grupo toma su color de --group-N (style.css) -->
+            <div
+              class="rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col md:flex-row gap-2 xl:gap-3"
+            >
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-palette text-base md:text-2xl text-color-accent"></i>
+                <span>Leyenda</span>
+              </h3>
+              <div class="legend-list flex-1 grid grid-cols-2 md:grid-cols-5 gap-2 xl:gap-3">
+                <a href="/g2-prensa" class="legend-item" style="--group-color: var(--group-1)"><i class="ph-fill ph-newspaper"></i><span>Prensa</span></a>
+                <a href="/g3-boyband" class="legend-item" style="--group-color: var(--group-2)"><i class="ph-fill ph-users-three"></i><span>Boyband</span></a>
+                <a href="/g4-girlband" class="legend-item" style="--group-color: var(--group-3)"><i class="ph-fill ph-flower"></i><span>Girlband</span></a>
+                <a href="/g5-solistas" class="legend-item" style="--group-color: var(--group-4)"><i class="ph-fill ph-microphone"></i><span>Solistas</span></a>
+                <a href="/g6-actores" class="legend-item" style="--group-color: var(--group-5)"><i class="ph-fill ph-film-slate"></i><span>Actores</span></a>
+                <a href="/g7-actrices" class="legend-item" style="--group-color: var(--group-6)"><i class="ph-fill ph-film-strip"></i><span>Actrices</span></a>
+                <a href="/g8-modelos" class="legend-item" style="--group-color: var(--group-7)"><i class="ph-fill ph-camera"></i><span>Modelos</span></a>
+                <a href="/g9-ciudadanos" class="legend-item" style="--group-color: var(--group-8)"><i class="ph-fill ph-house-line"></i><span>Ciudadanos</span></a>
+                <a href="/g10-ausentes" class="legend-item" style="--group-color: var(--group-9)"><i class="ph-fill ph-moon"></i><span>Ausentes</span></a>
+                <a href="/g11-inactivos" class="legend-item" style="--group-color: var(--group-10)"><i class="ph-fill ph-prohibit"></i><span>Inactivos</span></a>
               </div>
             </div>
           </div>
-          <div class="flex xl:flex-row flex-col xl:gap-5 gap-3">
-            <div
-              class="xl:basis-1/4 h-auto surface-3 border border-color-1 xl:p-5 p-2 rounded-sm flex flex-col"
-            >
-              <div
-                class="flex flex-row justify-evenly text-color-accent text-md"
-              >
-                <span
-                  class="flex flex-row font-bold items-center"
-                  data-title="Usuarios"
-                  >135 <span class="ph ph-users-four text-xl ml-1"></span
-                ></span>
-                <span
-                  class="flex flex-row font-bold items-center"
-                  data-title="Post"
-                  >119227 <span class="ph ph ph-chats text-xl ml-1"></span
-                ></span>
-              </div>
-              <div class="text-center mt-1">
-                Bienvenido,
-                <a href="/" class="text-sky-600 font-bold"
-                  >Ten Leechaiyapornkul
-                </a>
-              </div>
+          <!-- {L_WHOSBIRTHDAY_TODAY} y {L_WHOSBIRTHDAY_WEEK}, cada uno en su párrafo -->
+          <div
+            class="surface-3 border border-color-1 xl:p-3 p-2 rounded-sm flex flex-col md:flex-row gap-2 xl:gap-3"
+          >
+            <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+              <i class="ph-fill ph-cake text-base md:text-2xl text-color-accent"></i>
+              <span>Cumpleaños</span>
+            </h3>
+            <div class="birthday-list flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs xl:text-sm uppercase">
+              <p>Miembros que celebran sus cumpleaños hoy: <a href="/u60"><span class="usr_grp_clr" style="color:var(--group-7)"><strong>Kim Dong Hyun</strong></span></a> (22)<br></p>
+              <p>Miembros que celebran su cumpleaños en los próximos 7 días: <a href="/u61"><span class="usr_grp_clr" style="color:var(--group-8)"><strong>Koga Yudai</strong></span></a> (29), <a href="/u62"><span class="usr_grp_clr" style="color:var(--group-9)"><strong>Lee Min Ho</strong></span></a> (28), <a href="/u63"><span class="usr_grp_clr" style="color:var(--group-8)"><strong>Nakamoto Yuta</strong></span></a> (31)<br></p>
             </div>
-            <div
-              class="xl:basis-3/4 h-auto surface-3 border border-color-1 xl:p-5 p-2 rounded-sm"
-            ></div>
           </div>
         </div>
       </main>
       <footer>
         <div
           id="afiliaciones"
-          class="surface-2 border border-color-3 flex flex-row gap-2 rounded-sm p-2 xl:p-5 mt-10 w-full"
+          class="surface-2 border border-color-3 flex flex-col gap-2 xl:gap-3 rounded-sm p-2 xl:p-3 mt-10 w-full"
         >
-          <div
-            class="surface-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-1/4"
-          ></div>
-          <div
-            class="surface-3 p-2 xl:p-5 rounded-sm border border-color-1 basis-3/4 gap-2 flex flex-col"
-          >
-            <div class="flex flex-row gap-2">
-              <div
-                class="surface-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
-              ></div>
-              <div
-                class="surface-2 p-2 rounded-sm border border-color-1 flex basis-1/2 gap-2 xl:gap-5 xl:p-5"
-              ></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 xl:gap-3">
+            <!-- Afiliaciones hermanas -->
+            <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-heart text-base md:text-2xl text-color-accent"></i>
+                <span>Hermanas</span>
+              </h3>
+              <div class="affiliate-list flex-1">
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 25" aria-label="Foro 25"><img src="https://placehold.co/40x40.png" alt="Foro 25" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 26" aria-label="Foro 26"><img src="https://placehold.co/40x40.png" alt="Foro 26" /></a>
+              </div>
             </div>
-            <div
-              class="surface-2 p-2 rounded-sm border border-color-1 flex basis-full gap-2 xl:gap-5 xl:p-5 flex-wrap"
-            >
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
-              <img src="https://placehold.co/40x40.png" />
+            <!-- Directorios -->
+            <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-list-magnifying-glass text-base md:text-2xl text-color-accent"></i>
+                <span>Directorios</span>
+              </h3>
+              <div class="affiliate-list flex-1">
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 27" aria-label="Foro 27"><img src="https://placehold.co/40x40.png" alt="Foro 27" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 28" aria-label="Foro 28"><img src="https://placehold.co/40x40.png" alt="Foro 28" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 29" aria-label="Foro 29"><img src="https://placehold.co/40x40.png" alt="Foro 29" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 30" aria-label="Foro 30"><img src="https://placehold.co/40x40.png" alt="Foro 30" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 31" aria-label="Foro 31"><img src="https://placehold.co/40x40.png" alt="Foro 31" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 32" aria-label="Foro 32"><img src="https://placehold.co/40x40.png" alt="Foro 32" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col xl:flex-row gap-2 xl:gap-3">
+            <!-- Afiliaciones élite -->
+            <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3 flex-1">
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-diamond text-base md:text-2xl text-color-accent"></i>
+                <span>Élite</span>
+                <span class="text-color-accent">24/45</span>
+              </h3>
+              <div class="affiliate-list flex-1">
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 1" aria-label="Foro 1"><img src="https://placehold.co/40x40.png" alt="Foro 1" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 2" aria-label="Foro 2"><img src="https://placehold.co/40x40.png" alt="Foro 2" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 3" aria-label="Foro 3"><img src="https://placehold.co/40x40.png" alt="Foro 3" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 4" aria-label="Foro 4"><img src="https://placehold.co/40x40.png" alt="Foro 4" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 5" aria-label="Foro 5"><img src="https://placehold.co/40x40.png" alt="Foro 5" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 6" aria-label="Foro 6"><img src="https://placehold.co/40x40.png" alt="Foro 6" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 7" aria-label="Foro 7"><img src="https://placehold.co/40x40.png" alt="Foro 7" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 8" aria-label="Foro 8"><img src="https://placehold.co/40x40.png" alt="Foro 8" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 9" aria-label="Foro 9"><img src="https://placehold.co/40x40.png" alt="Foro 9" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 10" aria-label="Foro 10"><img src="https://placehold.co/40x40.png" alt="Foro 10" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 11" aria-label="Foro 11"><img src="https://placehold.co/40x40.png" alt="Foro 11" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 12" aria-label="Foro 12"><img src="https://placehold.co/40x40.png" alt="Foro 12" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 13" aria-label="Foro 13"><img src="https://placehold.co/40x40.png" alt="Foro 13" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 14" aria-label="Foro 14"><img src="https://placehold.co/40x40.png" alt="Foro 14" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 15" aria-label="Foro 15"><img src="https://placehold.co/40x40.png" alt="Foro 15" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 16" aria-label="Foro 16"><img src="https://placehold.co/40x40.png" alt="Foro 16" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 17" aria-label="Foro 17"><img src="https://placehold.co/40x40.png" alt="Foro 17" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 18" aria-label="Foro 18"><img src="https://placehold.co/40x40.png" alt="Foro 18" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 19" aria-label="Foro 19"><img src="https://placehold.co/40x40.png" alt="Foro 19" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 20" aria-label="Foro 20"><img src="https://placehold.co/40x40.png" alt="Foro 20" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 21" aria-label="Foro 21"><img src="https://placehold.co/40x40.png" alt="Foro 21" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 22" aria-label="Foro 22"><img src="https://placehold.co/40x40.png" alt="Foro 22" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 23" aria-label="Foro 23"><img src="https://placehold.co/40x40.png" alt="Foro 23" /></a>
+                <a href="/" target="_blank" class="affiliate" data-title="Foro 24" aria-label="Foro 24"><img src="https://placehold.co/40x40.png" alt="Foro 24" /></a>
+              </div>
+            </div>
+            <div class="xl:w-1/4 surface-3 border border-color-1 rounded-sm p-2 xl:p-3 grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-1 content-center gap-2 xl:gap-3">
+              <span class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-xs font-bold text-center"><i class="ph-fill ph-broom text-base text-color-accent"></i><span>Última limpieza: 18/10/26</span></span>
+              <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-xs font-bold text-center hover:border-(--accent-color)"><i class="ph-fill ph-link-simple text-base text-color-accent"></i><span>Afiliados normales</span></a>
+              <a href="/" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-xs font-bold text-center hover:border-(--accent-color)"><i class="ph-fill ph-identification-card text-base text-color-accent"></i><span>Nuestros datos</span></a>
+            </div>
+          </div>
+          <!-- Créditos -->
+          <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
+            <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+              <i class="ph-fill ph-copyright text-base md:text-2xl text-color-accent"></i>
+              <span>Créditos</span>
+            </h3>
+            <div class="credits flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs uppercase text-justify">
+              <p>Todo el contenido de <strong>Nightwalker</strong> pertenece a sus respectivos autores y no se permite el plagio de ninguna de sus partes. El skin ha sido creado exclusivamente para Nightwalker. Las imágenes han sido editadas por el staff a partir de fotografías y creaciones propias, así como de imágenes de la red.</p>
+              <p>Los escritos e ideas del foro (ambientación, registros, tiendas, normas y posts generales), así como los códigos que utiliza la administración, pertenecen al staff. Las historias y gráficos creados por los usuarios les pertenecen a ellos. Cualquier intento de plagio total o parcial será denunciado a ForoActivo.</p>
             </div>
           </div>
         </div>
@@ -512,7 +579,7 @@
       class="switch-account-modal surface-1 text-color rounded-sm"
       aria-labelledby="switch-account-title"
     >
-      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-5" hidden>
+      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-3" hidden>
         <h3
           id="switch-account-picker-title"
           class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
@@ -523,12 +590,12 @@
         <button
           type="button"
           data-switch-account-close
-          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
         >
           Cerrar
         </button>
       </div>
-      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-5" novalidate>
+      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-3" novalidate>
         <h3
           id="switch-account-title"
           class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
@@ -566,19 +633,19 @@
           <button
             type="button"
             data-switch-account-close
-            class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+            class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            class="switch-account-button switch-account-submit surface-3 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer"
+            class="switch-account-button switch-account-submit flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color-accent uppercase text-xs font-bold cursor-pointer"
           >
             Conectar
           </button>
         </div>
       </form>
-      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-5" hidden>
+      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-3" hidden>
         <p class="text-sm">
           Este navegador no permite guardar cuentas de forma segura.
           <a href="/login" class="text-color-accent font-bold">Conéctate desde el login del foro</a>.
@@ -586,7 +653,7 @@
         <button
           type="button"
           data-switch-account-close
-          class="switch-account-button surface-2 border-color-3 rounded-sm px-4 py-2 text-color uppercase text-sm font-bold cursor-pointer self-end"
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
         >
           Cerrar
         </button>
