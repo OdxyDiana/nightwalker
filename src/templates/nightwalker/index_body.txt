@@ -79,7 +79,7 @@
                 </h3>
                 <div class="stats-list flex-1 grid grid-cols-2 md:grid-cols-6 gap-2 xl:gap-3">
                     <!-- BEGIN switch_user_logged_in -->
-                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>Bienvenido, <a id="stats-welcome-name" href="javascript:void(0)" class="text-sky-600"></a></span></span>
+                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>{LOGGED_AS}</span></span>
                     <!-- END switch_user_logged_in -->
                     <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-chats text-base text-color-accent"></i><span>{TOTAL_POSTS}</span></span>
                     <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-users-four text-base text-color-accent"></i><span>{TOTAL_USERS}</span></span>
@@ -126,14 +126,3 @@
     {CHATBOX_BOTTOM}
 </main>
 
-<script type="text/javascript">
-    // Nombre del usuario conectado en "Bienvenido"
-    (function () {
-        var link = document.getElementById('stats-welcome-name');
-        var user = window._userdata;
-        if (!link || !user) return;
-
-        link.textContent = user.username || '';
-        if (user.user_id) link.href = '/u' + user.user_id;
-    })();
-</script>
