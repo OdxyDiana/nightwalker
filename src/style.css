@@ -1744,3 +1744,13 @@ img:hover {
 #tablon .material-symbols-outlined {
   display: none;
 }
+
+/* Avatar del último mensaje: {LAST_POST_AVATAR} llega como <img> con sus propios atributos */
+.forum-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
