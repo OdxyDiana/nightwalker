@@ -1615,3 +1615,16 @@ img:hover {
 .legend-item:hover {
   filter: brightness(1.12);
 }
+
+/* Móvil y tablet: el tablón se reduce a logo, últimos temas y búsquedas, y el resto se despliega con «Ver más» */
+@media (width < 80rem) {
+  #tablon:not(.is-open) .tablon-extra {
+    display: none;
+  }
+  #tablon:not(.is-open) .tablon-latest {
+    grid-column: 1 / -1;
+  }
+  #tablon.is-open .tablon-toggle i {
+    rotate: 180deg;
+  }
+}
