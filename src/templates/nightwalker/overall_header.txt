@@ -143,7 +143,7 @@
     <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/calendar-section.js" defer></script>
 </head>
 
-<body id="top">
+<body id="top" class="background-2 p-5">
 <!-- BEGIN switch_login_popup -->
 <div id="login_popup" class="block-subtle" style="z-index: 10001 !important;">
     <div class="headline">
@@ -225,6 +225,7 @@
     </div>
 </div>
 <!-- END switch_like_popup -->
+<div id="wrap" class="container surface-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3">
 <header>
     <nav class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto">
         <div class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between">
@@ -344,7 +345,6 @@
     })();
 </script>
 
-<div id="wrap">
 
     <!-- BEGIN switch_ticker -->
     <div id="fa_ticker_block">
