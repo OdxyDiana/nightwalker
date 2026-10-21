@@ -78,14 +78,11 @@
                     <span>Estadísticas</span>
                 </h3>
                 <div class="stats-list flex-1 grid grid-cols-2 md:grid-cols-6 gap-2 xl:gap-3">
-                    <!-- BEGIN switch_user_logged_in -->
-                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>{LOGGED_AS}</span></span>
-                    <!-- END switch_user_logged_in -->
+                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>Bienvenido, <span>{NEWEST_USER}</span><script>$('script:last').prev().html(function(_,o){return o.match(/<.*>/)[0]})</script></span></span>
                     <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-chats text-base text-color-accent"></i><span>{TOTAL_POSTS}</span></span>
                     <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-users-four text-base text-color-accent"></i><span>{TOTAL_USERS}</span></span>
-                    <span class="col-span-2 md:col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-user-plus text-base text-color-accent"></i><span>{NEWEST_USER}</span></span>
-                    <span class="col-span-2 md:col-span-2 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-broadcast text-base text-color-accent"></i><span>{TOTAL_USERS_ONLINE}</span></span>
-                    <span class="col-span-2 md:col-span-2 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-trophy text-base text-color-accent"></i><span>{RECORD_USERS}</span></span>
+                    <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-broadcast text-base text-color-accent"></i><span>{TOTAL_USERS_ONLINE}</span></span>
+                    <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-trophy text-base text-color-accent"></i><span>{RECORD_USERS}</span></span>
                 </div>
             </div>
 
