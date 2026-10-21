@@ -5,7 +5,7 @@ const forumContent = [
       {
         title: "Guidebook",
         desc: `<div class="col-span-12 xl:row-span-5 xl:col-span-3 xl:col-start-1 xl:row-start-2 overflow-hidden rounded-sm background-2 xl:p-3 p-2 object-cover object-center border border-color-1 box-content guidebook">
-                            <img src="https://i.pinimg.com/736x/8c/cc/71/8ccc71575ad6343e00f422b366d18ca2.jpg" alt="Guidebook" class="w-full max-h-60 xl:w-auto xl:max-h-full border-color-1 border object-cover object-center  rounded-sm opacity-50"/>
+                            <img src="https://i.pinimg.com/736x/8c/cc/71/8ccc71575ad6343e00f422b366d18ca2.jpg" alt="Guidebook" class="w-full max-h-60 xl:w-auto xl:max-h-full border-color-1 border object-cover object-center  rounded-sm"/>
                         </div>
                         <div class="col-span-12 xl:col-span-9 xl:row-span-4 xl:col-start-4 xl:row-start-2 overflow-auto max-h-[150px] xl:max-h-full  rounded-sm background-2 border-color-1 border p-2 xl:p-3 text-color text-left xl:text-base text-sm normal-case">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in mattis est. Donec quis massa lectus. Proin pharetra felis id bibendum molestie. Suspendisse sit amet massa non lectus interdum interdum. Aliquam vestibulum dui mauris, vestibulum pretium eros venenatis ac. Cras mollis scelerisque mi et suscipit. In et tellus urna. Nullam congue quam velit, a gravida urna luctus eget. Phasellus rhoncus odio eget viverra faucibus. Curabitur sollicitudin felis risus, vitae aliquam ligula mattis id. Sed condimentum odio molestie blandit egestas. Donec pretium nulla scelerisque risus ultricies, eu interdum eros tincidunt. Aenean et est ac ex iaculis vehicula. Proin id faucibus dui.  
@@ -123,7 +123,7 @@ const forumContent = [
       {
         title: "Viviendas",
         desc: `<div class="col-span-12 xl:row-span-4 xl:col-span-3 xl:col-start-1 xl:row-start-2 xl:relative overflow-hidden rounded-sm background-2 xl:p-3 p-2 object-cover object-center border border-color-1 box-content desc3">
-                            <img src="https://i.pinimg.com/736x/04/79/98/0479985e548548e840cbf02eccf120aa.jpg" alt="Guidebook" class="w-full max-h-60 xl:max-h-none xl:absolute xl:top-3 xl:left-3 xl:w-[calc(100%-1.5rem)] xl:h-[calc(100%-1.5rem)] border-color-1 border object-cover object-center  rounded-sm opacity-50"/>
+                            <img src="https://i.pinimg.com/736x/04/79/98/0479985e548548e840cbf02eccf120aa.jpg" alt="Guidebook" class="w-full max-h-60 xl:max-h-none xl:absolute xl:top-3 xl:left-3 xl:w-[calc(100%-1.5rem)] xl:h-[calc(100%-1.5rem)] border-color-1 border object-cover object-center  rounded-sm"/>
                         </div>
                         <div class="col-span-12 xl:col-span-9 xl:row-span-3 xl:col-start-4 xl:row-start-2 overflow-auto max-h-[150px] xl:max-h-full  rounded-sm background-2 border-color-1 border p-2 xl:p-3 text-color text-left xl:text-base text-sm normal-case">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in mattis est. Donec quis massa lectus. Proin pharetra felis id bibendum molestie. Suspendisse sit amet massa non lectus interdum interdum. Aliquam vestibulum dui mauris, vestibulum pretium eros venenatis ac. Cras mollis scelerisque mi et suscipit. In et tellus urna. Nullam congue quam velit, a gravida urna luctus eget. Phasellus rhoncus odio eget viverra faucibus. Curabitur sollicitudin felis risus, vitae aliquam ligula mattis id. Sed condimentum odio molestie blandit egestas. Donec pretium nulla scelerisque risus ultricies, eu interdum eros tincidunt. Aenean et est ac ex iaculis vehicula. Proin id faucibus dui.  
@@ -146,9 +146,9 @@ const forumContent = [
 
       {
         title: "Parques",
-        desc: `<div class="absolute inset-0 desc4 overflow-hidden rounded-sm opacity-50 bg-cover bg-center" style="background-image:url('https://i.pinimg.com/1200x/64/01/f4/6401f42988ca5f269d3b4691d5116251.jpg')">
+        desc: `<div class="absolute inset-0 desc4 overflow-hidden rounded-sm desc-bg bg-cover bg-center" style="background-image:url('https://i.pinimg.com/1200x/64/01/f4/6401f42988ca5f269d3b4691d5116251.jpg')">
                         </div>
-                        <div class="relative z-1 opacity-75 col-span-12 xl:col-span-4 row-span-1 xl:col-start-8 row-start-7 flex rounded-sm background-2 border-color-1 border p-2 xl:p-3 @container flex-wrap gap-2 xl:gap-3 justify-evenly items-center">
+                        <div class="relative z-1 col-span-12 xl:col-span-4 row-span-1 xl:col-start-8 row-start-7 flex rounded-sm background-2 border-color-1 border p-2 xl:p-3 @container flex-wrap gap-2 xl:gap-3 justify-evenly items-center">
                             <a href="/" target="_blank" class="flex flex-auto min-w-0 items-center justify-center gap-2 px-0 @min-[7rem]:px-1 @sm:px-3 py-1.5 background-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold">
                                 <i class="ph-fill ph-map-pin text-xs @min-[7rem]:text-lg @sm:text-base"></i>
                                 <span class="hidden @sm:inline">Mapa</span>
@@ -166,7 +166,7 @@ const forumContent = [
 
       {
         title: "Coex Mall",
-        desc: `<div class="absolute inset-0 desc5 overflow-hidden rounded-sm opacity-50 bg-cover bg-center" style="background-image:url('https://i.pinimg.com/1200x/de/5f/01/de5f01875f3b5c96184845295f6e0dbf.jpg')">
+        desc: `<div class="absolute inset-0 desc5 overflow-hidden rounded-sm desc-bg bg-cover bg-center" style="background-image:url('https://i.pinimg.com/1200x/de/5f/01/de5f01875f3b5c96184845295f6e0dbf.jpg')">
                         </div>`,
       },
     ],

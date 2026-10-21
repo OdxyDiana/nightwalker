@@ -28,8 +28,30 @@
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
 }
+/* Las imágenes van apagadas para que no destaquen sobre el tema. En vez de transparentarlas
+   (que en modo claro las deja lavadas), se oscurecen o se suavizan según el modo, y recuperan
+   su color al pasar el ratón */
 img {
-  opacity: 50%;
+  filter: brightness(0.5) saturate(0.6);
+  transition: filter 0.3s;
+}
+[data-theme="light"] img {
+  filter: saturate(0.45) contrast(0.85);
+}
+img:hover {
+  filter: none;
+}
+/* Fondos de las descripciones de foros: van apagados igual que las imágenes y recuperan
+   el color al pasar el ratón por la tarjeta del foro (el fondo queda tapado por su contenido) */
+.desc-bg {
+  filter: brightness(0.5) saturate(0.6);
+  transition: filter 0.3s;
+}
+[data-theme="light"] .desc-bg {
+  filter: saturate(0.45) contrast(0.85);
+}
+.forum-section:hover .desc-bg {
+  filter: none;
 }
 .text-color-accent {
   color: var(--accent-color);
@@ -859,7 +881,6 @@ img {
   height: auto;
   border-radius: var(--radius-sm);
   border: 1px solid var(--background-1);
-  opacity: 50%;
 }
 .profile-field-fecha-de-inscripción {
   grid-column: 1 / span 3;
