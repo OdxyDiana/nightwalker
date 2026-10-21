@@ -10,6 +10,7 @@
     <script src="forum-section.js"></script>
     <script src="calendar-section.js"></script>
     <script src="tablon-section.js"></script>
+    <script src="notifications-section.js"></script>
   </head>
   <body class="background-2 p-5">
     <div
@@ -129,13 +130,62 @@
             />
           </a>
           <div
-            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col tablon-extra row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
           >
             <h3
+              id="tablon-notificaciones-titulo"
               class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
             >
               <i class="ph-fill ph-bell text-base text-color-accent"></i>Notificaciones
             </h3>
+            <div class="relative flex-1 min-h-32 mb-2 xl:mb-3">
+              <div id="tablon-notificaciones" class="flex flex-col gap-1.5 max-h-48 xl:max-h-none xl:absolute xl:inset-0 overflow-y-auto overflow-x-hidden pr-1.5 [scrollbar-gutter:stable] text-xs"></div>
+            </div>
+            <div id="tablon-notificaciones-acciones" class="text-xs empty:hidden"></div>
+            <script>
+              // Solo para local: en el foro la lista sale de GET /notif
+              const notificaciones = {
+                store: [
+                  {
+                    time: "Ayer a las 19:43",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 2, from: { id: 2, name: "Alexaundra C Schneiderman" }, type: 0, id: 1, dt: 1792518196 },
+                    read: 1,
+                  },
+                  {
+                    time: "Hoy a las 21:30",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 3, from: { id: 11, name: "Benjamin Evan Ainsworth" }, type: 8, id: 2, dt: 1792618235 },
+                    read: 0,
+                  },
+                  {
+                    time: "Hoy a las 20:12",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 4, from: { id: 25, name: "Kim Min Ji" }, type: 2, id: 3, dt: 1792613520 },
+                    read: 0,
+                  },
+                  {
+                    time: "Hoy a las 18:05",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 5, from: { id: 20, name: "Jackson Wang" }, type: 11, id: 4, dt: 1792606000 },
+                    read: 1,
+                  },
+                  {
+                    time: "Hoy a las 17:40",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 6, from: { id: 1, name: "Ten Leechaiyapornkul" }, type: 14, id: 5, dt: 1792604400 },
+                    read: 0,
+                  },
+                ],
+                unread: 3,
+              };
+            </script>
+          
           </div>
           <div
             class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"

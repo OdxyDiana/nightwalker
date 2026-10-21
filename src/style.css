@@ -1628,3 +1628,13 @@ img:hover {
     rotate: 180deg;
   }
 }
+
+/* Botón de la lista de notificaciones (con scroll): el tooltip sale a su izquierda para no ensanchar la lista */
+.notification-item [data-title]::after {
+  top: 50%;
+  left: auto;
+  right: calc(100% + 0.375rem);
+  min-width: 0;
+  white-space: nowrap;
+  transform: translateY(-50%);
+}
