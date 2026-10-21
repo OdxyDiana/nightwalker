@@ -712,9 +712,19 @@ img {
   .post-profile > #post-header {
     order: 1;
   }
+  /* Con la ficha abierta, cabecera y pie forman una sola caja: sin hueco ni borde entre ellos,
+     y entre sus campos la misma separación que entre el resto */
   .post-profile > #post-footer {
     order: 2;
-    margin-top: calc(var(--spacing) * 2);
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 0;
+  }
+  .post-profile.is-open > #post-header {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .post-profile > #post-content {
     order: 3;

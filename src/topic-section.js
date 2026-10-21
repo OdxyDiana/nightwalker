@@ -205,14 +205,14 @@ const addProfileToggle = () => {
       "post-profile-toggle xl:hidden flex items-center justify-center gap-2 p-2 surface-3 border border-color-1 rounded-sm uppercase text-xs font-bold cursor-pointer hover:border-(--accent-color)";
     button.setAttribute("aria-expanded", "false");
     button.innerHTML =
-      '<i class="ph-fill ph-caret-down transition-transform"></i><span>Ver ficha</span>';
+      '<i class="ph-fill ph-caret-down transition-transform"></i><span>Ver más</span>';
 
     button.addEventListener("click", () => {
       const isOpen = profile.classList.toggle("is-open");
       button.setAttribute("aria-expanded", String(isOpen));
       button.querySelector("span").textContent = isOpen
-        ? "Ocultar ficha"
-        : "Ver ficha";
+        ? "Ocultar más"
+        : "Ver más";
     });
 
     header.append(button);
