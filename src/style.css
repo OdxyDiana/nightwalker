@@ -1754,3 +1754,57 @@ img:hover {
   object-fit: cover;
   object-position: center;
 }
+
+/** PAGINACIÓN (la del foro llega como <strong class="pagination"><span><a>1</a><span class="page-sep">, </span>...) **/
+.topic-pages .pagination,
+.topic-pages .pagination > span,
+.page-pagination .pagination,
+.page-pagination .pagination > span {
+  display: contents;
+  font-weight: inherit;
+}
+.topic-pages .page-sep,
+.page-pagination .page-sep {
+  display: none;
+}
+.topic-pages a,
+.page-pagination a,
+.page-pagination .pagination strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 6);
+  padding-inline: calc(var(--spacing) * 1);
+  background-color: var(--background-1);
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.topic-pages a:hover,
+.page-pagination a:hover {
+  border-color: var(--accent-color);
+}
+@media (width >= 80rem) {
+  .topic-pages a {
+    min-width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+  }
+}
+.page-pagination a,
+.page-pagination .pagination strong {
+  min-width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  padding-inline: calc(var(--spacing) * 2);
+}
+.page-pagination .pagination strong {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Icono de «has participado» que trae el foro como imagen */
+.participate-check img {
+  height: 1em;
+  width: auto;
+}
