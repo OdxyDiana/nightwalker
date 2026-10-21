@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="{L_LANG_HTML}" data-theme="dark">
+<head>
+    <meta charset="{S_CONTENT_ENCODING}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+
+    <!-- BEGIN switch_canonical_url -->
+    <link rel="canonical" href="{switch_canonical_url.CANONICAL_URL}" />
+    <!-- END switch_canonical_url -->
+
+    {META_FAVICO}
+    {META}
+    {META_FB_LIKE}
+
+    <title>{SITENAME_TITLE}{PAGE_TITLE}</title>
+
+    <!-- Tema Nightwalker (GitHub). Va antes que {CSS}: lo que se ponga en el CSS del panel
+         (p. ej. --dark-theme-accent-color / --light-theme-accent-color en :root) tiene prioridad -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/style.css" />
+    {T_HEAD_STYLESHEET}
+    {CSS}
+
+    <meta name="theme-color" content="{GG_THEME_COLOR}" />
+
+    <link rel="search" type="application/opensearchdescription+xml" href="/improvedsearch.xml" title="{SITENAME}" />
+    <link rel="search" type="application/opensearchdescription+xml" href="{URL_BOARD_DIRECTORY}/search/improvedsearch.xml" title="{SEARCH_FORUMS}" />
+
+    <script src="{JQUERY_PATH}" type="text/javascript"></script>
+    <!-- BEGIN switch_recent_jquery -->
+    <script src="{JS_DIR}jquery1.9/jquery-migrate-1.4.1.js" type="text/javascript"></script>
+    <script src="{JQUERY_DIR}browser/v1.0/jquery.browser.min.js" type="text/javascript"></script>
+    <script src="{JQUERY_DIR}support/jquery.support.js" type="text/javascript"></script>
+    <!-- END switch_recent_jquery -->
+
+    <script src="{JS_DIR}{L_LANG}.js" type="text/javascript"></script>
+
+    <!-- BEGIN switch_fb_login -->
+    <script src="{switch_fb_login.JS_FB_LOGIN}" type="text/javascript"></script>
+    <!-- END switch_fb_login -->
+
+    <!-- BEGIN switch_ticker -->
+    <link type="text/css" rel="stylesheet" href="{JS_DIR}jquery/ticker/ticker.css" />
+    <script src="{JS_DIR}jquery/ticker/ticker.js" type="text/javascript"></script>
+    <!-- END switch_ticker -->
+
+    <!-- BEGIN switch_ticker -->
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () {
+            Ticker.start({
+                height : {switch_ticker.HEIGHT},
+                spacing : {switch_ticker.SPACING},
+                speed : {switch_ticker.SPEED},
+                direction : '{switch_ticker.DIRECTION}',
+                pause : {switch_ticker.STOP_TIME},
+                max_height: {switch_ticker.HEIGHT},
+            });
+        });
+        //]]>
+    </script>
+    <!-- END switch_ticker -->
+    <script type="text/javascript">
+        $(document).scroll(function() {
+            var y = $(this).scrollTop();
+            if (y > 164) {
+                if($('.btn-fixed').find('.btn-fixed-txt').length !== 0){
+                    $('.btn-fixed').addClass('btn-scrolled');
+                }
+            } else {
+                if($('.btn-fixed').find('.btn-fixed-txt').length !== 0) {
+                    $('.btn-fixed').removeClass('btn-scrolled');
+                }
+            }
+        });
+    </script>
+    <!-- BEGIN switch_report_popup -->
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () {
+            report = window.open('{switch_report_popup.U_REPORT_POPUP}', '_phpbbreport', 'HEIGHT={switch_report_popup.S_HEIGHT},resizable=yes,scrollbars=no,WIDTH={switch_report_popup.S_WIDTH}');
+            if (report != null) {
+                report.focus();
+            }
+        });//]]>
+    </script>
+    <!-- END switch_report_popup -->
+    <!-- BEGIN switch_enable_pm_popup -->
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () {
+            pm = window.open('{U_PRIVATEMSGS_POPUP}', '_faprivmsg', 'HEIGHT=225,resizable=yes,WIDTH=400');
+            if (pm != null) {
+                pm.focus();
+            }
+        });
+        //]]>
+    </script>
+    <!-- END switch_enable_pm_popup -->
+    <!-- BEGIN switch_login_popup -->
+    <script type="text/javascript">
+        //<![CDATA[
+    var logInPopUpLeft, logInPopUpTop, logInPopUpWidth = {LOGIN_POPUP_WIDTH},
+    logInPopUpHeight = {LOGIN_POPUP_HEIGHT}, logInBackgroundResize = true, logInBackgroundClass = false;
+
+    $(document).ready(function () {
+        $(window).resize(function () {
+            var windowWidth = document.documentElement.clientWidth;
+            var popupWidth = $("#login_popup").width();
+            var mypopup = $("#login_popup");
+
+            $("#login_popup").css({
+                "left": windowWidth / 2 - popupWidth / 2
+            });
+        });
+    });
+        //]]>
+    </script>
+    <!-- END switch_login_popup -->
+
+    {RICH_SNIPPET_GOOGLE}
+    {HOSTING_JS}
+
+    <!-- BEGIN google_analytics_code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={G_ANALYTICS_ID}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{G_ANALYTICS_ID}', {'anonymize_ip': true, 'store_gac': false, 'cookie_expires': 13 * 30 * 24 * 60 * 60});
+        <!-- BEGIN google_analytics_code_bis -->
+        gtag('config', '{G_ANALYTICS_ID_BIS}', {'anonymize_ip': true, 'store_gac': false, 'cookie_expires': 13 * 30 * 24 * 60 * 60});
+        <!-- END google_analytics_code_bis -->
+    </script>
+    <!-- END google_analytics_code -->
+
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/switch-account.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/tablon-section.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/notifications-section.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/calendar-data.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/calendar-section.js" defer></script>
+</head>
+
+<body id="top">
+<!-- BEGIN switch_login_popup -->
+<div id="login_popup" class="block-subtle" style="z-index: 10001 !important;">
+    <div class="headline">
+        {SITENAME}
+        <button title="{L_LOGIN_CLOSE}" id="login_popup_close"><i class="ph-fill ph-x"></i></button>
+    </div>
+    <div id="login_popup_content">
+        <div id="login_popup_message">
+            {LOGIN_POPUP_MSG}
+        </div>
+        <br />
+        <div id="login_popup_buttons">
+            <!-- BEGIN switch_quick_login -->
+			<div class="mt10">
+				<div class="social_btn">
+					<!-- BEGIN fb_quick_connect -->
+					<div class="fb-login-button"></div>
+					<!-- END fb_quick_connect -->
+					&nbsp;
+					<!-- BEGIN topicit_quick_connect -->
+					<div class="ti-connect"></div>
+					<!-- END topicit_quick_connect -->
+				</div>
+			</div>
+            <br/>
+            <!-- END switch_quick_login -->
+            <form action="{S_LOGIN_ACTION}" method="get">
+                <input type="submit" value="{L_LOGIN}" class="btn btn-default" />
+                <input type="button" value="{L_REGISTER}" onclick="parent.location='{U_REGISTER}';" class="btn btn-default" />
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END switch_login_popup -->
+
+{GREETING_POPUP}
+
+<!-- BEGIN inactive_users_modal -->
+<div id="inactive_popup" class="block-subtle" style="z-index: 10000 !important;">
+    <div class="headline">
+        {inactive_users_modal.L_MODAL_TITLE}
+        <button title="{inactive_users_modal.L_CLOSE}" id="inactive_popup_close"><i class="ph-fill ph-x"></i></button>
+    </div>
+    <div id="inactive_popup_message">
+        {inactive_users_modal.L_MODAL_BODY}
+    </div>
+    <br />
+    <div id="inactive_popup_buttons">
+        <button id="inactive_popup_url" class="button1">{inactive_users_modal.L_MODAL_BUTTON}</button>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#inactive_popup #inactive_popup_close').on('mouseup', function () {
+        document.cookie = "modal_require_activation_closed=1; max-age=86400*15; path=/;";
+        $('#inactive_popup').hide(50);
+    });
+    $('#inactive_popup #inactive_popup_url').on('mouseup', function () {
+        document.cookie = "modal_require_activation_closed=1; max-age=86400*15; path=/;";
+        location.href = '{inactive_users_modal.U_MODAL}'
+    })
+</script>
+<!-- END inactive_users_modal -->
+
+<!-- BEGIN switch_like_popup -->
+<div id="like_popup" class="block-subtle" style="z-index: 10001 !important;">
+    <div class="headline">
+        {SITENAME}
+        <button title="{L_LIKE_CLOSE}" id="like_popup_close"><i class="ph-fill ph-x"></i></button>
+    </div>
+    <div id="like_popup_message">
+        {LIKE_POPUP_MSG}
+    </div>
+    <br />
+    <div id="like_popup_buttons">
+        <form action="{S_LOGIN_ACTION}" method="get">
+            <input type="submit" value="{L_LOGIN}" class="btn btn-default" />
+            <input type="button" value="{L_REGISTER}" onclick="parent.location='{U_REGISTER}';" class="btn btn-default" />
+        </form>
+    </div>
+</div>
+<!-- END switch_like_popup -->
+<header>
+    <nav class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto">
+        <div class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between">
+            <!-- BEGIN switch_user_logged_in -->
+            <a id="header-user" href="javascript:void(0)" class="flex justify-start items-center min-w-0"></a>
+            <!-- END switch_user_logged_in -->
+            <!-- BEGIN switch_user_logged_out -->
+            <div id="header-user" class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!" data-title="{L_GUEST}" role="group" aria-label="{L_GUEST}">
+                <div class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content">
+                    <img src="https://images2.imgbox.com/0c/77/494XeWpw_o.png" alt="{L_GUEST}" class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
+                </div>
+                <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">{L_GUEST}</span>
+            </div>
+            <!-- END switch_user_logged_out -->
+            <div class="navbar-buttons shrink-0 flex justify-center gap-1 sm:gap-2 items-center p-1 sm:p-2">
+                <a href="{U_INDEX}" class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_INDEX}">
+                    <i class="ph-fill ph-house"></i>
+                </a>
+                <a href="/memberlist" class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_MEMBERLIST}">
+                    <i class="ph-fill ph-user-list"></i>
+                </a>
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Modo oscuro">
+                    <i class="ph-fill ph-moon-stars"></i>
+                </a>
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Modo claro">
+                    <i class="ph-fill ph-sun-dim"></i>
+                </a>
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Cambiar cuenta" href="{S_LOGIN_ACTION}" data-switch-account-open>
+                    <i class="ph-fill ph-user-switch"></i>
+                </a>
+                <!-- BEGIN switch_user_logged_out -->
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_LOGIN}" href="{S_LOGIN_ACTION}">
+                    <i class="ph-fill ph-sign-in"></i>
+                </a>
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_REGISTER}" href="{U_REGISTER}">
+                    <i class="ph-fill ph-password"></i>
+                </a>
+                <!-- END switch_user_logged_out -->
+            </div>
+        </div>
+        <!-- El breadcrumb lo escriben viewforum_body / viewtopic_body (#breadcrumbs); el JS lo mueve aquí -->
+        <div id="breadcrump" class="text-[0px] z-1 surface-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"></div>
+    </nav>
+
+    <!-- Tablón: logo, notificaciones, cuentas y últimos temas son fijos; el resto llega por los módulos del panel (posición giefmod_index1) -->
+    <div id="tablon" class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3">
+        <a href="{U_INDEX}" class="block w-full xl:w-auto p-2 xl:p-3 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6">
+            <!-- BEGIN switch_logo_mob -->
+            <img src="{switch_logo_mob.LOGO_MOB}" alt="{L_INDEX}" loading="lazy" class="rounded-sm w-full h-auto border border-color-1" />
+            <!-- END switch_logo_mob -->
+        </a>
+        <!-- BEGIN switch_user_logged_in -->
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col tablon-extra row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2">
+            <h3 id="tablon-notificaciones-titulo" class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                <i class="ph-fill ph-bell text-base text-color-accent"></i>Notificaciones
+            </h3>
+            <div class="relative flex-1 min-h-32 mb-2 xl:mb-3">
+                <div id="tablon-notificaciones" class="flex flex-col gap-1.5 max-h-48 xl:max-h-none xl:absolute xl:inset-0 overflow-y-auto overflow-x-hidden pr-1.5 [scrollbar-gutter:stable] text-xs"></div>
+            </div>
+            <div id="tablon-notificaciones-acciones" class="text-xs empty:hidden"></div>
+        </div>
+        <!-- END switch_user_logged_in -->
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3">
+            <h3 class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                <i class="ph-fill ph-user-switch text-base text-color-accent"></i>Cuentas
+            </h3>
+            <div id="switch-account-list" class="switch-account-list"></div>
+        </div>
+        <!-- Calendario: fijo en la plantilla; sus noticias se editan en calendar-data.js -->
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 col-span-12 xl:col-span-9 col-start-1">
+            <h3 class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                <i class="ph-fill ph-calendar-dots text-base text-color-accent"></i>Calendario
+            </h3>
+            <div id="calendario" class="grid gap-2 xl:gap-3 xl:grid-cols-2"></div>
+        </div>
+
+        <!-- Módulos del panel (posición giefmod_index1): Últimos temas, Staff, banner, búsquedas y enlaces. -->
+        <!-- La CSS aplana la caja del foro (.box) para que la raíz del HTML de cada módulo sea una celda de la rejilla -->
+        <div id="sidebar" class="contents">
+            <!-- BEGIN giefmod_index1 -->
+            {giefmod_index1.MODVAR}
+            <!-- END giefmod_index1 -->
+        </div>
+    </div>
+</header>
+
+<script type="text/javascript">
+    // Avatar y nombre del usuario conectado (mismo origen de datos que switch-account.js)
+    (function () {
+        var user = window._userdata;
+        var box = document.getElementById('header-user');
+        if (!user || Number(user.session_logged_in) !== 1 || !box) return;
+
+        var avatar = user.avatar_link || '';
+        if (!avatar && user.avatar) {
+            var match = String(user.avatar).match(/src=["']([^"']+)["']/);
+            if (match) avatar = match[1];
+        }
+        var name = String(user.username || '');
+        if (user.user_id) box.href = '/u' + user.user_id;
+        box.setAttribute('data-title', name);
+
+        var frame = document.createElement('div');
+        frame.className = 'shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content';
+        if (avatar) {
+            var img = document.createElement('img');
+            img.src = avatar;
+            img.alt = name;
+            img.className = 'w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm';
+            frame.appendChild(img);
+        }
+        var label = document.createElement('span');
+        label.className = 'hidden sm:block uppercase font-bold ml-[10px] truncate';
+        label.textContent = name;
+        box.appendChild(frame);
+        box.appendChild(label);
+    })();
+</script>
+
+<div id="wrap">
+
+    <!-- BEGIN switch_ticker -->
+    <div id="fa_ticker_block">
+        <div class="module">
+            <div class="inner">
+                <div id="fa_ticker_container">
+                    <div id="fa_ticker" style="height:{switch_ticker.HEIGHT}px;">
+                        <div class="fa_ticker_content">
+                            <!-- BEGIN ticker_row -->
+                            <div>{switch_ticker.ticker_row.ELEMENT}</div>
+                            <!-- END ticker_row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END switch_ticker -->
+
+    <!-- BEGIN html_validation -->
+</div><!-- <div id="wrap" /> -->
+</body>
+</html>
+<!-- END html_validation -->
