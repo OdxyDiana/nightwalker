@@ -1638,3 +1638,16 @@ img:hover {
   white-space: nowrap;
   transform: translateY(-50%);
 }
+
+/* Medalla en una notificación: el foro manda la imagen en --award-image y el texto aparte */
+.notification-item p:has(.notif_award) {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.notification-item .notif_award {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--award-image) center / contain no-repeat;
+}

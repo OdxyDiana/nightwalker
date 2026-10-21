@@ -4,6 +4,8 @@
 const NOTIFICATIONS_URL = "/notif";
 const NOTIFICATIONS_REFRESH_MS = 60000;
 
+// En el foro el texto sale de las frases del idioma del foro (_lang['Notif_*'], con enlaces), igual que
+// Toolbar.compileNotif de FAToolbar.js pero sin depender de él. Lo de abajo solo se usa si no hay _lang (en local).
 // Texto por tipo (FA.Notification.NOTIF_*); lo que va después del nombre de quien la envía
 const NOTIFICATION_TEXTS = {
   0: "te ha enviado un mensaje privado",
@@ -77,6 +79,118 @@ const buildReadButton = (label, onClick) => {
   return button;
 };
 
+// Frase de _lang y sus datos por tipo; mismos datos que Toolbar.compileNotif (FAToolbar.js)
+const describeNotification = (text) => {
+  const { from = {}, post = {}, forum = {}, group = {}, award = {} } = text;
+  const base = { id: from.id, name: from.name, nid: text.id };
+  const topic = {
+    topic_id: post.topic_id,
+    topic_name: post.topic_name,
+    topic_title: post.topic_title,
+    topic_display_name: post.topic_display_name,
+    post_id: post.post_id,
+    start: post.start,
+  };
+  const forumData = {
+    forum_id: forum.forum_id,
+    forum_name: forum.forum_name,
+    forum_title: forum.forum_title,
+  };
+  const withTitle = post.topic_title !== undefined ? "2" : "";
+  const asGuest = from.id == -1 ? "_guest" : "";
+
+  switch (text.type) {
+    case 0:
+      return ["Notif_priv_msg", { ...base, msg_id: text.msg_id }];
+    case 1:
+      return ["Notif_report", base];
+    case 2:
+      return ["Notif_friend_req", base];
+    case 3:
+      return [
+        "Notif_group_req",
+        {
+          ...base,
+          group_id: group.id,
+          group_url_name: group.url_name,
+          group_name: group.name,
+        },
+      ];
+    case 4:
+      return ["Notif_friend_con", base];
+    case 5:
+      return ["Notif_wall_msg", { ...base, self: text.self }];
+    case 6:
+      return ["Notif_abuse", { nid: text.id }];
+    case 7:
+      return [
+        `Notif_topic_watch${post.start ? "_p" : ""}${asGuest}${withTitle}`,
+        { ...base, ...topic },
+      ];
+    case 8:
+      return ["Notif_mention", { ...base, ...topic }];
+    case 9:
+      return ["Notif_hashtag", { ...base, ...topic, tag: text.tag }];
+    case 10:
+      return [
+        `Notif_advert_${post.type}`,
+        {
+          nid: text.id,
+          ad_id: post.ad_id,
+          ad_title: post.ad_title,
+          ad_url: post.ad_url,
+          forum_id: post.forum_id,
+        },
+      ];
+    case 11:
+      return ["Notif_like", { ...base, ...topic }];
+    case 12:
+      return ["Notif_dislike", { ...base, ...topic }];
+    case 13:
+      return ["Notif_forum_watch", { ...base, ...topic, ...forumData }];
+    case 14:
+      return [
+        "Notif_award",
+        {
+          nid: text.id,
+          award_notif: award.award_notif,
+          award_image: award.award_image,
+        },
+      ];
+    case 15:
+      return ["Notif_followers_new_topic", { ...base, ...topic, ...forumData }];
+    case 16:
+      return [
+        `Notif_followers_new_post${post.start ? "_p" : ""}${withTitle}`,
+        { ...base, ...topic },
+      ];
+    case 17:
+      return ["Notif_donation", { ...base, amount: text.amount }];
+  }
+  return null;
+};
+
+// jQuery.vsprintf es el de la plataforma; si no está se sustituyen a mano los %(dato)s
+const formatNotification = (template, args) => {
+  try {
+    if (window.jQuery?.vsprintf) return jQuery.vsprintf(template, [args]);
+  } catch {}
+  return template.replace(/%(?:\((\w+)\))?[sd%]/g, (match, key) =>
+    match === "%%" ? "%" : (args[key] ?? ""),
+  );
+};
+
+const compileNotification = (notification) => {
+  if (typeof _lang === "undefined") return null;
+  try {
+    const [key, args] = describeNotification(notification.text) ?? [];
+    const template = key && _lang[key];
+    return template ? formatNotification(template, args) || null : null;
+  } catch {
+    return null;
+  }
+};
+
 const buildNotification = (notification) => {
   const { text, time, read } = notification;
   const item = document.createElement("div");
@@ -88,21 +202,28 @@ const buildNotification = (notification) => {
   content.className = "flex flex-col gap-0.5 min-w-0 flex-1";
 
   const message = document.createElement("p");
-  const author = document.createElement("a");
-  author.href = `/u${text.from.id}`;
-  author.className = "font-bold";
-  author.textContent = text.from.name;
-  message.append(author, ` ${NOTIFICATION_TEXTS[text.type] ?? NOTIFICATION_FALLBACK_TEXT}`);
-
-  // Los mensajes privados llevan a su lectura; el resto, solo al perfil de quien las envía
-  if (text.type === 0 && text.msg_id) {
-    const link = document.createElement("a");
-    link.href = `/privmsg?folder=inbox&mode=read&p=${text.msg_id}`;
-    link.className = "hover:text-color-accent";
-    link.append(message);
-    content.append(link);
-  } else {
+  const compiled = compileNotification(notification);
+  if (compiled) {
+    // Mismo HTML que inserta la barra del foro con .html() (frases del propio foro)
+    message.innerHTML = compiled;
     content.append(message);
+  } else {
+    const author = document.createElement("a");
+    author.href = `/u${text.from.id}`;
+    author.className = "font-bold";
+    author.textContent = text.from.name;
+    message.append(author, ` ${NOTIFICATION_TEXTS[text.type] ?? NOTIFICATION_FALLBACK_TEXT}`);
+
+    // Los mensajes privados llevan a su lectura; el resto, solo al perfil de quien las envía
+    if (text.type === 0 && text.msg_id) {
+      const link = document.createElement("a");
+      link.href = `/privmsg?folder=inbox&nid=${text.id}`;
+      link.className = "hover:text-color-accent";
+      link.append(message);
+      content.append(link);
+    } else {
+      content.append(message);
+    }
   }
 
   const date = document.createElement("span");
@@ -143,7 +264,7 @@ const renderNotifications = (data) => {
   badge.hidden = !data.unread;
   badge.textContent = data.unread;
   if (!data.store.length) {
-    list.textContent = "No tienes notificaciones.";
+    list.textContent = (typeof _lang !== "undefined" && _lang.Notif_no_notifications) || "No hay nuevas notificaciones.";
     return;
   }
   if (data.unread > 0) {
