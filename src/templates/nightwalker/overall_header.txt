@@ -16,8 +16,8 @@
 
     <title>{SITENAME_TITLE}{PAGE_TITLE}</title>
 
-    <!-- Tema Nightwalker (GitHub). Va antes que {CSS}: lo que se ponga en el CSS del panel
-         (p. ej. --dark-theme-accent-color / --light-theme-accent-color en :root) tiene prioridad -->
+    <!-- Tema Nightwalker (GitHub). Los colores de acento y de los grupos NO están aquí: se pegan en el CSS del
+         panel (contenido de foro.css) y llegan por {CSS}, que va después y define las variables -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/style.css" />
     {T_HEAD_STYLESHEET}
     {CSS}
