@@ -1808,3 +1808,40 @@ img:hover {
   height: 1em;
   width: auto;
 }
+
+/** MENSAJE: piezas que llegan del foro ya hechas **/
+/* {POSTER_AVATAR} llega como <img> sin clases */
+.post-author-avatar img {
+  display: block;
+  margin-inline: auto;
+  max-width: 250px;
+  max-height: 280px;
+  aspect-ratio: 10 / 16;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+@media (width >= 80rem) {
+  .post-author-avatar img {
+    max-height: 400px;
+  }
+}
+.post-author-awards:empty {
+  display: none;
+}
+/* Perfil, MP, email y campos de contacto: botones cuadrados con su icono dentro */
+.post-author-content-buttons > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing) * 1.5);
+  background-color: var(--background-1);
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+}
+.post-author-content-buttons > a:hover {
+  border-color: var(--accent-color);
+}
+.post-author-content-buttons > a img {
+  max-height: 1.25rem;
+  width: auto;
+}

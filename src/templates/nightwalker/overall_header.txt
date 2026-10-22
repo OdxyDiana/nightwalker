@@ -141,6 +141,7 @@
     <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/notifications-section.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/calendar-data.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/calendar-section.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/topic-section.js" defer></script>
 </head>
 
 <body id="top" class="background-2 p-5">
