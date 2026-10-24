@@ -55,22 +55,8 @@
                 </div>
             </div>
 
-            <!-- Grupos, estado, última visita, medallas, administración y ficha de rol -->
+            <!-- Estado, última visita, medallas, administración y ficha de rol -->
             <div id="profile-extra" class="grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-3">
-                <!-- BEGIN switch_groups_list -->
-                <div id="groups-details" class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
-                    <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
-                        <i class="ph-fill ph-users-three text-base md:text-2xl text-color-accent"></i>
-                        <span>{switch_groups_list.L_GROUPS}</span>
-                    </h3>
-                    <div class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs flex flex-col gap-1">
-                        <!-- BEGIN group_details -->
-                        <div id="{switch_groups_list.group_details.GROUP_ID}-name"><a href="{switch_groups_list.group_details.U_GROUP}">{switch_groups_list.group_details.L_GROUP_NAME}</a></div>
-                        <!-- END group_details -->
-                    </div>
-                </div>
-                <!-- END switch_groups_list -->
-
                 <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
                     <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
                         <i class="ph-fill ph-chart-bar text-base md:text-2xl text-color-accent"></i>
