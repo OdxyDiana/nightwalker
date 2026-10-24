@@ -1819,9 +1819,6 @@ img:hover {
     max-height: 400px;
   }
 }
-.post-author-awards:empty {
-  display: none;
-}
 /* Perfil, MP, email y campos de contacto: botones cuadrados con su icono dentro */
 .post-author-content-buttons > a {
   display: flex;

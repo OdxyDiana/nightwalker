@@ -135,9 +135,6 @@
                             <div class="p-2 xl:p-3 post-author-rank surface-1 border border-color-3 rounded-sm uppercase w-full text-center">
                                 {postrow.displayed.POSTER_RANK_NEW}{postrow.displayed.RANK_IMAGE}
                             </div>
-                            <div {postrow.displayed.AWARDS_SHOW} class="dd_award {postrow.displayed.PROFILE_POSITION} post-author-awards w-full text-center">
-                                {postrow.displayed.AWARDS}
-                            </div>
                             <div class="post-author-rpg w-full">{postrow.displayed.POSTER_RPG}</div>
                         </div>
 
