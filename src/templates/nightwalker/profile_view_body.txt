@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <!-- Estado, última visita, medallas, administración y ficha de rol -->
+            <!-- Estado, última visita, administración y ficha de rol (las medallas son un campo de perfil) -->
             <div id="profile-extra" class="grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-3">
                 <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
                     <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
@@ -78,18 +78,6 @@
                     {FRIENDSFOES}
                 </div>
                 <!-- END switch_allow_friendsfoes -->
-
-                <!-- BEGIN switch_awards -->
-                <div class="awards_module surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
-                    <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
-                        <i class="ph-fill ph-medal text-base md:text-2xl text-color-accent"></i>
-                        <span>{switch_awards.L_AWARDS}</span>
-                    </h3>
-                    <div class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-center">
-                        {switch_awards.AWARDS_LIST}
-                    </div>
-                </div>
-                <!-- END switch_awards -->
 
                 <!-- BEGIN switch_auth_user -->
                 <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
