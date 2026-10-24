@@ -278,7 +278,7 @@
     </nav>
 
     <!-- Tablón: logo, notificaciones, cuentas y últimos temas son fijos; el resto llega por los módulos del panel (posición giefmod_index1) -->
-    <div id="tablon" class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3">
+    <div id="tablon" class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3<!-- BEGIN switch_user_logged_out --> tablon-anon<!-- END switch_user_logged_out -->">
         <a href="{U_INDEX}" class="block w-full xl:w-auto p-2 xl:p-3 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6">
             <!-- BEGIN switch_logo_mob -->
             <img src="{switch_logo_mob.LOGO_MOB}" alt="{L_INDEX}" loading="lazy" class="rounded-sm w-full h-auto border border-color-1" />

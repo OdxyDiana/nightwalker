@@ -1689,6 +1689,15 @@ img:hover {
     margin-bottom: calc(var(--spacing) * 3);
   }
 }
+/* Sin sesión no hay caja de notificaciones: Últimos temas ocupa su hueco */
+#tablon.tablon-anon #sidebar .box:has(.mod-recent-row) {
+  grid-column: 1 / -1;
+}
+@media (width >= 80rem) {
+  #tablon.tablon-anon #sidebar .box:has(.mod-recent-row) {
+    grid-column: 1 / span 6;
+  }
+}
 /* Móvil y tablet: Últimos temas se ve siempre, aunque el tablón esté plegado */
 @media (width < 80rem) {
   #tablon:not(.is-open) #sidebar .box:has(.mod-recent-row) {
