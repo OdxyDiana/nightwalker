@@ -257,6 +257,12 @@
                 <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Cambiar cuenta" href="{S_LOGIN_ACTION}" data-switch-account-open>
                     <i class="ph-fill ph-user-switch"></i>
                 </a>
+                <!-- BEGIN switch_user_logged_in -->
+                <!-- id="logout": switch-account.js busca este enlace para cerrar sesión (lleva el token tid) -->
+                <a id="logout" class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_LOGIN_LOGOUT}" href="{U_LOGIN_LOGOUT}">
+                    <i class="ph-fill ph-sign-out"></i>
+                </a>
+                <!-- END switch_user_logged_in -->
                 <!-- BEGIN switch_user_logged_out -->
                 <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_LOGIN}" href="{S_LOGIN_ACTION}">
                     <i class="ph-fill ph-sign-in"></i>
