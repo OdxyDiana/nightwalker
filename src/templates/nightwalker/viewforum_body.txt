@@ -1,0 +1,84 @@
+<!-- La ruta de navegación se escribe aquí y overall_footer_end la mueve a la barra de arriba (#breadcrump) -->
+<div id="breadcrumbs" class="hidden">
+    <a href="{U_INDEX}" class="nav before:font-phosphor-fill before:content-['\E13A']"><span>{L_INDEX}</span></a>
+    {NAV_CAT_DESC}
+</div>
+
+<main class="mt-10">
+    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2 xl:gap-3">
+        <!-- BEGIN switch_user_authpost -->
+        <a href="{U_POST_NEW_TOPIC}" rel="nofollow" {S_POST_NEW_TOPIC} title="{T_POST_NEW_TOPIC}" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-sm font-bold">
+            <i class="ph-fill ph-file-plus text-base"></i>
+            <span>{L_POST_NEW_TOPIC}</span>
+        </a>
+        <!-- END switch_user_authpost -->
+        <nav class="page-pagination flex flex-wrap items-center justify-center gap-1 text-xs font-bold empty:hidden">{PAGINATION}</nav>
+    </div>
+
+    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mt-5 flex flex-col gap-2 xl:gap-3">
+        <div class="surface-1 xl:p-10 p-5 text-center uppercase rounded-sm border border-color-3">
+            <div class="flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)">
+                <h1 class="text-2xl xl:text-3xl font-extrabold"><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h1>
+            </div>
+        </div>
+        <!-- BEGIN switch_forum_desc -->
+        <div class="forum-page-desc surface-3 border border-color-1 rounded-sm p-2 xl:p-3 text-sm">{SINGLE_FORUM_DESC}</div>
+        <!-- END switch_forum_desc -->
+    </div>
+
+    {BOARD_INDEX}
+
+    {TOPICS_LIST_BOX}
+
+    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 xl:gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-bold uppercase">
+            <!-- BEGIN switch_user_logged_in -->
+            <span class="flex items-center">{S_WATCH_FORUM}</span>
+            <a href="{U_MARK_READ}" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2">
+                <i class="ph-fill ph-checks text-base"></i>
+                <span>{L_MARK_TOPICS_READ}</span>
+            </a>
+            <!-- END switch_user_logged_in -->
+            <!-- BEGIN switch_sort_options -->
+            <details class="sort-box relative">
+                <summary class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 cursor-pointer list-none">
+                    <i class="ph-fill ph-sort-ascending text-base"></i>
+                    <span>{switch_sort_options.L_SORT}</span>
+                </summary>
+                <form method="post" class="forumline sort-form absolute z-10 mt-1 surface-1 border border-color-3 rounded-sm p-3 flex flex-col gap-2 normal-case">
+                    <b>{switch_sort_options.L_SORT_BY}</b>
+                    <select name="sort_method" class="surface-2 rounded-sm p-1">
+                        {switch_sort_options.S_OPTIONS}
+                    </select>
+                    <b>{switch_sort_options.L_ORDER}</b>
+                    <div class="flex gap-3">
+                        <label><input type="radio" name="sort_order" id="sort_order_d" value="0" {switch_sort_options.DESC_CHECKED}/> {switch_sort_options.L_DESC}</label>
+                        <label><input type="radio" name="sort_order" id="sort_order_a" value="1" {switch_sort_options.ASC_CHECKED}/> {switch_sort_options.L_ASC}</label>
+                    </div>
+                    <input class="surface-2 border border-color-1 rounded-sm px-3 py-2 uppercase font-bold cursor-pointer" type="submit" value="{switch_sort_options.L_SORT}"/>
+                </form>
+            </details>
+            <!-- END switch_sort_options -->
+        </div>
+        <nav class="page-pagination flex flex-wrap items-center justify-center gap-1 text-xs font-bold empty:hidden">{PAGINATION}</nav>
+    </div>
+
+    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mt-5 grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-3">
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
+            <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-shield-star text-base md:text-2xl text-color-accent"></i>
+                <span>{L_MODERATOR}</span>
+            </h3>
+            <div class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs">{MODERATORS}</div>
+        </div>
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
+            <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-lock-key text-base md:text-2xl text-color-accent"></i>
+                <span>{L_TABS_PERMISSIONS}</span>
+            </h3>
+            <div class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs">{S_AUTH_LIST}</div>
+        </div>
+    </div>
+
+    <div class="mt-5">{JUMPBOX}</div>
+</main>

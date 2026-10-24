@@ -1,0 +1,124 @@
+<!-- BEGIN topics_list_box -->
+<!-- BEGIN row -->
+<!-- BEGIN header_table -->
+<!-- BEGIN multi_selection -->
+<script type="text/javascript">
+
+    function check_uncheck_main_{topics_list_box.row.header_table.BOX_ID}()
+    {
+        var all_checked = true;
+
+        for (i = 0; (i < document.{topics_list_box.FORMNAME}.elements.length) && all_checked; i++)
+        {
+            if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+            {
+                all_checked = document.{topics_list_box.FORMNAME}.elements[i].checked;
+            }
+        }
+
+        document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked = all_checked;
+    }
+
+    function check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}()
+    {
+        for (i = 0; i < document.{topics_list_box.FORMNAME}.length; i++)
+        {
+            if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+            {
+                document.{topics_list_box.FORMNAME}.elements[i].checked = document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked;
+            }
+        }
+    }
+
+</script>
+<!-- END multi_selection -->
+
+<div class="topic-list surface-2 border border-color-3 p-2 xl:p-3 mt-5 rounded-sm">
+    <div class="topic-list-header surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3">
+        <div class="topic-list-title flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)">
+            <h2 class="text-2xl xl:text-3xl font-extrabold">{topics_list_box.row.L_TITLE}</h2>
+        </div>
+    </div>
+    <div class="topic-list-container grid grid-rows-flow grid-cols-2 gap-2 xl:gap-3">
+    <!-- END header_table -->
+
+    <!-- BEGIN header_row -->
+    <h3 class="col-span-2 surface-1 border border-color-3 rounded-sm p-2 text-center uppercase font-bold text-sm">{topics_list_box.row.L_TITLE}</h3>
+    <!-- END header_row -->
+
+    <!-- BEGIN topic -->
+    <!-- BEGIN table_sticky -->
+    </div><!-- <div class="topic-list-container" /> -->
+</div><!-- <div class="topic-list" /> -->
+<div class="topic-list surface-2 border border-color-3 p-2 xl:p-3 mt-5 rounded-sm">
+    <div class="topic-list-header surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3">
+        <div class="topic-list-title flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)">
+            <h2 class="text-2xl xl:text-3xl font-extrabold">{topics_list_box.row.topic.table_sticky.L_TITLE}</h2>
+        </div>
+    </div>
+    <div class="topic-list-container grid grid-rows-flow grid-cols-2 gap-2 xl:gap-3">
+    <!-- END table_sticky -->
+    <!-- BEGIN line_sticky -->
+    <div class="sticky-separator col-span-2 h-px bg-(--accent-color) opacity-40"></div>
+    <!-- END line_sticky -->
+
+    <div class="topic-row grid {topics_list_box.row.FOLDER_CLASSNAME} {topics_list_box.row.TOPIC_READ_STATUS} col-span-2 xl:col-span-1 surface-3 border border-color-1 p-2 gap-2 xl:p-3 xl:gap-3 rounded-sm grid-cols-12 xl:grid-cols-17" title="{topics_list_box.row.L_TOPIC_FOLDER_ALT}">
+        <div class="xl:surface-2 xl:border xl:border-color-1 xl:rounded-sm gap-2 xl:gap-3 grid grid-cols-12 col-span-12 xl:col-span-11 col-start-1 row-start-1 items-center">
+            <span class="xl:bg-transparent surface-2 rounded-sm p-2 border xl:border-0 border-color-1 col-span-2 sm:col-span-1 self-stretch flex items-center justify-center text-center gap-1">
+                <i class="ph ph-chat-centered"></i>
+                <span class="participate-check">{topics_list_box.row.PARTICIPATE_POST_IMG}</span>
+            </span>
+            <a href="{topics_list_box.row.U_VIEW_TOPIC}" data-title="{topics_list_box.row.TOPIC_TITLE}" class="truncate xl:bg-transparent rounded-sm border border-color-1 surface-2 p-2 col-span-10 sm:col-span-11 xl:border-0">
+                <!-- BEGIN single_selection -->
+                <input type="radio" name="{topics_list_box.FIELDNAME}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} />
+                <!-- END single_selection -->
+                {topics_list_box.row.TOPIC_TYPE}
+                <span>{topics_list_box.row.TOPIC_TITLE}</span>
+            </a>
+            <!-- BEGIN switch_description -->
+            <div class="topic-description col-span-12 px-2 pb-2 text-xs italic">{topics_list_box.row.topic.switch_description.TOPIC_DESCRIPTION}</div>
+            <!-- END switch_description -->
+        </div>
+
+        <div class="col-start-1 col-span-6 row-start-4 xl:row-start-3 xl:col-start-1 xl:col-span-8 surface-2 rounded-sm p-2 xl:p-3 border border-color-1 italic text-xs items-center justify-center text-center flex">
+            {topics_list_box.row.LAST_POST_TIME}
+        </div>
+
+        <div class="topic-pages col-start-1 col-span-12 row-start-3 xl:row-start-2 xl:col-start-9 xl:col-span-9 surface-2 rounded-sm p-2 xl:p-3 border border-color-1 flex flex-wrap items-center justify-center gap-1 empty:hidden" role="navigation">{topics_list_box.row.GOTO_PAGE_NEW}</div>
+
+        <div class="min-w-0 col-start-1 col-span-6 row-start-2 xl:row-start-2 xl:col-start-1 xl:col-span-8 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 flex justify-center items-center gap-2 xl:gap-3 text-xs">
+            <span class="xl:hidden flex items-center" data-title="{topics_list_box.row.L_BY}" aria-hidden="true"><i class="ph-fill ph-pencil-line"></i></span>
+            <span class="sr-only xl:not-sr-only">{topics_list_box.row.L_BY}</span>
+            <span class="font-bold truncate min-w-0">{topics_list_box.row.TOPIC_AUTHOR}</span>
+        </div>
+
+        <div class="flex surface-2 border border-color-1 p-2 xl:p-3 rounded-sm col-start-7 col-span-3 row-start-2 justify-center items-center text-xs xl:row-start-1 xl:col-start-12 xl:col-span-3 xl:text-lg" data-title="{L_VIEWS}">
+            {topics_list_box.row.VIEWS} <span class="ph ph-eye ml-1"></span>
+        </div>
+        <div class="flex surface-2 border border-color-1 p-2 xl:p-3 rounded-sm col-start-10 col-span-3 row-start-2 text-color-accent justify-center items-center text-xs xl:row-start-1 xl:col-start-15 xl:col-span-3 xl:text-lg" data-title="{L_REPLIES}">
+            {topics_list_box.row.REPLIES} <span class="ph ph-chat-centered ml-1"></span>
+        </div>
+
+        <div class="min-w-0 col-start-7 col-span-6 row-start-4 xl:row-start-3 xl:col-start-9 xl:col-span-9 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 gap-2 xl:gap-3 flex justify-center items-center text-xs">
+            <span class="font-bold truncate min-w-0">{topics_list_box.row.LAST_POST_AUTHOR}</span>
+            <a href="{topics_list_box.row.LAST_POST_IMG}" data-title="{L_LASTPOST}" class="last-post-message"><i class="ph-fill ph-paper-plane-tilt"></i></a>
+        </div>
+
+        <!-- BEGIN multi_selection -->
+        <input onclick="javascript:check_uncheck_main_{topics_list_box.row.BOX_ID}();" type="checkbox" name="{topics_list_box.FIELDNAME}[]{topics_list_box.row.BOX_ID}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} />
+        <!-- END multi_selection -->
+    </div>
+    <!-- END topic -->
+
+    <!-- BEGIN no_topics -->
+    <div class="topic-row col-span-2 surface-3 border border-color-1 rounded-sm p-3 text-center text-sm italic">
+        {topics_list_box.row.L_NO_TOPICS}
+    </div>
+    <!-- END no_topics -->
+
+    <!-- BEGIN bottom -->
+    </div><!-- <div class="topic-list-container" /> -->
+</div><!-- <div class="topic-list" /> -->
+<!-- END bottom -->
+<!-- END row -->
+<!-- END topics_list_box -->

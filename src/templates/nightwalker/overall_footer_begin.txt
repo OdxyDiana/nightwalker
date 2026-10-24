@@ -1,0 +1,51 @@
+<!-- BEGIN html_validation -->
+<div id="wrap">
+    <!-- END html_validation -->
+
+    <!-- Afiliaciones y créditos: una página interna del foro (se edita desde el panel) cargada en un iframe.
+         Cambia el src por su URL real. -->
+    <footer class="mt-10">
+        <iframe id="afiliaciones-frame" src="/h1-afiliaciones" title="Afiliaciones y créditos" loading="lazy" scrolling="no" class="w-full border-0" style="min-height: 200px"></iframe>
+    </footer>
+
+    <script type="text/javascript">
+        // El iframe es del mismo dominio: se ajusta a la altura de su contenido
+        (function () {
+            var frame = document.getElementById('afiliaciones-frame');
+            if (!frame) return;
+
+            function fit() {
+                try {
+                    var doc = frame.contentDocument;
+                    if (doc && doc.documentElement) frame.style.height = doc.documentElement.scrollHeight + 'px';
+                } catch (e) {}
+            }
+
+            frame.addEventListener('load', function () {
+                fit();
+                try {
+                    if (window.ResizeObserver) new ResizeObserver(fit).observe(frame.contentDocument.documentElement);
+                } catch (e) {}
+            });
+        })();
+    </script>
+
+</div><!-- <div id="wrap" /> -->
+<div id="{ID_RIGHT}" class="wrap" style="display: none">
+    <!-- BEGIN giefmod_index2 -->
+    {giefmod_index2.MODVAR}
+    <!-- END giefmod_index2 -->
+</div>
+{FOOTER_WIDGETS}
+
+<div id="page-footer">
+    <div class="navbar container mx-auto flex flex-wrap items-center justify-between gap-2 xl:mb-10 mb-5 text-xs">
+        <a href="#top" class="p-2 surface-2 rounded-sm text-color border border-color-3 hover:border-(--accent-color)"><i class="ph-fill ph-arrow-up"></i></a>
+        <a href="{U_INDEX}" class="p-2 surface-2 rounded-sm text-color border border-color-3 hover:border-(--accent-color) uppercase font-bold" accesskey="h">{L_HOME}</a>
+        <div class="ml-auto text-right">
+
+            <!-- BEGIN html_validation -->
+        </div><!-- <div class="ml-auto text-right" /> -->
+    </div><!-- <div class="navbar" /> -->
+</div><!-- <div id="page-footer" /> -->
+<!-- END html_validation -->

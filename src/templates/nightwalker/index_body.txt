@@ -1,0 +1,125 @@
+<main id="index" class="mt-10">
+    <!-- BEGIN message_admin_index -->
+    <div class="introduction surface-2 border border-color-3 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 xl:mb-5 mb-3">
+        <!-- BEGIN message_admin_titre -->
+        <h3 class="surface-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base">{message_admin_index.message_admin_titre.MES_TITRE}</h3>
+        <!-- END message_admin_titre -->
+
+        <!-- BEGIN message_admin_txt -->
+        <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 text-sm">{message_admin_index.message_admin_txt.MES_TXT}</div>
+        <!-- END message_admin_txt -->
+    </div>
+    <!-- END message_admin_index -->
+
+    {CHATBOX_TOP}
+    {BOARD_INDEX}
+
+    <!-- BEGIN disable_viewonline -->
+    <div id="estadisticas" class="flex flex-col surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mt-10">
+        <div class="surface-1 border border-color-3 rounded-sm grid grid-cols-5 gap-2 xl:gap-3 xl:mb-3 mb-2 p-2 xl:p-3">
+            <!-- BEGIN switch_user_logged_in -->
+            <a href="{U_SEARCH_NEW}" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="{L_SEARCH_NEW}" aria-label="{L_SEARCH_NEW}">
+                <i class="ph-fill ph-envelope-simple text-lg md:text-base"></i>
+                <span class="hidden md:inline">{L_SEARCH_NEW}</span>
+            </a>
+            <!-- END switch_user_logged_in -->
+            <a href="{U_SEARCH_UNANSWERED}" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="{L_SEARCH_UNANSWERED}" aria-label="{L_SEARCH_UNANSWERED}">
+                <i class="ph-fill ph-chat-circle-dots text-lg md:text-base"></i>
+                <span class="hidden md:inline">{L_SEARCH_UNANSWERED}</span>
+            </a>
+            <a href="{U_TODAY_ACTIVE}" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="{L_TODAY_ACTIVE}" aria-label="{L_TODAY_ACTIVE}">
+                <i class="ph-fill ph-fire text-lg md:text-base"></i>
+                <span class="hidden md:inline">{L_TODAY_ACTIVE}</span>
+            </a>
+            <a href="{U_OVERALL_POSTERS}" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="{L_OVERALL_POSTERS}" aria-label="{L_OVERALL_POSTERS}">
+                <i class="ph-fill ph-ranking text-lg md:text-base"></i>
+                <span class="hidden md:inline">{L_OVERALL_POSTERS}</span>
+            </a>
+            <!-- BEGIN switch_on_index -->
+            <!-- BEGIN switch_delete_cookies -->
+            <a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" rel="nofollow" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border hover:border-(--accent-color) uppercase text-xs font-bold" data-title="{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}" aria-label="{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}">
+                <i class="ph-fill ph-cookie text-lg md:text-base"></i>
+                <span class="hidden md:inline">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</span>
+            </a>
+            <!-- END switch_delete_cookies -->
+            <!-- END switch_on_index -->
+        </div>
+
+        <div class="flex flex-col xl:flex-row xl:gap-3 gap-2 mb-2 xl:mb-3">
+            <div class="xl:flex hidden xl:w-1/5 xl:h-auto overflow-hidden rounded-sm surface-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content">
+                <img src="https://i.pinimg.com/736x/70/f2/a3/70f2a3517a28495857a8dfb2275bcb38.jpg" alt="{L_WHO_IS_ONLINE}" class="w-[300px] h-[400px] xl:w-auto xl:h-auto border-color-1 border object-cover object-center rounded-sm" />
+            </div>
+
+            <div id="block-online" class="xl:w-2/5 rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col gap-2 xl:gap-3">
+                <h3 class="surface-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-users text-base text-color-accent"></i>
+                    <!-- BEGIN switch_viewonline_link -->
+                    <a href="{U_VIEWONLINE}" rel="nofollow" class="hover:text-color-accent">{L_WHO_IS_ONLINE}</a>
+                    <!-- END switch_viewonline_link -->
+                    <!-- BEGIN switch_viewonline_nolink -->
+                    <span>{L_WHO_IS_ONLINE}</span>
+                    <!-- END switch_viewonline_nolink -->
+                </h3>
+                <div class="online-list online-list-scroll">{LOGGED_IN_USER_LIST} {L_ONLINE_USERS}</div>
+            </div>
+
+            <div class="xl:w-2/5 rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col gap-2 xl:gap-3">
+                <h3 class="surface-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-clock text-base text-color-accent"></i>Conectados recientemente
+                </h3>
+                <div class="online-list online-list-scroll">{L_CONNECTED_MEMBERS}</div>
+            </div>
+        </div>
+
+        <div class="flex flex-col xl:gap-3 gap-2 xl:mb-3 mb-2">
+            <div class="rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col md:flex-row gap-2 xl:gap-3">
+                <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                    <i class="ph-fill ph-chart-bar text-base md:text-2xl text-color-accent"></i>
+                    <span>Estadísticas</span>
+                </h3>
+                <div class="stats-list flex-1 grid grid-cols-2 md:grid-cols-6 gap-2 xl:gap-3">
+                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-hand-waving text-base text-color-accent"></i><span>{NEWEST_USER}</span></span>
+                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-chats text-base text-color-accent"></i><span>{TOTAL_POSTS}</span></span>
+                    <span class="col-span-2 flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-users-four text-base text-color-accent"></i><span>{TOTAL_USERS}</span></span>
+                    <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-broadcast text-base text-color-accent"></i><span>{TOTAL_USERS_ONLINE}</span></span>
+                    <span class="col-span-2 md:col-span-3 leading-tight flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm border border-color-1 uppercase text-[0.6875rem] md:text-xs font-bold text-center"><i class="ph-fill ph-trophy text-base text-color-accent"></i><span>{RECORD_USERS}</span></span>
+                </div>
+            </div>
+
+            <!-- Leyenda: hecha a mano; cada grupo toma su color de --group-N (style.css). Cambia nombres, iconos y enlaces a tus grupos -->
+            <div class="rounded-sm surface-3 xl:p-3 p-2 border border-color-1 flex flex-col md:flex-row gap-2 xl:gap-3">
+                <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                    <i class="ph-fill ph-palette text-base md:text-2xl text-color-accent"></i>
+                    <span>{LEGEND}</span>
+                </h3>
+                <div class="legend-list flex-1 grid grid-cols-2 md:grid-cols-5 gap-2 xl:gap-3">
+                    <a href="/g2-prensa" class="legend-item" style="--group-color: var(--group-1)"><i class="ph-fill ph-newspaper"></i><span>Prensa</span></a>
+                    <a href="/g3-boyband" class="legend-item" style="--group-color: var(--group-2)"><i class="ph-fill ph-users-three"></i><span>Boyband</span></a>
+                    <a href="/g4-girlband" class="legend-item" style="--group-color: var(--group-3)"><i class="ph-fill ph-flower"></i><span>Girlband</span></a>
+                    <a href="/g5-solistas" class="legend-item" style="--group-color: var(--group-4)"><i class="ph-fill ph-microphone"></i><span>Solistas</span></a>
+                    <a href="/g6-actores" class="legend-item" style="--group-color: var(--group-5)"><i class="ph-fill ph-film-slate"></i><span>Actores</span></a>
+                    <a href="/g7-actrices" class="legend-item" style="--group-color: var(--group-6)"><i class="ph-fill ph-film-strip"></i><span>Actrices</span></a>
+                    <a href="/g8-modelos" class="legend-item" style="--group-color: var(--group-7)"><i class="ph-fill ph-camera"></i><span>Modelos</span></a>
+                    <a href="/g9-ciudadanos" class="legend-item" style="--group-color: var(--group-8)"><i class="ph-fill ph-house-line"></i><span>Ciudadanos</span></a>
+                    <a href="/g10-ausentes" class="legend-item" style="--group-color: var(--group-9)"><i class="ph-fill ph-moon"></i><span>Ausentes</span></a>
+                    <a href="/g11-inactivos" class="legend-item" style="--group-color: var(--group-10)"><i class="ph-fill ph-prohibit"></i><span>Inactivos</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="surface-3 border border-color-1 xl:p-3 p-2 rounded-sm flex flex-col md:flex-row gap-2 xl:gap-3">
+            <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-cake text-base md:text-2xl text-color-accent"></i>
+                <span>Cumpleaños</span>
+            </h3>
+            <div class="birthday-list flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs xl:text-sm uppercase">
+                <p>{L_WHOSBIRTHDAY_TODAY}</p>
+                <p>{L_WHOSBIRTHDAY_WEEK}</p>
+            </div>
+        </div>
+    </div>
+    <!-- END disable_viewonline -->
+
+    {CHATBOX_BOTTOM}
+</main>
+
