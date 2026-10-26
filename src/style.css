@@ -312,17 +312,26 @@ img:hover {
 }
 
 /**LISTADO TEMAS**/
-.topic-list-container {
+/* El icono de cada tema depende de su estado: sin novedades, con respuestas nuevas o cerrado.
+   Las clases post_* las pone el foro en la fila a través de {FOLDER_CLASSNAME} */
+.topic-row {
   .icon-no-new,
   .icon-closed,
   .icon-new {
     display: none;
   }
-
-  &.post_no_new {
-    .icon-no-new {
+  &.post_no_new .icon-no-new {
+    display: initial;
+  }
+  &.post_new {
+    .icon-new,
+    .last-post-message {
+      color: var(--accent-color);
       display: initial;
     }
+  }
+  &.post_locked .icon-closed {
+    display: initial;
   }
 }
 

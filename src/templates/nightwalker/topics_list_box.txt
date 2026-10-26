@@ -65,7 +65,9 @@
     <div class="topic-row grid {topics_list_box.row.FOLDER_CLASSNAME} {topics_list_box.row.TOPIC_READ_STATUS} col-span-2 xl:col-span-1 surface-3 border border-color-1 p-2 gap-2 xl:p-3 xl:gap-3 rounded-sm grid-cols-12 xl:grid-cols-17" title="{topics_list_box.row.L_TOPIC_FOLDER_ALT}">
         <div class="xl:surface-2 xl:border xl:border-color-1 xl:rounded-sm gap-2 xl:gap-3 grid grid-cols-12 col-span-12 xl:col-span-11 col-start-1 row-start-1 items-center">
             <span class="xl:bg-transparent surface-2 rounded-sm p-2 border xl:border-0 border-color-1 col-span-2 sm:col-span-1 self-stretch flex items-center justify-center text-center gap-1">
-                <i class="ph ph-chat-centered"></i>
+                <i class="ph-fill ph-chat-slash icon-no-new"></i>
+                <i class="ph-fill ph-chat-dots icon-new"></i>
+                <i class="ph-fill ph-lock icon-closed"></i>
                 <span class="participate-check">{topics_list_box.row.PARTICIPATE_POST_IMG}</span>
             </span>
             <a href="{topics_list_box.row.U_VIEW_TOPIC}" data-title="{topics_list_box.row.TOPIC_TITLE}" class="truncate xl:bg-transparent rounded-sm border border-color-1 surface-2 p-2 col-span-10 sm:col-span-11 xl:border-0">
