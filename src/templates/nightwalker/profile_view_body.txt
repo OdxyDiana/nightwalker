@@ -9,14 +9,8 @@
             <div id="profile-header" class="grid grid-cols-12 gap-2 xl:gap-3"></div>
 
             <div id="profile-body" class="grid grid-cols-12 gap-2 xl:gap-3">
-                <!-- Seguir, mensaje privado, email y campos de contacto (ahí van Instagram y demás enlaces) -->
+                <!-- Campos de contacto: mensaje privado, Expediente, Cronología, Relaciones, Instagram... -->
                 <div id="profile-actions-buttons-container" class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 grid grid-cols-5 gap-2 xl:gap-3 empty:hidden">
-                    <!-- BEGIN switch_follow_member -->
-                    <button onclick="doFollowAction(this);" data-id="{CUR_USER_ID}" class="followBtn {C_CLASS} flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold cursor-pointer">
-                        <i class="ph-fill ph-bell{C_ICLASS} text-lg md:text-base"></i>
-                        <span class="hidden md:inline">{CUR_FOLLOW_TEXT}</span>
-                    </button>
-                    <!-- END switch_follow_member -->
                     <!-- BEGIN contact_field -->
                     <span id="field_id{contact_field.ID}" class="contents" title="{contact_field.LABEL}">{contact_field.CONTENT}</span>
                     <!-- END contact_field -->
@@ -54,77 +48,6 @@
                     <!-- END profile_field -->
                 </div>
             </div>
-
-            <!-- Estado, última visita, administración y ficha de rol (las medallas son un campo de perfil) -->
-            <div id="profile-extra" class="grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-3">
-                <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
-                    <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
-                        <i class="ph-fill ph-chart-bar text-base md:text-2xl text-color-accent"></i>
-                        <span>{L_STATS}</span>
-                    </h3>
-                    <dl class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs flex flex-col gap-1">
-                        <!-- BEGIN switch_show_status -->
-                        <div class="profile-status"><dt class="inline font-bold">{L_STATUT}:</dt> <dd class="inline">{USER_ONLINE}</dd></div>
-                        <!-- END switch_show_status -->
-                        <div><dt class="inline font-bold">{L_LAST_VISITED}:</dt> <dd class="inline">{LAST_VISIT_TIME}</dd></div>
-                        <!-- BEGIN switch_dhow_mp -->
-                        <div><dt class="inline font-bold">{L_PRIVATE_MSG}:</dt> <dd class="inline">{PRIVATE_MSG}</dd></div>
-                        <!-- END switch_dhow_mp -->
-                    </dl>
-                </div>
-
-                <!-- BEGIN switch_allow_friendsfoes -->
-                <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 text-xs">
-                    {FRIENDSFOES}
-                </div>
-                <!-- END switch_allow_friendsfoes -->
-
-                <!-- BEGIN switch_auth_user -->
-                <div class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row gap-2 xl:gap-3">
-                    <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
-                        <i class="ph-fill ph-gavel text-base md:text-2xl text-color-accent"></i>
-                        <span>{L_ADMINISTRATE_USER}</span>
-                    </h3>
-                    <div class="flex-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs flex flex-col gap-1">
-                        {ADMINISTRATE_USER}
-                        {BAN_USER}
-                    </div>
-                </div>
-                <!-- END switch_auth_user -->
-
-                <!-- BEGIN switch_admin_user_comment_active -->
-                <form action="{S_PROFILE_ACTION}" method="post" name="post" class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2">
-                    <label class="flex flex-col gap-1 text-xs">
-                        <span class="font-bold uppercase">{L_COMMENTS}</span>
-                        <span class="italic">{L_MODS_AND_ADMINS}</span>
-                        <textarea class="input-subtle surface-2 border border-color-1 rounded-sm p-2" name="admin_user_comment_text" rows="8" cols="30">{ADMIN_USER_COMMENT}</textarea>
-                    </label>
-                    <input type="hidden" value="update_admin_user_comment" name="mode" />
-                    <input type="hidden" value="{USER_ID}" name="userid" />
-                    <input type="submit" class="self-end surface-2 border border-color-1 rounded-sm px-3 py-2 uppercase text-xs font-bold cursor-pointer hover:border-(--accent-color)" name="user_comment_maj" value="{L_UPDATE}" />
-                </form>
-                <!-- END switch_admin_user_comment_active -->
-            </div>
-
-            <!-- BEGIN switch_rpg -->
-            <div class="rpg-view surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3">
-                <h3 class="surface-2 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base">{L_VIEWING_RPG}</h3>
-                <p class="text-center">{RPG_IMAGE}</p>
-                <div class="grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-3">
-                    <div class="flex flex-col gap-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs">
-                        <!-- BEGIN rpg_fields_left -->
-                        <dl><dt class="inline font-bold">{switch_rpg.rpg_fields_left.F_NAME}:</dt> <dd class="inline">{switch_rpg.rpg_fields_left.F_VALUE_NEW}</dd></dl>
-                        <!-- END rpg_fields_left -->
-                    </div>
-                    <div class="flex flex-col gap-1 surface-2 border border-color-1 rounded-sm p-2 xl:p-3 text-xs">
-                        <!-- BEGIN rpg_fields -->
-                        <dl><dt class="inline font-bold">{switch_rpg.rpg_fields.F_NAME}:</dt> <dd class="inline">{switch_rpg.rpg_fields.F_VALUE_NEW}</dd></dl>
-                        <!-- END rpg_fields -->
-                    </div>
-                </div>
-                <div class="self-end">{U_ADMIN_RPG_NEW}</div>
-            </div>
-            <!-- END switch_rpg -->
         </div>
     </div>
 </main>
