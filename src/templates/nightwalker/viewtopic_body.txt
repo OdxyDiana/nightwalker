@@ -157,12 +157,6 @@
                                         <span class="rep-cat flex items-center gap-1"><i class="ph-fill ph-thumbs-down"></i>{postrow.displayed.switch_likes_active.switch_dislike_button.COUNT_VOTE_DISLIKE}</span>
                                     </button>
                                     <!-- END switch_dislike_button -->
-                                    <!-- BEGIN switch_like_list -->
-                                    {postrow.displayed.switch_likes_active.switch_like_list.D_LIKE_LIST}
-                                    <!-- END switch_like_list -->
-                                    <!-- BEGIN switch_dislike_list -->
-                                    {postrow.displayed.switch_likes_active.switch_dislike_list.D_DISLIKE_LIST}
-                                    <!-- END switch_dislike_list -->
                                 </div>
                                 <!-- END switch_likes_active -->
                                 <!-- BEGIN switch_vote_active -->
