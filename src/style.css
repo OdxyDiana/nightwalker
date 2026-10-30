@@ -419,7 +419,8 @@ img:hover {
   position: absolute;
   inset: 0;
 }
-.post-author-name:hover {
+/* Solo reacciona si el nombre es un enlace: el de un invitado llega como texto plano */
+.post-author-name:has(a):hover {
   border-color: var(--accent-color);
 }
 /* Botón cuadrado de la misma altura que la caja del nombre (se estira y el ancho sale de la altura) */
