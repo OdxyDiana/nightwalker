@@ -1904,6 +1904,16 @@ img:hover {
 .post-author-content-buttons > a:hover {
   border-color: var(--accent-color);
 }
+.post-author-content-buttons > a i {
+  display: block;
+  font-size: var(--text-base);
+  line-height: 1;
+}
+@media (width >= 80rem) {
+  .post-author-content-buttons > a {
+    padding: calc(var(--spacing) * 2);
+  }
+}
 .post-author-content-buttons > a img {
   max-height: 1.25rem;
   width: auto;

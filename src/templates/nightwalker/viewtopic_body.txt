@@ -112,7 +112,7 @@
                                 <div class="post-author-name flex-1 min-w-0 p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase flex items-center justify-center font-bold">
                                     {postrow.displayed.POSTER_NAME}
                                 </div>
-                                <!-- La fecha indica que es la de publicación y lleva dentro el enlace permanente del mensaje -->
+                                <!-- Botón cuadrado del enlace permanente (la fecha de publicación va aparte, en .post-fecha) -->
                                 <a href="{postrow.displayed.POST_URL}" class="post-permalink flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) cursor-pointer" data-title="Enlace permanente" aria-label="Enlace permanente"><i class="ph ph-link-simple"></i></a>
                             </div>
                             <div class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm flex items-center justify-center gap-2 text-center text-xs xl:text-sm" data-title="Fecha de publicación">
