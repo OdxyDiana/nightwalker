@@ -139,6 +139,7 @@
                         </div>
 
                         <div id="post-buttons" class="flex flex-row xl:flex-col flex-wrap justify-center xl:justify-between gap-2 xl:gap-3 p-2 xl:p-3 border border-color-3 surface-2 rounded-sm">
+                            <div class="post-actions flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                             <div class="post-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                                 {postrow.displayed.THANK_IMG}
                                 {postrow.displayed.MULTIQUOTE_IMG}
@@ -147,46 +148,50 @@
                                 {postrow.displayed.DELETE_IMG}
                                 {postrow.displayed.IP_IMG}
                                 {postrow.displayed.REPORT_IMG_NEW}
-                                <!-- BEGIN switch_likes_active -->
-                                <div class="fa_like_div flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
-                                    <button class="rep-button {postrow.displayed.switch_likes_active.C_VOTE_LIKE} flex items-center justify-center gap-1 surface-1 border border-color-3 rounded-sm p-1.5 xl:p-2 cursor-pointer hover:border-(--accent-color) text-xs font-bold" title="{postrow.displayed.switch_likes_active.L_LIKE}" data-href="{postrow.displayed.switch_likes_active.U_VOTE_LIKE}" data-href-rm="{postrow.displayed.switch_likes_active.U_VOTE_RM_LIKE}">
-                                        <span class="rep-cat flex items-center gap-1"><i class="ph-fill ph-thumbs-up"></i>{postrow.displayed.switch_likes_active.COUNT_VOTE_LIKE}</span>
-                                    </button>
-                                    <!-- BEGIN switch_dislike_button -->
-                                    <button class="rep-button {postrow.displayed.switch_likes_active.switch_dislike_button.C_VOTE_DISLIKE} flex items-center justify-center gap-1 surface-1 border border-color-3 rounded-sm p-1.5 xl:p-2 cursor-pointer hover:border-(--accent-color) text-xs font-bold" title="{postrow.displayed.switch_likes_active.switch_dislike_button.L_DISLIKE}" data-href="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_DISLIKE}" data-href-rm="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_RM_LIKE}">
-                                        <span class="rep-cat flex items-center gap-1"><i class="ph-fill ph-thumbs-down"></i>{postrow.displayed.switch_likes_active.switch_dislike_button.COUNT_VOTE_DISLIKE}</span>
-                                    </button>
-                                    <!-- END switch_dislike_button -->
-                                </div>
-                                <!-- END switch_likes_active -->
-                                <!-- BEGIN switch_vote_active -->
-                                <div class="vote flex flex-row xl:flex-col flex-wrap justify-center items-center gap-2 xl:gap-3">
-                                    <!-- BEGIN switch_vote -->
-                                    <a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_PLUS}" class="vote-up"><i class="ph-fill ph-plus-circle"></i></a>
-                                    <!-- END switch_vote -->
-                                    <!-- BEGIN switch_vote -->
-                                    <a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_MINUS}" class="vote-down"><i class="ph-fill ph-minus-circle"></i></a>
-                                    <!-- END switch_vote -->
-
-                                    <!-- BEGIN switch_bar -->
-                                    <div class="vote-bar" title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}">
-                                        <div class="vote-bars flex">
-                                            <!-- BEGIN switch_vote_plus -->
-                                            <div class="vote-bar-plus h-2 bg-green-600" style="width:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_plus.HEIGHT_PLUS}px;"></div>
-                                            <!-- END switch_vote_plus -->
-                                            <!-- BEGIN switch_vote_minus -->
-                                            <div class="vote-bar-minus h-2 bg-red-600" style="width:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_minus.HEIGHT_MINUS}px;"></div>
-                                            <!-- END switch_vote_minus -->
-                                        </div>
-                                    </div>
-                                    <!-- END switch_bar -->
-
-                                    <!-- BEGIN switch_no_bar -->
-                                    <div title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}" class="vote-bar-empty"></div>
-                                    <!-- END switch_no_bar -->
-                                </div>
-                                <!-- END switch_vote_active -->
                             </div>
+                            <!-- Likes y votos: junto a los botones, pero fuera de .post-buttons (su CSS pinta un cuadro con icono en cada enlace) -->
+                            <div class="post-reactions flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
+                            <!-- BEGIN switch_likes_active -->
+                            <div class="fa_like_div flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
+                                <button class="rep-button {postrow.displayed.switch_likes_active.C_VOTE_LIKE} flex items-center justify-center gap-1 surface-1 border border-color-3 rounded-sm p-1.5 xl:p-2 cursor-pointer hover:border-(--accent-color) text-xs font-bold" title="{postrow.displayed.switch_likes_active.L_LIKE}" data-href="{postrow.displayed.switch_likes_active.U_VOTE_LIKE}" data-href-rm="{postrow.displayed.switch_likes_active.U_VOTE_RM_LIKE}">
+                                    <span class="rep-cat flex items-center gap-1"><i class="ph-fill ph-thumbs-up"></i>{postrow.displayed.switch_likes_active.COUNT_VOTE_LIKE}</span>
+                                </button>
+                                <!-- BEGIN switch_dislike_button -->
+                                <button class="rep-button {postrow.displayed.switch_likes_active.switch_dislike_button.C_VOTE_DISLIKE} flex items-center justify-center gap-1 surface-1 border border-color-3 rounded-sm p-1.5 xl:p-2 cursor-pointer hover:border-(--accent-color) text-xs font-bold" title="{postrow.displayed.switch_likes_active.switch_dislike_button.L_DISLIKE}" data-href="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_DISLIKE}" data-href-rm="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_RM_LIKE}">
+                                    <span class="rep-cat flex items-center gap-1"><i class="ph-fill ph-thumbs-down"></i>{postrow.displayed.switch_likes_active.switch_dislike_button.COUNT_VOTE_DISLIKE}</span>
+                                </button>
+                                <!-- END switch_dislike_button -->
+                            </div>
+                            <!-- END switch_likes_active -->
+                            <!-- BEGIN switch_vote_active -->
+                            <div class="vote flex flex-row xl:flex-col flex-wrap justify-center items-center gap-2 xl:gap-3">
+                                <!-- BEGIN switch_vote -->
+                                <a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_PLUS}" class="vote-up"><i class="ph-fill ph-plus-circle"></i></a>
+                                <!-- END switch_vote -->
+                                <!-- BEGIN switch_vote -->
+                                <a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_MINUS}" class="vote-down"><i class="ph-fill ph-minus-circle"></i></a>
+                                <!-- END switch_vote -->
+
+                                <!-- BEGIN switch_bar -->
+                                <div class="vote-bar" title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}">
+                                    <div class="vote-bars flex">
+                                        <!-- BEGIN switch_vote_plus -->
+                                        <div class="vote-bar-plus h-2 bg-green-600" style="width:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_plus.HEIGHT_PLUS}px;"></div>
+                                        <!-- END switch_vote_plus -->
+                                        <!-- BEGIN switch_vote_minus -->
+                                        <div class="vote-bar-minus h-2 bg-red-600" style="width:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_minus.HEIGHT_MINUS}px;"></div>
+                                        <!-- END switch_vote_minus -->
+                                    </div>
+                                </div>
+                                <!-- END switch_bar -->
+
+                                <!-- BEGIN switch_no_bar -->
+                                <div title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}" class="vote-bar-empty"></div>
+                                <!-- END switch_no_bar -->
+                            </div>
+                            <!-- END switch_vote_active -->
+                            </div>
+                            </div><!-- <div class="post-actions" /> -->
                             <!-- Perfil, mensaje privado, email y los campos de contacto (ahí van Instagram y demás enlaces) -->
                             <div class="post-author-content-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                                 {postrow.displayed.PROFILE_IMG}
