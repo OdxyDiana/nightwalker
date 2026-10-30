@@ -394,21 +394,59 @@ img:hover {
   grid-template-rows: auto auto;
 }
 
-/* Fila 1: el nombre a todo el ancho; debajo, tres filas de campos */
-.post-author-name {
-  grid-column: 1 / 13;
+/* Fila 1: una barra con el nombre y, al final, el botón del enlace permanente; debajo, tres filas de campos.
+   En los mensajes pares (en espejo) la barra va en row-reverse y el botón queda a la izquierda */
+.post-author-bar {
+  grid-column: 1 / -1;
   grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.post-profile:nth-of-type(even) .post-author-bar {
+  flex-direction: row-reverse;
+}
+.post-author-bar .post-author-name {
+  flex: 1;
+  min-width: 0;
+}
+/* Todo el recuadro del nombre es el enlace: el enlace del foro se extiende sobre la caja (sin anidar enlaces) */
+.post-author-name {
+  position: relative;
+}
+.post-author-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.post-author-name:hover {
+  border-color: var(--accent-color);
+}
+/* Botón cuadrado de la misma altura que la caja del nombre (se estira y el ancho sale de la altura) */
+.post-author-bar {
+  align-items: stretch;
+}
+.post-permalink {
+  flex-shrink: 0;
+  align-self: stretch;
+  aspect-ratio: 1 / 1;
+  font-size: var(--text-base);
 }
 
 /* El texto que añade ::after va junto al número, en la misma línea */
 .post-author-field.post-field-post,
 .post-author-field.post-field-wons,
-.post-author-field.post-field-edad {
+.post-author-field.post-field-edad,
+.post-author-field.post-field-reputacion {
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   gap: calc(var(--spacing) * 1);
+}
+/* La reputación es más larga: si no cabe en una línea, el texto baja */
+.post-author-field.post-field-reputacion {
+  flex-wrap: wrap;
 }
 .post-author-field.post-field-post {
   grid-column: 1 / 3;
@@ -659,9 +697,10 @@ img:hover {
     grid-column: span 2;
     grid-row: auto;
   }
-  #post-header .post-author-name {
-    grid-column: span 4;
+  #post-header .post-author-bar {
+    grid-column: 1 / -1;
     order: 1;
+    gap: calc(var(--spacing) * 2);
   }
   #post-header .post-fecha {
     grid-column: span 4;
@@ -674,7 +713,10 @@ img:hover {
     max-height: none;
   }
   #post-header > .post-field-personaje {
-    grid-row: span 4;
+    grid-row: span 6;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    align-self: stretch;
     order: 4;
   }
   #post-header > .post-field-personaje .post-author-field-content,
@@ -693,22 +735,32 @@ img:hover {
     height: 100%;
     object-fit: cover;
   }
+  /* La foto es siempre un cuadrado centrado en su caja, aunque la caja sea más alta */
+  #post-header > .post-field-personaje .post-author-field-content {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - var(--spacing) * 4);
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
+  }
   #post-header > .post-field-grupo {
     order: 5;
   }
   #post-header > .post-field-fans {
     order: 6;
   }
-  #post-header > .post-field-empresa {
+  /* A la derecha del personaje, todos en la misma columna: grupo, fans, posts, wons, empresa y edad */
+  #post-header > .post-field-post {
     order: 7;
   }
-  #post-header > .post-field-edad {
+  #post-header > .post-field-wons {
     order: 8;
   }
-  #post-header > .post-field-post {
+  #post-header > .post-field-empresa {
     order: 9;
   }
-  #post-header > .post-field-wons {
+  #post-header > .post-field-edad {
     order: 10;
   }
   #post-header > .post-field-apodos {
