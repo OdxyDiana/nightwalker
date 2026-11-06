@@ -72,11 +72,11 @@
             <div id="post-wrapper" class="mb-2 xl:mb-3">
                 <!-- BEGIN postrow -->
                 <!-- BEGIN hidden -->
-                <div class="post-wrap {postrow.hidden.ROW_CLASS} post-hidden p-2 xl:p-3 surface-1 border border-color-3 rounded-sm mb-2 xl:mb-3">
-                    <!-- Aviso del mensaje oculto: sin botón de mostrar (el foro lo escribe dentro de MESSAGE y aquí se esconde en sus variantes) -->
-                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-sm [&_a[href*='showHiddenMessage']]:hidden [&_a[onclick*='showHiddenMessage']]:hidden [&_a:has([id^='hidden-title--'])]:hidden [&_[id^='hidden-title--']]:hidden">
+                <!-- Mensaje oculto: el autor, su avatar y sus datos se ven siempre; solo el mensaje y los botones de citar y editar se esconden (clase post-is-hidden en el contenedor) -->
+                <div class="post-is-hidden">
+                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 mb-2 xl:mb-3 text-xs text-center uppercase [&_a[href*='showHiddenMessage']]:hidden [&_a[onclick*='showHiddenMessage']]:hidden [&_a:has([id^='hidden-title--'])]:hidden [&_[id^='hidden-title--']]:hidden">
                         {postrow.hidden.MESSAGE}
-                        <div class="block-footer" style="display: none;">
+                    </div>
                 <!-- END hidden -->
 
                 <!-- BEGIN displayed -->
@@ -121,9 +121,11 @@
                             <div class="post-actions flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                             <div class="post-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                                 {postrow.displayed.THANK_IMG}
-                                {postrow.displayed.MULTIQUOTE_IMG}
-                                {postrow.displayed.QUOTE_IMG}
-                                {postrow.displayed.EDIT_IMG}
+                                <span class="contents [.post-is-hidden_&]:hidden">
+                                    {postrow.displayed.MULTIQUOTE_IMG}
+                                    {postrow.displayed.QUOTE_IMG}
+                                    {postrow.displayed.EDIT_IMG}
+                                </span>
                                 {postrow.displayed.DELETE_IMG}
                                 {postrow.displayed.IP_IMG}
                                 {postrow.displayed.REPORT_IMG_NEW}
@@ -183,9 +185,11 @@
                         </div>
 
                         <div class="post-content p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex-1 min-w-0" {postrow.displayed.THANK_BGCOLOR}>
-                            {postrow.displayed.MESSAGE}
+                            <div class="post-message [.post-is-hidden_&]:hidden">
+                                {postrow.displayed.MESSAGE}
 
-                            {postrow.displayed.EDITED_MESSAGE}
+                                {postrow.displayed.EDITED_MESSAGE}
+                            </div>
 
                             <!-- BEGIN switch_attachments -->
                             <div class="attachbox mt-3 pt-3 border-t border-color-1">
@@ -226,9 +230,7 @@
                 <!-- END displayed -->
 
                 <!-- BEGIN hidden -->
-                        </div>
-                    </div>
-                </div>
+                </div><!-- <div class="post-is-hidden" /> -->
                 <!-- END hidden -->
                 <!-- END postrow -->
             </div>
