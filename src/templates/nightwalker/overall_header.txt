@@ -235,7 +235,7 @@
             <!-- BEGIN switch_user_logged_out -->
             <div id="header-user" class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!" data-title="Invitado" role="group" aria-label="Invitado">
                 <div class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content">
-                    <img id="header-guest-avatar" alt="Avatar de invitado" class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
+                    <img id="header-guest-avatar" alt="Avatar de invitado" class="[&:not([src])]:invisible w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
                 </div>
                 <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">Invitado</span>
             </div>
@@ -344,9 +344,8 @@
         var icon = link.querySelector('i');
         icon.className = 'ph-fill ph-envelope-simple';
         link.setAttribute('data-title', text);
-        link.classList.add('has-new');
         var badge = document.createElement('span');
-        badge.className = 'nav-badge';
+        badge.className = 'absolute -top-1.5 -right-1.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-(--accent-color) text-white text-[0.625rem] font-bold leading-none';
         badge.textContent = count;
         link.appendChild(badge);
     })();

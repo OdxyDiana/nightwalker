@@ -7,33 +7,8 @@
 <!-- END switch_plus_menu -->
 <script type="text/javascript">
     //<![CDATA[
-    var hiddenMsgLabel = { visible:'{JS_HIDE_HIDDEN_MESSAGE}', hidden:'{JS_SHOW_HIDDEN_MESSAGE}' };
-    showHiddenMessage = function(id)
-    {
-        try
-        {
-            var regId = parseInt(id, 10);
-            if( isNaN(regId) ) { regId = 0; }
-
-            if( regId > 0)
-            {
-                $('.post--' + id).parent().toggle(0, function()
-                {
-                    if( $(this).is(":visible") )
-                    {
-                        $('#hidden-title--' + id).html(hiddenMsgLabel.visible);
-                    }
-                    else
-                    {
-                        $('#hidden-title--' + id).html(hiddenMsgLabel.hidden);
-                    }
-                });
-            }
-        }
-        catch(e) { }
-
-        return false;
-    };
+    // Los mensajes ocultos no se pueden mostrar desde el navegador: solo los ven quienes tienen permiso en el foro
+    showHiddenMessage = function () { return false; };
     //]]>
 </script>
 
@@ -98,7 +73,7 @@
                 <!-- BEGIN postrow -->
                 <!-- BEGIN hidden -->
                 <div class="post-wrap {postrow.hidden.ROW_CLASS} post-hidden p-2 xl:p-3 surface-1 border border-color-3 rounded-sm mb-2 xl:mb-3">
-                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-sm">
+                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-sm [&_a[href*='showHiddenMessage']]:hidden">
                         {postrow.hidden.MESSAGE}
                         <div class="block-footer" style="display: none;">
                 <!-- END hidden -->
