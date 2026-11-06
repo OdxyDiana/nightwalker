@@ -73,7 +73,8 @@
                 <!-- BEGIN postrow -->
                 <!-- BEGIN hidden -->
                 <div class="post-wrap {postrow.hidden.ROW_CLASS} post-hidden p-2 xl:p-3 surface-1 border border-color-3 rounded-sm mb-2 xl:mb-3">
-                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-sm [&_a[href*='showHiddenMessage']]:hidden">
+                    <!-- Aviso del mensaje oculto: sin botón de mostrar (el foro lo escribe dentro de MESSAGE y aquí se esconde en sus variantes) -->
+                    <div class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 text-sm [&_a[href*='showHiddenMessage']]:hidden [&_a[onclick*='showHiddenMessage']]:hidden [&_a:has([id^='hidden-title--'])]:hidden [&_[id^='hidden-title--']]:hidden">
                         {postrow.hidden.MESSAGE}
                         <div class="block-footer" style="display: none;">
                 <!-- END hidden -->
