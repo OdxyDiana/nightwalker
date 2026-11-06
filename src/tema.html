@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightwalker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="foro.css" />
+    <script src="script.js"></script>
+    <script src="switch-account.js"></script>
+    <script src="topic-data.js"></script>
+    <script src="topic-section.js"></script>
+  </head>
+  <body class="background-2 p-5">
+    <div
+      id="wrap"
+      class="container surface-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+    >
+      <header>
+        <nav
+          class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
+        >
+          <div
+            class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+          >
+            <div
+              id="header-user"
+              class="user-anon flex justify-start items-center"
+            >
+              <div
+                class="w-[50px] h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
+              >
+                <img
+                  src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                  alt="Anonymous"
+                  class="w-[50px] h-[50px] border-color-3 border object-cover object-center rounded-sm opacity-50"
+                />
+              </div>
+              <span class="uppercase font-bold ml-[10px]">Anonymous</span>
+            </div>
+            <div
+              class="navbar-buttons flex justify-center gap-2 items-center p-2"
+            >
+              <a
+                href="/"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Índice"
+              >
+                <i class="ph-fill ph-house"></i>
+              </a>
+              <a
+                href="/memberlist"
+                class="p-2 nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Idols"
+              >
+                <i class="ph-fill ph-user-list"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo oscuro"
+              >
+                <i class="ph-fill ph-moon-stars"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border"
+                data-title="Modo claro"
+              >
+                <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Cambiar cuenta"
+                href="/login"
+                data-switch-account-open
+              >
+                <i class="ph-fill ph-user-switch"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Conéctate"
+                href="/login?connexion"
+              >
+                <i class="ph-fill ph-sign-in"></i>
+              </a>
+              <a
+                class="nav-icon p-2 surface-2 rounded-sm text-color flex align-center border-color-3 border"
+                data-title="Registrate"
+                href="/register"
+              >
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            id="breadcrump"
+            class="text-[0px] z-1 surface-1 p-2 rounded-b-sm flex w-fit empty:hidden mt-[-1px] border-color-3 border-x border-b border-t-0 xl:mb-10 mb-5"
+          >
+            &nbsp;::&nbsp;
+            <a
+              href="/c1-nombre-de-la-categoria-1"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Nombre de la categoría 1</span></a
+            >
+            &nbsp;::&nbsp;
+            <a
+              href="/f3-expedientes"
+              class="nav before:font-phosphor-fill before:content-['\E13A']"
+              ><span>Expedientes</span></a
+            >
+          </div>
+        </nav>
+
+        <div
+          id="tablon"
+          class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3"
+        >
+          <a
+            href="/"
+            class="block w-full xl:w-auto p-2 xl:p-3 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+          >
+            <img
+              src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
+              alt="Nigthwalker"
+              loading="lazy"
+              class="opacity-50 rounded-sm w-full h-auto border border-color-1"
+            />
+          </a>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+          >
+            <h3
+              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Notificaciones
+            </h3>
+          </div>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+          >
+            <h3
+              class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+            >
+              Cuentas
+            </h3>
+          </div>
+          <div class="contents">
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Últimos temas
+              </h3>
+            </div>
+            <div
+              class="surface-3 flex justify-between rounded-sm xl:py-2 xl:px-4 py-1 px-2 border-color-1 border text-2xl xl:text-3xl col-span-12 col-start-1 row-start-4 xl:row-start-3"
+            >
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+              <a href="/" target="_blank" class="text-color">
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9 col-start-1"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Calendario
+              </h3>
+              <calendario-app [calendario]="calendario"></calendario-app>
+              <script>
+                const calendario = {
+                  noticias: [
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                    {
+                      fecha: "dd/MM/YYYY",
+                      noticia: "Blablabla pasó tal y cual",
+                    },
+                  ],
+                };
+              </script>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Staff
+              </h3>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-3 col-start-1"
+            ></div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 row-span-1 col-span-9"
+            >
+              <h3
+                class="surface-2 m-2 rounded-sm p-2 text-center uppercase border border-color-1"
+              >
+                Búsquedas
+              </h3>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-10">
+        <div id="topic">
+          <div
+            id="topic-actions"
+            class="surface-2 border border-color-3 rounded-sm p-2 xl:p-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2 xl:gap-3"
+          >
+            <div class="grid grid-cols-2 md:flex gap-2 xl:gap-3">
+              <a
+                href="/"
+                class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-xs md:text-sm font-bold"
+                ><i class="ph-fill ph-file-plus text-base"></i>
+                <span>Nuevo tema</span></a
+              >
+              <a
+                href="/"
+                class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) gap-2 px-3 py-2 uppercase text-xs md:text-sm font-bold"
+                ><i class="ph-fill ph-arrow-bend-up-left text-base"></i>
+                <span>Nueva respuesta</span></a
+              >
+            </div>
+            <nav
+              class="flex flex-wrap items-center justify-center gap-1 text-xs font-bold"
+              aria-label="Paginación"
+            >
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Primera página"><i class="ph ph-caret-line-left text-sm"></i></a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2 border-(--accent-color)! text-color-accent" aria-current="page">1</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">2</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">3</a>
+              <span class="min-w-8 h-8 flex items-center justify-center">…</span>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">10</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">11</a>
+              <a href="" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" aria-label="Última página"><i class="ph ph-caret-line-right text-sm"></i></a>
+            </nav>
+          </div>
+          <div
+            id="topic-body"
+            class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm my-2 xl:my-3"
+          >
+            <h3
+              id="post-title"
+              class="p-5 xl:p-10 surface-1 border border-color-3 uppercase rounded-sm text-center mb-2 xl:mb-3 text-2xl xl:text-3xl font-extrabold flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)"
+            >
+              Titulo del tema carajo
+            </h3>
+            <div
+              id="post-wrapper"
+              class="mb-2 xl:mb-3"
+            >
+              <template id="post-template">
+                <div class="post-profile p-2 xl:p-3 surface-1 border border-color-3 rounded-sm">
+                  <div
+                    id="post-header"
+                    class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-3"
+                  >
+                    <div class="post-author-field-container contents">
+                      <div class="post-author-bar">
+                        <div
+                          class="post-author-name flex-1 min-w-0 p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase flex items-center justify-center font-bold"
+                        >
+                          <a href="/"> Nickname </a>
+                        </div>
+                        <a href="/" class="post-permalink flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) cursor-pointer" data-title="Enlace permanente" aria-label="Enlace permanente"><i class="ph ph-link-simple"></i></a>
+                      </div>
+                      <div
+                        class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm flex items-center justify-center gap-2 text-center text-xs xl:text-sm"
+                        data-title="Fecha de publicación"
+                      >
+                        <i class="ph ph-calendar-blank"></i>
+                        <span>10 de feb, 2026, 14:45</span>
+                      </div>
+                    </div>
+
+                    <template id="post-author-fields-template">
+                      <div
+                        class="post-author-field surface-3 p-2 xl:p-3 border border-color-1 rounded-sm text-center uppercase text-xs xl:text-sm flex flex-col justify-center"
+                      >
+                        <div class="post-author-field-label hidden">
+                          <span class="label">Mensajes :</span>
+                        </div>
+                        <div
+                          class="post-author-field-content max-h-[100px] overflow-auto break-words"
+                        >
+                          5689
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                  <div
+                    id="post-content"
+                    class="flex flex-col xl:flex-row gap-2 xl:gap-3 my-2 xl:my-3"
+                  >
+                    <div
+                      class="post-author p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex flex-col gap-2 xl:gap-3 justify-start items-center"
+                    >
+                      <div
+                        class="post-author-avatar border border-color-1 rounded-sm w-full h-auto overflow-hidden"
+                      >
+                        <img
+                          class="block mx-auto max-h-[280px] xl:max-h-[400px] max-w-[250px] rounded-sm aspect-[10/16]"
+                        />
+                      </div>
+
+                      <div
+                        class="p-2 xl:p-3 post-author-rank surface-1 border border-color-3 rounded-sm uppercase w-full text-center"
+                      >
+                        Idol
+                      </div>
+                    </div>
+                    <div
+                      id="post-buttons"
+                      class="flex flex-row xl:flex-col flex-wrap justify-center xl:justify-between gap-2 xl:gap-3 p-2 xl:p-3 border border-color-3 surface-2 rounded-sm"
+                    >
+                      <div class="post-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
+                          <a href="/post?p=230&amp;mode=editpost" title="Editar"><img src="https://2img.net/i/fa/prosilver/icon_post_edit_en.png" alt="Editar" /></a>
+                          <a href="/post?p=230&amp;mode=quote" title="Citar"><img src="https://2img.net/i/fa/prosilver/icon_post_quote_en.png" alt="Citar" /></a>
+                          <a href="/post?p=230&amp;mode=like" title="Me gusta"><img src="https://2img.net/i/fa/prosilver/icon_post_like.png" alt="Me gusta" /></a>
+                          <a href="/report?p=230" title="Reportar"><img src="https://2img.net/i/fa/prosilver/icon_post_report.png" alt="Reportar" /></a>
+                        </div>
+                        <div
+                          class="post-author-content-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3"
+                        >
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 surface-1 border border-color-3 rounded-sm hover:border-(--accent-color)" title="Expediente" aria-label="Expediente"><i class="ph-fill ph-identification-card block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 surface-1 border border-color-3 rounded-sm hover:border-(--accent-color)" title="Cronología" aria-label="Cronología"><i class="ph-fill ph-clock-counter-clockwise block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 surface-1 border border-color-3 rounded-sm hover:border-(--accent-color)" title="Relaciones" aria-label="Relaciones"><i class="ph-fill ph-users-three block text-base leading-none"></i></a>
+                          <a href="/" class="flex items-center justify-center p-1.5 xl:p-2 surface-1 border border-color-3 rounded-sm hover:border-(--accent-color)" title="Instagram" aria-label="Instagram"><i class="ph-fill ph-instagram-logo block text-base leading-none"></i></a>
+                        </div>
+                    </div>
+                    <div
+                      class="post-content p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex-1 min-w-0"
+                    >
+                      PRUEBAAAAAAAAAAAAAAAAAA
+                    </div>
+                  </div>
+                  <div
+                    id="post-footer"
+                    class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-3"
+                  ></div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div
+          id="afiliaciones"
+          class="surface-3 border border-color-2 flex flex-row gap-2 xl:gap-3 rounded-sm p-2 xl:p-3 mt-10 w-full"
+        >
+          <div
+            class="surface-2 p-2 rounded-sm border border-color-1 basis-1/4"
+          ></div>
+          <div
+            class="surface-2 p-2 rounded-sm border border-color-1 basis-3/4 gap-2 flex flex-col"
+          >
+            <div class="flex flex-row gap-2">
+              <div
+                class="surface-1 p-2 rounded-sm border border-color-3 flex basis-1/2 gap-2 xl:gap-3 xl:p-3"
+              ></div>
+              <div
+                class="surface-1 p-2 rounded-sm border border-color-3 flex basis-1/2 gap-2 xl:gap-3 xl:p-3"
+              ></div>
+            </div>
+            <div
+              class="surface-1 p-2 rounded-sm border border-color-3 flex basis-full gap-2 xl:gap-3 xl:p-3 flex-wrap"
+            >
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+              <img src="https://placehold.co/40x40.png" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <dialog
+      id="switch-account-modal"
+      class="switch-account-modal surface-1 text-color rounded-sm"
+      aria-labelledby="switch-account-title"
+    >
+      <div class="switch-account-picker flex flex-col gap-3 p-4 xl:p-3" hidden>
+        <h3
+          id="switch-account-picker-title"
+          class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
+        >
+          Cuentas
+        </h3>
+        <div class="switch-account-list"></div>
+        <button
+          type="button"
+          data-switch-account-close
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
+        >
+          Cerrar
+        </button>
+      </div>
+      <form class="switch-account-form flex flex-col gap-3 p-4 xl:p-3" novalidate>
+        <h3
+          id="switch-account-title"
+          class="surface-2 rounded-sm p-2 text-center uppercase border border-color-3 font-bold"
+        >
+          Conectar cuenta
+        </h3>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm uppercase font-bold">Usuario</span>
+          <input
+            name="username"
+            type="text"
+            autocomplete="username"
+            autocapitalize="off"
+            spellcheck="false"
+            required
+            class="switch-account-input surface-2 rounded-sm p-2 text-color"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm uppercase font-bold">Contraseña</span>
+          <input
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="switch-account-input surface-2 rounded-sm p-2 text-color"
+          />
+        </label>
+        <p class="switch-account-error text-sm font-bold" role="alert" hidden></p>
+        <p class="text-xs opacity-75 flex gap-1 items-start">
+          <i class="ph-fill ph-lock-simple mt-[2px]"></i>
+          La contraseña se guarda cifrada y solo en este dispositivo.
+        </p>
+        <div class="flex gap-2 justify-end">
+          <button
+            type="button"
+            data-switch-account-close
+            class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="switch-account-button switch-account-submit flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color-accent uppercase text-xs font-bold cursor-pointer"
+          >
+            Conectar
+          </button>
+        </div>
+      </form>
+      <div class="switch-account-unsupported flex flex-col gap-3 p-4 xl:p-3" hidden>
+        <p class="text-sm">
+          Este navegador no permite guardar cuentas de forma segura.
+          <a href="/login" class="text-color-accent font-bold">Conéctate desde el login del foro</a>.
+        </p>
+        <button
+          type="button"
+          data-switch-account-close
+          class="switch-account-button flex items-center justify-center gap-2 surface-2 border border-color-1 rounded-sm px-3 py-2 text-color uppercase text-xs font-bold cursor-pointer self-end"
+        >
+          Cerrar
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

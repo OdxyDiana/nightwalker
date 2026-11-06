@@ -1,0 +1,125 @@
+<div class="page-header">
+    <h1><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h1>
+    <!-- BEGIN switch_user_authpost -->
+    <a href="{U_POST_NEW_TOPIC}" rel="nofollow" {S_POST_NEW_TOPIC} title="{T_POST_NEW_TOPIC}" class="btn btn-default">
+        <i class="material-symbols-outlined">{I_POST_NEW_TOPIC}</i>
+        <span>{L_POST_NEW_TOPIC}</span>
+    </a>
+    <!-- END switch_user_authpost -->
+    <!-- BEGIN switch_forum_desc -->
+    <div id="page-desc">
+        <div class="page-desc-content">
+            <div>{SINGLE_FORUM_DESC}</div>
+        </div>
+        <div class="page-desc-btn">
+            <i class="material-symbols-outlined">keyboard_arrow_down</i>
+            <i class="material-symbols-outlined">keyboard_arrow_up</i>
+        </div>
+    </div>
+    <!-- END switch_forum_desc -->
+    <div id="breadcrumbs">
+        <a href="{U_INDEX}"><i class="material-symbols-outlined">home</i> <span>{L_INDEX}</span></a>
+        {NAV_CAT_DESC}
+    </div>
+    <div class="pagination">
+        {PAGINATION}
+    </div>
+</div>
+
+<div class="topic-actions">
+    <div class="topic-actions-buttons">
+        <!-- BEGIN show_plus_menu -->
+        <div class="plus-menu-wrap">
+            <script type="text/javascript">//<![CDATA[
+                var url_newposts = '{U_NEWPOSTS_JS_PLUS_MENU}';
+                var url_egosearch = '{U_EGOSEARCH_JS_PLUS_MENU}';
+                var url_unanswered = '{U_UNANSWERED_JS_PLUS_MENU}';
+                var url_watchsearch = '{U_WATCHSEARCH_JS_PLUS_MENU}';
+                insert_plus_menu_new('f{FORUM_ID}&amp;f={FORUM_ID}','{JS_SESSION_ID}', {JS_AUTH_FAVOURITES});
+                //]]>
+            </script>
+        </div>
+        <!-- END show_plus_menu -->
+        <!-- BEGIN switch_user_logged_in -->
+        <a href="{U_MARK_READ}" class="mark-read-button">
+            <i class="material-symbols-outlined">done_all</i>&nbsp;{L_MARK_TOPICS_READ}
+        </a>
+        <!-- END switch_user_logged_in -->
+    </div>
+</div>
+
+<div class="clear"></div>
+
+{BOARD_INDEX}
+
+<div class="clear"></div>
+
+{TOPICS_LIST_BOX}
+
+<div class="pagination">
+    {PAGINATION}
+</div>
+
+<!-- BEGIN switch_user_logged_in -->
+{S_WATCH_FORUM}&nbsp;<a class="btn btn-flat mark-buttons" href="{U_MARK_READ}"><i class="material-symbols-outlined">mark_chat_read</i>&nbsp;{L_MARK_TOPICS_READ}</a>
+<!-- END switch_user_logged_in -->
+<!-- BEGIN switch_sort_options -->
+&nbsp;<div id="sort-box">
+    <span class="btn btn-flat mark-buttons" id="sort-btn"><i class="material-symbols-outlined">sort</i>&nbsp;{switch_sort_options.L_SORT}</span>
+    <form method="post" class="forumline sort-form">
+        <b>{switch_sort_options.L_SORT_BY}</b>
+        <select name="sort_method">
+            {switch_sort_options.S_OPTIONS}
+        </select>
+        <b>{switch_sort_options.L_ORDER}</b>
+        <div>
+            <label><input type="radio" name="sort_order" id="sort_order_d" value="0" {switch_sort_options.DESC_CHECKED}/> {switch_sort_options.L_DESC}</label>
+            <label><input type="radio" name="sort_order" id="sort_order_a" value="1" {switch_sort_options.ASC_CHECKED}/> {switch_sort_options.L_ASC}</label>
+        </div>
+        <input class="btn btn-default" type="submit" value="{switch_sort_options.L_SORT}"/>
+    </form>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function() {
+        var sort_btn = $('#sort-btn');
+        sort_btn.on('click', function() {
+            sort_btn.toggleClass('expanded');
+        });
+
+        document.onclick = function(e){
+            if ($(e.target).parents('#sort-box').length==0) {
+                document.getElementById('sort-btn').classList.remove('expanded');
+            }
+        };
+    });
+    //]]>
+</script>
+<!-- END switch_sort_options -->
+<!-- BEGIN switch_user_authpost -->
+<a href="{U_POST_NEW_TOPIC}" rel="nofollow" {S_POST_NEW_TOPIC} class="btn-fixed" title="{L_POST_NEW_TOPIC}">
+    <i class="material-symbols-outlined">{I_POST_NEW_TOPIC}</i>
+    <span class="btn-fixed-txt">{L_POST_NEW_TOPIC}</span>
+</a>
+<!-- END switch_user_authpost -->
+<div class="clear"></div>
+<div class="block">
+    <div class="block-header">
+        <i class="material-symbols-outlined">school</i> {L_MODERATOR}
+    </div>
+    <div class="block-content">
+        <p>{MODERATORS}</p>
+    </div>
+</div>
+
+<div class="block">
+    <div class="block-header">
+        <i class="material-symbols-outlined">privacy_tip</i> {L_TABS_PERMISSIONS}
+    </div>
+    <div class="block-content">
+        <p>{S_AUTH_LIST}</p>
+    </div>
+</div>
+
+{JUMPBOX}
