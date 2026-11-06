@@ -71,7 +71,7 @@
 
             <div id="post-wrapper" class="mb-2 xl:mb-3">
                 <!-- BEGIN postrow -->
-                <!-- El autor, su avatar y sus datos van siempre. Solo el mensaje y los botones de citar y editar dependen de hidden / displayed (más abajo) -->
+                <!-- BEGIN displayed -->
                 <div id="{postrow.U_POST_ID}" class="post-profile post--{postrow.U_POST_ID} {postrow.displayed.ROW_COUNT}{postrow.displayed.ONLINE_IMG_NEW} {postrow.displayed.GROUP} p-2 xl:p-3 surface-1 border border-color-3 rounded-sm mb-2 xl:mb-3">
                     <div id="post-header" class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-3">
                         <div class="post-author-field-container contents">
@@ -113,11 +113,9 @@
                             <div class="post-actions flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                             <div class="post-buttons flex flex-row xl:flex-col flex-wrap justify-center gap-2 xl:gap-3">
                                 {postrow.displayed.THANK_IMG}
-                                <!-- BEGIN displayed -->
                                 {postrow.displayed.MULTIQUOTE_IMG}
                                 {postrow.displayed.QUOTE_IMG}
                                 {postrow.displayed.EDIT_IMG}
-                                <!-- END displayed -->
                                 {postrow.displayed.DELETE_IMG}
                                 {postrow.displayed.IP_IMG}
                                 {postrow.displayed.REPORT_IMG_NEW}
@@ -177,53 +175,54 @@
                         </div>
 
                         <div class="post-content p-2 xl:p-3 surface-2 border border-color-3 rounded-sm flex-1 min-w-0" {postrow.displayed.THANK_BGCOLOR}>
+                <!-- END displayed -->
+                <!-- BEGIN hidden -->
                             <div class="post-message [&_a[href*='showHiddenMessage']]:hidden [&_a[onclick*='showHiddenMessage']]:hidden [&_a:has([id^='hidden-title--'])]:hidden [&_[id^='hidden-title--']]:hidden">
-                                <!-- BEGIN hidden -->
                                 {postrow.hidden.MESSAGE}
-                                <!-- END hidden -->
-                                <!-- BEGIN displayed -->
-                                {postrow.displayed.MESSAGE}
-
-                                {postrow.displayed.EDITED_MESSAGE}
-
-                                <!-- BEGIN switch_attachments -->
-                                <div class="attachbox mt-3 pt-3 border-t border-color-1">
-                                    <b>{postrow.displayed.switch_attachments.L_ATTACHMENTS}</b>
-                                    <dl class="attachments">
-                                        <!-- BEGIN switch_post_attachments -->
-                                        <dt>
-                                            <!-- BEGIN switch_dl_att -->
-                                            <a class="postlink inline-flex items-center gap-1" href="{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.U_ATTACHMENT}"><i class="ph-fill ph-paperclip"></i>{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT}</a> {postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT_DEL}
-                                            <!-- END switch_dl_att -->
-                                            <!-- BEGIN switch_no_dl_att -->
-                                            <div class="postlink inline-flex items-center gap-1" style="cursor: not-allowed"><i class="ph-fill ph-paperclip"></i>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT}</div> {postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT_DEL}
-                                            <!-- END switch_no_dl_att -->
-                                        </dt>
-                                        <dd class="text-xs">
-                                            <!-- BEGIN switch_no_comment -->
-                                            <p>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_comment.ATTACHMENT_COMMENT}</p>
-                                            <!-- END switch_no_comment -->
-                                            <!-- BEGIN switch_no_dl_att -->
-                                            <p><strong>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.TEXT_NO_DL}</strong></p>
-                                            <!-- END switch_no_dl_att -->
-                                            <p>(<span class="ltr">{postrow.displayed.switch_attachments.switch_post_attachments.FILE_SIZE}</span>) {postrow.displayed.switch_attachments.switch_post_attachments.NB_DL}</p>
-                                        </dd>
-                                        <!-- END switch_post_attachments -->
-                                    </dl>
-                                </div>
-                                <!-- END switch_attachments -->
-
-                                <!-- BEGIN switch_signature -->
-                                <div class="post-signature mt-3 pt-3 border-t border-color-1 text-xs" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}</div>
-                                <!-- END switch_signature -->
-                                <!-- END displayed -->
                             </div>
+                <!-- END hidden -->
+                <!-- BEGIN displayed -->
+                            {postrow.displayed.MESSAGE}
+
+                            {postrow.displayed.EDITED_MESSAGE}
+
+                            <!-- BEGIN switch_attachments -->
+                            <div class="attachbox mt-3 pt-3 border-t border-color-1">
+                                <b>{postrow.displayed.switch_attachments.L_ATTACHMENTS}</b>
+                                <dl class="attachments">
+                                    <!-- BEGIN switch_post_attachments -->
+                                    <dt>
+                                        <!-- BEGIN switch_dl_att -->
+                                        <a class="postlink inline-flex items-center gap-1" href="{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.U_ATTACHMENT}"><i class="ph-fill ph-paperclip"></i>{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT}</a> {postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT_DEL}
+                                        <!-- END switch_dl_att -->
+                                        <!-- BEGIN switch_no_dl_att -->
+                                        <div class="postlink inline-flex items-center gap-1" style="cursor: not-allowed"><i class="ph-fill ph-paperclip"></i>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT}</div> {postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT_DEL}
+                                        <!-- END switch_no_dl_att -->
+                                    </dt>
+                                    <dd class="text-xs">
+                                        <!-- BEGIN switch_no_comment -->
+                                        <p>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_comment.ATTACHMENT_COMMENT}</p>
+                                        <!-- END switch_no_comment -->
+                                        <!-- BEGIN switch_no_dl_att -->
+                                        <p><strong>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.TEXT_NO_DL}</strong></p>
+                                        <!-- END switch_no_dl_att -->
+                                        <p>(<span class="ltr">{postrow.displayed.switch_attachments.switch_post_attachments.FILE_SIZE}</span>) {postrow.displayed.switch_attachments.switch_post_attachments.NB_DL}</p>
+                                    </dd>
+                                    <!-- END switch_post_attachments -->
+                                </dl>
+                            </div>
+                            <!-- END switch_attachments -->
+
+                            <!-- BEGIN switch_signature -->
+                            <div class="post-signature mt-3 pt-3 border-t border-color-1 text-xs" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}</div>
+                            <!-- END switch_signature -->
                         </div>
                     </div>
 
                     <div id="post-footer" class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-3">
                     </div>
                 </div>
+                <!-- END displayed -->
                 <!-- END postrow -->
             </div>
         </div>
