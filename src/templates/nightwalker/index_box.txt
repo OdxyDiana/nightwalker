@@ -1,0 +1,122 @@
+<!-- Las acciones de arriba y abajo (nuevos mensajes, sin respuesta, cookies...) están en index_body, dentro de #estadisticas -->
+<!-- BEGIN catrow -->
+<!-- BEGIN tablehead -->
+<div
+            class="forum {catrow.tablehead.TYPE_TABLE_SECTION} rounded-sm surface-2 xl:p-3 p-2 border border-color-3 xl:mb-5 mb-3"
+          >
+            <div
+              class="forum-header surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3"
+            >
+              <div
+                class="category-title flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)"
+              >
+                <h2 class="text-2xl xl:text-3xl font-extrabold">
+                  {catrow.tablehead.L_FORUM}
+                </h2>
+              </div>
+            </div>
+            <div
+              class="forum-container grid grid-rows-flow grid-cols-2 gap-2 xl:gap-3"
+            >
+<!-- END tablehead -->
+
+<!-- BEGIN forumrow -->
+<div
+            class="forum-section {catrow.forumrow.FOLDER_CLASSNAME} {catrow.forumrow.TYPE_SECTION} col-span-2 row-span-1 gap-2 xl:gap-3 gap-2 grid grid-cols-12 grid-flow-rows group p-2 xl:p-3 rounded-sm surface-3 xl:has-[.desc1]:col-span-1 xl:has-[.desc2]:col-span-1 border border-color-1 relative has-[.desc4]:xl:h-100 has-[.desc4]:h-80 has-[.desc5]:xl:h-100 has-[.desc5]:h-80 has-[.desc4]:content-end has-[.desc5]:content-end"
+          >
+            <div
+              class="forum-title col-start-1 row-start-1 col-span-12 row-span-1 text-color-accent uppercase xl:text-xl text-lg font-bold py-2 xl:py-3 border-color-3 rounded-sm group-has-[.desc4]:border group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:p-2 group-has-[.desc4]:xl:p-3 group-has-[.desc4]:flex group-has-[.desc4]:xl:gap-3 group-has-[.desc4]:gap-2 group-has-[.desc4]:items-center group-has-[.desc4]:xl:col-span-7 group-has-[.desc4]:col-span-12 group-has-[.desc4]:col-start-1 group-has-[.desc4]:xl:row-start-7 group-has-[.desc4]:row-start-6 group-has-[.desc5]:border group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:flex group-has-[.desc5]:xl:gap-3 group-has-[.desc5]:gap-2 group-has-[.desc5]:items-center group-has-[.desc5]:p-2 group-has-[.desc5]:xl:p-3 group-has-[.desc5]:col-span-8 group-has-[.desc5]:xl:col-start-2 group-has-[.desc5]:xl:col-span-7 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7"
+            >
+              <i
+                class="ph-fill ph-chat-slash border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-no-new group-has-[.guidebook]:hidden"
+                data-title="{catrow.forumrow.L_FORUM_FOLDER_ALT}"
+              ></i>
+              <i
+                class="ph-fill ph-chat-dots border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-new group-has-[.guidebook]:hidden"
+                data-title="{catrow.forumrow.L_FORUM_FOLDER_ALT}"
+              ></i>
+              <i
+                class="ph-fill ph-lock border-color-1 border p-2 group-has-[.desc4]:xl:p-1.5 group-has-[.desc5]:xl:p-1.5 rounded-sm surface-2 text-color icon-closed group-has-[.guidebook]:hidden"
+                data-title="{catrow.forumrow.L_FORUM_FOLDER_ALT}"
+              ></i>
+              <a href="{catrow.forumrow.U_VIEWFORUM}" data-title="{catrow.forumrow.FORUM_NAME}">{catrow.forumrow.FORUM_NAME}</a>
+            </div>
+            <div class="forum-info contents">
+              {catrow.forumrow.FORUM_DESC}
+              <div
+                class="flex flex-col md:flex-row items-center justify-center text-sm xl:text-base surface-2 border border-color-1 rounded-sm group-has-[.guidebook]:hidden group-has-[.desc1]:col-start-1 group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-start-3 group-has-[.desc2]:row-start-3 group-has-[.desc2]:col-start-9 group-has-[.desc2]:col-span-2 group-has-[.desc3]:row-start-6 group-has-[.desc3]:xl:col-start-8 group-has-[.desc3]:col-start-9 group-has-[.desc3]:col-span-2 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:xl:col-start-8 group-has-[.desc4]:col-start-9 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-9 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                data-title="Temas"
+              >
+                {catrow.forumrow.TOPICS} <span class="ph ph ph-chat text-base xl:text-xl md:ml-1"></span>
+              </div>
+              <div
+                class="flex flex-col md:flex-row items-center justify-center text-sm xl:text-base surface-2 border border-color-1 rounded-sm text-color-accent group-has-[.guidebook]:hidden group-has-[.desc1]:row-start-3 group-has-[.desc1]:xl:col-start-5 group-has-[.desc1]:col-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:xl:col-start-11 group-has-[.desc2]:col-start-11 group-has-[.desc2]:row-start-3 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-span-2 group-has-[.desc3]:xl:col-start-10 group-has-[.desc3]:col-start-11 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc4]:xl:col-start-10 group-has-[.desc4]:col-start-11 group-has-[.desc4]:row-start-8 group-has-[.desc4]:col-span-2 group-has-[.desc5]:relative group-has-[.desc5]:z-1 group-has-[.desc5]:col-start-11 group-has-[.desc5]:row-start-7 group-has-[.desc5]:col-span-2"
+                data-title="Mensajes"
+              >
+                {catrow.forumrow.POSTS} <span class="ph ph ph-chats text-base xl:text-xl md:ml-1"></span>
+              </div>
+              <div
+                class="relative overflow-hidden hidden xl:block forum-avatar w-[60px] h-[96px] self-start justify-self-start group-has-[.guidebook]:hidden rounded-sm surface-3 xl:p-3 p-2 object-cover object-center border border-color-1 box-content group-has-[.desc1]:col-start-1 group-has-[.desc1]:row-start-3 group-has-[.desc1]:col-span-2 group-has-[.desc1]:row-span-2 group-has-[.desc2]:col-start-7 group-has-[.desc2]:row-start-2 group-has-[.desc2]:col-span-2 group-has-[.desc2]:row-span-2 group-has-[.desc3]:row-start-5 group-has-[.desc3]:col-start-12 group-has-[.desc3]:col-span-1 group-has-[.desc3]:row-span-2 group-has-[.desc3]:xl:block group-has-[.desc4]:col-start-12 group-has-[.desc4]:row-start-7 group-has-[.desc4]:row-span-2 group-has-[.desc4]:col-span-1 group-has-[.desc4]:xl:block group-has-[.desc4]:z-1 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-7 group-has-[.desc5]:row-span-2 group-has-[.desc5]:col-span-1 group-has-[.desc5]:z-1 group-has-[.desc5]:xl:block"
+              >
+                <!-- BEGIN avatar -->
+                {catrow.forumrow.avatar.LAST_POST_AVATAR}
+                <!-- END avatar -->
+              </div>
+
+              <div
+                class="relative xl:col-span-10 col-span-12 group-has-[.guidebook]:hidden surface-2 border border-color-1 rounded-sm p-2 xl:p-3 gap-1 text-color flex flex-col xl:flex-row xl:items-center group-has-[.desc1]:xl:col-start-3 group-has-[.desc1]:row-start-4 group-has-[.desc2]:col-start-1 group-has-[.desc2]:row-start-4 group-has-[.desc2]:col-span-12 group-has-[.desc3]:xl:col-span-7 group-has-[.desc3]:col-span-8 group-has-[.desc3]:row-start-6 group-has-[.desc3]:col-start-1 group-has-[.desc4]:col-start-1 group-has-[.desc4]:row-start-8 group-has-[.desc4]:xl:col-span-7 group-has-[.desc4]:col-span-8 group-has-[.desc4]:relative group-has-[.desc4]:z-1 group-has-[.desc5]:xl:col-start-2 group-has-[.desc5]:col-start-1 group-has-[.desc5]:row-start-8 group-has-[.desc5]:xl:col-span-11 group-has-[.desc5]:col-span-12"
+              >
+                <!-- BEGIN switch_topic_title -->
+                <a
+                  href="{catrow.forumrow.U_LATEST_TOPIC}"
+                  class="xl:grow min-w-0"
+                  data-title="{catrow.forumrow.LATEST_TOPIC_TITLE}"
+                  ><span
+                    class="truncate block xl:max-w-80 group-has-[.desc2]:xl:max-w-70 group-has-[.desc3]:xl:max-w-90 group-has-[.desc5]:xl:max-w-150"
+                    >{catrow.forumrow.LATEST_TOPIC_NAME}</span
+                  ></a
+                >
+                <span
+                  class="group-has-[.desc1]:xl:hidden flex italic text-xs whitespace-nowrap"
+                  data-title="{catrow.forumrow.LAST_POST_HOUR}"
+                >
+                  {catrow.forumrow.LAST_POST_HOUR}</span
+                >
+                <div
+                  class="flex shrink-0 xl:ml-auto xl:justify-end gap-1 items-center group-has-[.desc2]:xl:basis-5/16 group-has-[.desc3]:xl:basis-1/4 group-has-[.desc4]:xl:basis-1/4 group-has-[.desc5]:xl:basis-1/4"
+                >
+                  <span class="font-bold xl:whitespace-nowrap">{catrow.forumrow.USER_LAST_POST}</span>
+                  <span
+                    data-title="{catrow.forumrow.LAST_POST_HOUR}"
+                    class="hidden group-has-[.desc1]:xl:flex"
+                    ><i class="ph-fill ph-hourglass-high text-sm"></i
+                  ></span>
+                  <a
+                    href="{catrow.forumrow.U_LATEST_TOPIC_POST}"
+                    data-title="{L_LASTPOST}"
+                    class="last-post-message shrink-0"
+                    ><i class="ph-fill ph-paper-plane-tilt"></i
+                  ></a>
+                </div>
+                <!-- END switch_topic_title -->
+              </div>
+            </div>
+          </div>
+<!-- END forumrow -->
+
+<!-- BEGIN tablefoot -->
+            </div><!-- <div class="forum-container" /> -->
+          </div><!-- <div class="forum" /> -->
+<!-- END tablefoot -->
+<!-- END catrow -->
+
+<!-- BEGIN switch_forum_images -->
+<div class="forum surface-2 border border-color-3 rounded-sm xl:p-3 p-2 xl:mb-5 mb-3">
+    <div class="forum-header surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3">
+        <h2 class="text-2xl xl:text-3xl font-extrabold">{switch_forum_images.TITLE}</h2>
+    </div>
+    <div class="container-imgs-list" style="max-height: 500px" id="imageList">
+        {switch_forum_images.SCRIPTS}
+    </div>
+</div>
+<!-- END switch_forum_images -->

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nightwalker</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="foro.css" />
     <script src="script.js"></script>
     <script src="switch-account.js"></script>
+    <script src="topic-data.js"></script>
     <script src="topic-section.js"></script>
   </head>
   <body class="background-2 p-5">
@@ -315,20 +317,20 @@
                     class="p-2 xl:p-3 surface-2 border border-color-3 rounded-sm grid gap-2 xl:gap-3"
                   >
                     <div class="post-author-field-container contents">
-                      <div
-                        class="post-author-name p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase flex items-center justify-center font-bold"
-                      >
-                        <a href="/"> Nickname </a>
+                      <div class="post-author-bar">
+                        <div
+                          class="post-author-name flex-1 min-w-0 p-2 xl:p-3 surface-3 border border-color-1 rounded-sm text-center uppercase flex items-center justify-center font-bold"
+                        >
+                          <a href="/"> Nickname </a>
+                        </div>
+                        <a href="/" class="post-permalink flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) cursor-pointer" data-title="Enlace permanente" aria-label="Enlace permanente"><i class="ph ph-link-simple"></i></a>
                       </div>
                       <div
-                        class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm flex items-center justify-center text-center text-xs xl:text-sm"
+                        class="post-fecha surface-3 p-2 xl:p-3 border border-color-1 rounded-sm flex items-center justify-center gap-2 text-center text-xs xl:text-sm"
+                        data-title="Fecha de publicación"
                       >
-                        10 de feb, 2026, 14:45
-                      </div>
-                      <div
-                        class="post-permalink surface-3 p-2 xl:p-3 border border-color-1 rounded-sm text-center flex items-center justify-center"
-                      >
-                        <i class="ph ph-link-simple"></i>
+                        <i class="ph ph-calendar-blank"></i>
+                        <span>10 de feb, 2026, 14:45</span>
                       </div>
                     </div>
 

@@ -1,0 +1,24 @@
+/* Lo único que se edita desde el foro: colores de acento y colores de los grupos.
+   Se pega entero en el CSS del panel de administración (no se enlaza desde GitHub);
+   el resto del tema viene de style.css y no se toca desde el foro. */
+
+/* Colores de acento: uno por modo */
+:root {
+  --dark-theme-accent-color: #673143;
+  --light-theme-accent-color: #25719c;
+}
+
+/* Colores de cada grupo. Son de luminosidad media para que se lean en modo oscuro y en claro,
+   porque el foro pinta los nombres con un único color por grupo (el que se pone en el panel) */
+:root {
+  --group-1: oklch(72% 0.13 85); /* Prensa */
+  --group-2: oklch(64% 0.12 245); /* Boyband */
+  --group-3: oklch(70% 0.13 350); /* Girlband */
+  --group-4: oklch(64% 0.13 295); /* Solistas */
+  --group-5: oklch(66% 0.1 190); /* Actores */
+  --group-6: oklch(64% 0.14 20); /* Actrices */
+  --group-7: oklch(70% 0.13 55); /* Modelos */
+  --group-8: oklch(68% 0.12 145); /* Ciudadanos */
+  --group-9: oklch(56% 0.04 60); /* Ausentes */
+  --group-10: oklch(52% 0.01 260); /* Inactivos */
+}

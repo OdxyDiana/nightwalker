@@ -5,10 +5,8 @@
 @import url("./output.css");
 
 /** VARIABLES **/
-:root {
-  --dark-theme-accent-color: #673143;
-  --light-theme-accent-color: #25719c;
-}
+/* Los colores de acento (--dark-theme-accent-color / --light-theme-accent-color) y de los grupos
+   (--group-N) no están aquí: viven en foro.css, que se pega en el CSS del panel del foro */
 
 /** MODO OSCURO **/
 [data-theme="dark"] {
@@ -314,17 +312,26 @@ img:hover {
 }
 
 /**LISTADO TEMAS**/
-.topic-list-container {
+/* El icono de cada tema depende de su estado: sin novedades, con respuestas nuevas o cerrado.
+   Las clases post_* las pone el foro en la fila a través de {FOLDER_CLASSNAME} */
+.topic-row {
   .icon-no-new,
   .icon-closed,
   .icon-new {
     display: none;
   }
-
-  &.post_no_new {
-    .icon-no-new {
+  &.post_no_new .icon-no-new {
+    display: initial;
+  }
+  &.post_new {
+    .icon-new,
+    .last-post-message {
+      color: var(--accent-color);
       display: initial;
     }
+  }
+  &.post_locked .icon-closed {
+    display: initial;
   }
 }
 
@@ -376,8 +383,9 @@ img:hover {
 
 #post-header {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: auto auto auto;
+  /* 12 columnas: Grupo, Fans y Empresa ocupan dos para que su contenido quepa; el personaje queda más cuadrado */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto auto auto;
 }
 
 #post-footer {
@@ -386,11 +394,61 @@ img:hover {
   grid-template-rows: auto auto;
 }
 
-.post-author-name {
-  grid-column: 1 / 5;
+/* Fila 1: una barra con el nombre y, al final, el botón del enlace permanente; debajo, tres filas de campos.
+   En los mensajes pares (en espejo) la barra va en row-reverse y el botón queda a la izquierda */
+.post-author-bar {
+  grid-column: 1 / -1;
   grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.post-profile:nth-of-type(even) .post-author-bar {
+  flex-direction: row-reverse;
+}
+.post-author-bar .post-author-name {
+  flex: 1;
+  min-width: 0;
+}
+/* Todo el recuadro del nombre es el enlace: el enlace del foro se extiende sobre la caja (sin anidar enlaces) */
+.post-author-name {
+  position: relative;
+}
+.post-author-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+/* Solo reacciona si el nombre es un enlace: el de un invitado llega como texto plano */
+.post-author-name:has(a):hover {
+  border-color: var(--accent-color);
+}
+/* Botón cuadrado de la misma altura que la caja del nombre (se estira y el ancho sale de la altura) */
+.post-author-bar {
+  align-items: stretch;
+}
+.post-permalink {
+  flex-shrink: 0;
+  align-self: stretch;
+  aspect-ratio: 1 / 1;
+  font-size: var(--text-base);
 }
 
+/* El texto que añade ::after va junto al número, en la misma línea */
+.post-author-field.post-field-post,
+.post-author-field.post-field-wons,
+.post-author-field.post-field-edad,
+.post-author-field.post-field-reputacion {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: calc(var(--spacing) * 1);
+}
+/* La reputación es más larga: si no cabe en una línea, el texto baja */
+.post-author-field.post-field-reputacion {
+  flex-wrap: wrap;
+}
 .post-author-field.post-field-post {
   grid-column: 1 / 3;
   grid-row: 2;
@@ -406,8 +464,8 @@ img:hover {
   content: "Wons";
 }
 .post-author-field.post-field-personaje {
-  grid-column: 9 / 12;
-  grid-row: 1 / span 3;
+  grid-column: 11 / 13;
+  grid-row: 2 / span 3;
   max-width: fit-content;
   max-height: fit-content;
   overflow: hidden;
@@ -426,22 +484,22 @@ img:hover {
 }
 .post-author-field.post-field-apodos {
   grid-column: 5 / 7;
-  grid-row: 1 / span 2;
+  grid-row: 2 / span 2;
 }
 .post-author-field.post-field-empresa {
-  grid-column: 5;
+  grid-column: 1 / 5;
   grid-row: 3;
 }
 .post-author-field.post-field-edad {
-  grid-column: 6;
-  grid-row: 3;
+  grid-column: 5 / 7;
+  grid-row: 4;
 }
 .post-author-field.post-field-edad::after {
   content: " años";
 }
 .post-author-field.post-field-fans {
-  grid-column: 8;
-  grid-row: 1;
+  grid-column: 9 / 11;
+  grid-row: 2;
 }
 .post-author {
   grid-column: 1 / 4;
@@ -452,12 +510,8 @@ img:hover {
   grid-row: 4;
 }
 .post-fecha {
-  grid-column: 1 / 4;
-  grid-row: 3;
-}
-.post-permalink {
-  grid-column: 4 / 5;
-  grid-row: 3;
+  grid-column: 1 / 5;
+  grid-row: 4;
 }
 .post-author-field.post-field-pareja {
   grid-column: 1 / 4;
@@ -475,8 +529,8 @@ img:hover {
   content: " pts de reputación";
 }
 .post-author-field.post-field-medallas {
-  grid-column: 7 / 9;
-  grid-row: 2 / span 2;
+  grid-column: 7 / 11;
+  grid-row: 3 / span 2;
 }
 .post-author-field.post-field-inventario {
   grid-column: 6 / 10;
@@ -529,8 +583,8 @@ img:hover {
   scroll-snap-align: start;
 }
 .post-author-field.post-field-grupo {
-  grid-column: 7 / 8;
-  grid-row: 1;
+  grid-column: 7 / 9;
+  grid-row: 2;
 }
 .post-content {
   grid-column: 5 / 12;
@@ -585,6 +639,12 @@ img:hover {
     max-width: none;
     max-height: none;
   }
+  /* Como mínimo cuadrado: si el resto de campos son bajos, las filas crecen para que el personaje no quede ancho y bajo */
+  #post-header > .post-field-personaje {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    align-self: stretch;
+  }
   #post-header > .post-field-personaje .post-author-field-content,
   #post-footer > .post-field-pareja .post-author-field-content {
     position: absolute;
@@ -638,17 +698,14 @@ img:hover {
     grid-column: span 2;
     grid-row: auto;
   }
-  #post-header .post-author-name {
-    grid-column: span 4;
+  #post-header .post-author-bar {
+    grid-column: 1 / -1;
     order: 1;
+    gap: calc(var(--spacing) * 2);
   }
   #post-header .post-fecha {
-    grid-column: span 3;
+    grid-column: span 4;
     order: 2;
-  }
-  #post-header .post-permalink {
-    grid-column: span 1;
-    order: 3;
   }
   #post-header > .post-field-personaje,
   #post-footer > .post-field-pareja {
@@ -657,7 +714,10 @@ img:hover {
     max-height: none;
   }
   #post-header > .post-field-personaje {
-    grid-row: span 4;
+    grid-row: span 6;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    align-self: stretch;
     order: 4;
   }
   #post-header > .post-field-personaje .post-author-field-content,
@@ -676,22 +736,32 @@ img:hover {
     height: 100%;
     object-fit: cover;
   }
+  /* La foto es siempre un cuadrado centrado en su caja, aunque la caja sea más alta */
+  #post-header > .post-field-personaje .post-author-field-content {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - var(--spacing) * 4);
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
+  }
   #post-header > .post-field-grupo {
     order: 5;
   }
   #post-header > .post-field-fans {
     order: 6;
   }
-  #post-header > .post-field-empresa {
+  /* A la derecha del personaje, todos en la misma columna: grupo, fans, posts, wons, empresa y edad */
+  #post-header > .post-field-post {
     order: 7;
   }
-  #post-header > .post-field-edad {
+  #post-header > .post-field-wons {
     order: 8;
   }
-  #post-header > .post-field-post {
+  #post-header > .post-field-empresa {
     order: 9;
   }
-  #post-header > .post-field-wons {
+  #post-header > .post-field-edad {
     order: 10;
   }
   #post-header > .post-field-apodos {
@@ -1580,20 +1650,7 @@ img:hover {
 }
 
 /** LEYENDA DE GRUPOS **/
-/* Colores provisionales de cada grupo. Son de luminosidad media para que se lean en modo oscuro y en claro,
-   porque el foro pinta los nombres con un único color por grupo (el que se pone en el panel) */
-:root {
-  --group-1: oklch(72% 0.13 85); /* Prensa */
-  --group-2: oklch(64% 0.12 245); /* Boyband */
-  --group-3: oklch(70% 0.13 350); /* Girlband */
-  --group-4: oklch(64% 0.13 295); /* Solistas */
-  --group-5: oklch(66% 0.1 190); /* Actores */
-  --group-6: oklch(64% 0.14 20); /* Actrices */
-  --group-7: oklch(70% 0.13 55); /* Modelos */
-  --group-8: oklch(68% 0.12 145); /* Ciudadanos */
-  --group-9: oklch(56% 0.04 60); /* Ausentes */
-  --group-10: oklch(52% 0.01 260); /* Inactivos */
-}
+/* Los colores de cada grupo (--group-N) están en foro.css */
 /* Cada grupo es un bloque de su color, con el icono y el nombre encima */
 .legend-item {
   display: flex;
@@ -1650,4 +1707,247 @@ img:hover {
   width: 2rem;
   height: 2rem;
   background: var(--award-image) center / contain no-repeat;
+}
+
+/** MÓDULOS DEL TABLÓN (posición giefmod_index1) **/
+/* El foro envuelve cada módulo en .box > .box-body (y le pone un título .box-head). Los módulos de HTML
+   libre (staff, banner, búsquedas, enlaces) se aplanan: la raíz de su HTML es una celda de la rejilla */
+#tablon #sidebar .box,
+#tablon #sidebar .box-body {
+  display: contents;
+}
+#tablon #sidebar .box-head {
+  display: none;
+}
+
+/* Módulo Temas recientes: se queda como tarjeta, con su propio título */
+#tablon #sidebar .box:has(.mod-recent-row) {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / span 6;
+  grid-row: 2;
+  padding: calc(var(--spacing) * 2);
+  background-color: var(--background-3);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+}
+#tablon #sidebar .box:has(.mod-recent-row) .box-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2);
+  background-color: var(--background-2);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#tablon #sidebar .box:has(.mod-recent-row) .box-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 1.5);
+  font-size: var(--text-xs);
+}
+@media (width >= 80rem) {
+  #tablon #sidebar .box:has(.mod-recent-row) {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    padding: calc(var(--spacing) * 3);
+  }
+  #tablon #sidebar .box:has(.mod-recent-row) .box-head {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+}
+/* Sin sesión no hay caja de notificaciones: Últimos temas ocupa su hueco */
+#tablon.tablon-anon #sidebar .box:has(.mod-recent-row) {
+  grid-column: 1 / -1;
+}
+@media (width >= 80rem) {
+  #tablon.tablon-anon #sidebar .box:has(.mod-recent-row) {
+    grid-column: 1 / span 6;
+  }
+}
+/* Móvil y tablet: Últimos temas se ve siempre, aunque el tablón esté plegado */
+@media (width < 80rem) {
+  #tablon:not(.is-open) #sidebar .box:has(.mod-recent-row) {
+    grid-column: 1 / -1;
+  }
+}
+
+.mod-recent-row {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 0.5);
+  padding: calc(var(--spacing) * 2);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+}
+.mod-recent-title {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mod-recent-title:hover {
+  color: var(--accent-color);
+}
+.mod-recent-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+  opacity: 0.8;
+}
+.mod-recent-time,
+.mod-recent-author {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1);
+}
+/* Los iconos de la plantilla por defecto del módulo son material-symbols (fuente que no se carga) */
+#tablon .material-symbols-outlined {
+  display: none;
+}
+
+/* Avatar del último mensaje: {LAST_POST_AVATAR} llega como <img> con sus propios atributos */
+.forum-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/** PAGINACIÓN (la del foro llega como <strong class="pagination"><span><a>1</a><span class="page-sep">, </span>...) **/
+.topic-pages .pagination,
+.topic-pages .pagination > span,
+.page-pagination .pagination,
+.page-pagination .pagination > span {
+  display: contents;
+  font-weight: inherit;
+}
+.topic-pages .page-sep,
+.page-pagination .page-sep {
+  display: none;
+}
+.topic-pages a,
+.page-pagination a,
+.page-pagination .pagination strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 6);
+  padding-inline: calc(var(--spacing) * 1);
+  background-color: var(--background-1);
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.topic-pages a:hover,
+.page-pagination a:hover {
+  border-color: var(--accent-color);
+}
+@media (width >= 80rem) {
+  .topic-pages a {
+    min-width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+  }
+}
+.page-pagination a,
+.page-pagination .pagination strong {
+  min-width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  padding-inline: calc(var(--spacing) * 2);
+}
+.page-pagination .pagination strong {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Icono de «has participado» que trae el foro como imagen */
+.participate-check img {
+  height: 1em;
+  width: auto;
+}
+
+/** MENSAJE: piezas que llegan del foro ya hechas **/
+/* {POSTER_AVATAR} llega como <img> sin clases */
+.post-author-avatar img {
+  display: block;
+  margin-inline: auto;
+  max-width: 250px;
+  max-height: 280px;
+  aspect-ratio: 10 / 16;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+@media (width >= 80rem) {
+  .post-author-avatar img {
+    max-height: 400px;
+  }
+}
+/* Perfil, MP, email y campos de contacto: botones cuadrados con su icono dentro */
+.post-author-content-buttons > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing) * 1.5);
+  background-color: var(--background-1);
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--radius-sm);
+}
+.post-author-content-buttons > a:hover {
+  border-color: var(--accent-color);
+}
+.post-author-content-buttons > a i {
+  display: block;
+  font-size: var(--text-base);
+  line-height: 1;
+}
+@media (width >= 80rem) {
+  .post-author-content-buttons > a {
+    padding: calc(var(--spacing) * 2);
+  }
+}
+.post-author-content-buttons > a img {
+  max-height: 1.25rem;
+  width: auto;
+}
+
+/** PERFIL: botones de acción (seguir, MP, email y campos de contacto llegan como enlaces ya hechos) **/
+#profile-actions-buttons-container > a,
+#profile-actions-buttons-container > .contents > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  background-color: var(--background-2);
+  border: 1px solid var(--border-color-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#profile-actions-buttons-container > a:hover,
+#profile-actions-buttons-container > .contents > a:hover {
+  border-color: var(--accent-color);
+}
+#profile-actions-buttons-container img {
+  max-height: 1.25rem;
+  width: auto;
+}
+/* El avatar del perfil llega como <img> sin clases */
+#profile-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 10 / 16;
+  border-radius: var(--radius-sm);
 }
