@@ -31,11 +31,6 @@
     </script>
 
 </div><!-- <div id="wrap" /> -->
-<div id="{ID_RIGHT}" class="wrap" style="display: none">
-    <!-- BEGIN giefmod_index2 -->
-    {giefmod_index2.MODVAR}
-    <!-- END giefmod_index2 -->
-</div>
 {FOOTER_WIDGETS}
 
 <div id="page-footer">

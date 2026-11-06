@@ -235,7 +235,7 @@
             <!-- BEGIN switch_user_logged_out -->
             <div id="header-user" class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!" data-title="Invitado" role="group" aria-label="Invitado">
                 <div class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content">
-                    <img id="header-guest-avatar" src="https://images2.imgbox.com/0c/77/494XeWpw_o.png" alt="Avatar de invitado" class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
+                    <img id="header-guest-avatar" alt="Avatar de invitado" class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
                 </div>
                 <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">Invitado</span>
             </div>
@@ -256,6 +256,17 @@
                 <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Cambiar cuenta" href="{S_LOGIN_ACTION}" data-switch-account-open>
                     <i class="ph-fill ph-user-switch"></i>
                 </a>
+                <!-- BEGIN switch_user_logged_in -->
+                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_PROFILE}" href="{U_PROFILE}">
+                    <i class="ph-fill ph-user-gear"></i>
+                </a>
+                <!-- Mensajes privados: sobre abierto si no hay nuevos; sobre cerrado, badge y el número en el data-title si los hay.
+                     {PRIVATE_MESSAGE_INFO} es "Mensajes privados" o "N nuevos mensajes": el script se queda con el número -->
+                <a id="header-pm" class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color) relative" data-title="{L_PRIVATEMSGS}" href="{U_PRIVATEMSGS}">
+                    <i class="ph-fill ph-envelope-simple-open"></i>
+                    <span id="header-pm-info" hidden>{PRIVATE_MESSAGE_INFO}</span>
+                </a>
+                <!-- END switch_user_logged_in -->
                 <!-- BEGIN switch_user_logged_in -->
                 <!-- id="logout": switch-account.js busca este enlace para cerrar sesión (lleva el token tid) -->
                 <a id="logout" class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_LOGIN_LOGOUT}" href="{U_LOGIN_LOGOUT}">
@@ -319,6 +330,27 @@
 </header>
 
 <script type="text/javascript">
+    // Mensajes privados: sobre cerrado + badge + data-title con el texto del foro cuando hay mensajes nuevos
+    (function () {
+        var link = document.getElementById('header-pm');
+        var info = document.getElementById('header-pm-info');
+        if (!link || !info) return;
+
+        var text = (info.textContent || '').trim();
+        var match = text.match(/\d+/);
+        var count = match ? parseInt(match[0], 10) : 0;
+        if (!count) return;
+
+        var icon = link.querySelector('i');
+        icon.className = 'ph-fill ph-envelope-simple';
+        link.setAttribute('data-title', text);
+        link.classList.add('has-new');
+        var badge = document.createElement('span');
+        badge.className = 'nav-badge';
+        badge.textContent = count;
+        link.appendChild(badge);
+    })();
+
     // Invitado: si el foro da un avatar para el usuario anónimo en _userdata se usa; si no, queda el de la plantilla
     (function () {
         var user = window._userdata;
