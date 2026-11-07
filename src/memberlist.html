@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idols - Nightwalker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="foro.css" />
+    <script src="script.js"></script>
+    <script src="switch-account.js"></script>
+    <script src="calendar-section.js"></script>
+    <script src="tablon-section.js"></script>
+    <script src="notifications-section.js"></script>
+  </head>
+  <body class="background-2 p-5">
+    <div
+      id="wrap"
+      class="container surface-1 text-color border border-solid border-color-3 mx-auto rounded-sm xl:mt-60 mt-40 xl:mb-20 mb-10 xl:p-5 p-3"
+    >
+      <header>
+        <nav
+          class="fixed background-2 top-0 left-0 right-0 z-10 container mx-auto"
+        >
+          <div
+            class="surface-1 border border-solid border-color-3 rounded-sm p-2 xl:mt-10 mt-5 flex items-center justify-between"
+          >
+            <div
+              id="header-user"
+              class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!"
+              data-title="Anonymous"
+              role="group"
+              aria-label="Anonymous"
+            >
+              <div
+                class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content"
+              >
+                <img
+                  src="https://images2.imgbox.com/0c/77/494XeWpw_o.png"
+                  alt="Anonymous"
+                  class="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm"
+                />
+              </div>
+              <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">Anonymous</span>
+            </div>
+            <div
+              class="navbar-buttons shrink-0 flex justify-center gap-1 sm:gap-2 items-center p-1 sm:p-2"
+            >
+              <a
+                href="/"
+                class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Índice"
+              >
+                <i class="ph-fill ph-house"></i>
+              </a>
+              <a
+                href="/memberlist"
+                class="p-1 sm:p-2 text-sm sm:text-base nav-icon surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Idols"
+              >
+                <i class="ph-fill ph-user-list"></i>
+              </a>
+              <a
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color dark-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Modo oscuro"
+              >
+                <i class="ph-fill ph-moon-stars"></i>
+              </a>
+              <a
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Modo claro"
+              >
+                <i class="ph-fill ph-sun-dim"></i>
+              </a>
+              <a
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Cambiar cuenta"
+                href="/login"
+                data-switch-account-open
+              >
+                <i class="ph-fill ph-user-switch"></i>
+              </a>
+              <a
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Conéctate"
+                href="/login?connexion"
+              >
+                <i class="ph-fill ph-sign-in"></i>
+              </a>
+              <a
+                class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)"
+                data-title="Registrate"
+                href="/register"
+              >
+                <i class="ph-fill ph-password"></i>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div
+          id="tablon"
+          class="surface-2 rounded-sm border border-color-3 xl:p-3 p-2 grid grid-cols-12 gap-2 xl:gap-3"
+        >
+          <a
+            href="/"
+            class="block w-full xl:w-auto p-2 xl:p-3 surface-3 border border-color-1 rounded-sm col-start-1 xl:col-start-7 col-span-12 xl:row-span-2 row-span-1 row-start-1 xl:col-span-6"
+          >
+            <img
+              src="https://2img.net/images2.imgbox.com/bc/32/vE2U4rjh_o.png"
+              alt="Nigthwalker"
+              loading="lazy"
+              class="rounded-sm w-full h-auto border border-color-1"
+            />
+          </a>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col tablon-extra row-span-1 xl:col-span-3 col-span-6 col-start-7 xl:col-start-4 xl:row-start-1 row-start-2"
+          >
+            <h3
+              id="tablon-notificaciones-titulo"
+              class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
+            >
+              <i class="ph-fill ph-bell text-base text-color-accent"></i>Notificaciones
+            </h3>
+            <div class="relative flex-1 min-h-32 mb-2 xl:mb-3">
+              <div id="tablon-notificaciones" class="flex flex-col gap-1.5 max-h-48 xl:max-h-none xl:absolute xl:inset-0 overflow-y-auto overflow-x-hidden pr-1.5 [scrollbar-gutter:stable] text-xs"></div>
+            </div>
+            <div id="tablon-notificaciones-acciones" class="text-xs empty:hidden"></div>
+            <script>
+              // Solo para local: en el foro la lista sale de GET /notif
+              const notificaciones = {
+                store: [
+                  {
+                    time: "Ayer a las 19:43",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 2, from: { id: 2, name: "Alexaundra C Schneiderman" }, type: 0, id: 1, dt: 1792518196 },
+                    read: 1,
+                  },
+                  {
+                    time: "Hoy a las 21:30",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 3, from: { id: 11, name: "Benjamin Evan Ainsworth" }, type: 8, id: 2, dt: 1792618235, post: { topic_id: 3, topic_name: "evento-de-halloween", topic_title: "Evento de Halloween", post_id: 40, start: 0 } },
+                    read: 0,
+                  },
+                  {
+                    time: "Hoy a las 20:12",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 4, from: { id: 25, name: "Kim Min Ji" }, type: 2, id: 3, dt: 1792613520 },
+                    read: 0,
+                  },
+                  {
+                    time: "Hoy a las 18:05",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 5, from: { id: 20, name: "Jackson Wang" }, type: 11, id: 4, dt: 1792606000, post: { topic_id: 3, topic_name: "evento-de-halloween", topic_display_name: "Evento de Halloween", post_id: 41, start: 0 } },
+                    read: 1,
+                  },
+                  {
+                    time: "Hoy a las 17:40",
+                    tag: "0",
+                    channel: "a457762f5",
+                    text: { msg_id: 6, from: { id: 1, name: "Ten Leechaiyapornkul" }, type: 14, id: 5, dt: 1792604400, award: { award_notif: "Has recibido la medalla Primer mes", award_image: "https://placehold.co/40x40.png" } },
+                    read: 0,
+                  },
+                ],
+                unread: 3,
+              };
+            </script>
+          
+          </div>
+          <div
+            class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 xl:col-span-6 col-span-12 col-start-1 xl:col-start-1 xl:row-start-2 row-start-3"
+          >
+            <h3
+              class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
+            >
+              <i class="ph-fill ph-user-switch text-base text-color-accent"></i>Cuentas
+            </h3>
+            <div id="switch-account-list" class="switch-account-list"></div>
+          </div>
+          <div class="contents">
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-latest row-span-1 xl:col-span-3 col-span-6 col-start-1 xl:row-start-1 row-start-2"
+            >
+              <h3
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
+              >
+                <i class="ph-fill ph-clock-counter-clockwise text-base text-color-accent"></i>Últimos temas
+              </h3>
+            </div>
+            <div
+              class="tablon-extra surface-3 grid grid-cols-8 md:grid-cols-4 xl:grid-cols-8 gap-2 xl:gap-3 rounded-sm p-2 xl:p-3 border-color-1 border col-span-12 col-start-1 row-start-4 xl:row-start-3"
+            >
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Normas" aria-label="Normas">
+                <i class="ph-fill ph-scroll text-lg md:text-base"></i>
+                <span class="hidden md:inline">Normas</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Ambientación" aria-label="Ambientación">
+                <i class="ph-fill ph-city text-lg md:text-base"></i>
+                <span class="hidden md:inline">Ambientación</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Empresas" aria-label="Empresas">
+                <i class="ph-fill ph-buildings text-lg md:text-base"></i>
+                <span class="hidden md:inline">Empresas</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Grupos" aria-label="Grupos">
+                <i class="ph-fill ph-users-three text-lg md:text-base"></i>
+                <span class="hidden md:inline">Grupos</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Faces" aria-label="Faces">
+                <i class="ph-fill ph-identification-card text-lg md:text-base"></i>
+                <span class="hidden md:inline">Faces</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Tienda" aria-label="Tienda">
+                <i class="ph-fill ph-storefront text-lg md:text-base"></i>
+                <span class="hidden md:inline">Tienda</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Medallas" aria-label="Medallas">
+                <i class="ph-fill ph-medal text-lg md:text-base"></i>
+                <span class="hidden md:inline">Medallas</span>
+              </a>
+              <a href="/" target="_blank" class="flex items-center justify-center gap-2 px-3 py-2 surface-2 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Afiliados" aria-label="Afiliados">
+                <i class="ph-fill ph-handshake text-lg md:text-base"></i>
+                <span class="hidden md:inline">Afiliados</span>
+              </a>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 col-span-12 xl:col-span-9 col-start-1"
+            >
+              <h3
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
+              >
+                <i class="ph-fill ph-calendar-dots text-base text-color-accent"></i>Calendario
+              </h3>
+              <div id="calendario" class="grid gap-2 xl:gap-3 xl:grid-cols-2"></div>
+              <script>
+                const calendario = {
+                  noticias: [
+                    {
+                      fecha: "2026-10-03",
+                      titulo: "Apertura del foro",
+                      noticia: "Nightwalker abre sus puertas. ¡Bienvenidas, idols!",
+                      enlace: "/t1-apertura",
+                    },
+                    {
+                      fecha: "2026-10-18",
+                      titulo: "Comeback de temporada",
+                      noticia: "Las empresas anuncian sus comebacks de otoño.",
+                      enlace: "/t2-comebacks",
+                    },
+                    {
+                      fecha: "2026-10-18",
+                      titulo: "Nuevas medallas",
+                      noticia: "Ya podéis pedir las medallas del evento de octubre.",
+                    },
+                    {
+                      fecha: "2026-10-31",
+                      titulo: "Evento de Halloween",
+                      noticia: "Fiesta de disfraces en Coex Mall.",
+                      enlace: "/t3-halloween",
+                    },
+                    {
+                      fecha: "2026-11-12",
+                      titulo: "Gala de premios",
+                      noticia: "Votaciones abiertas para la gala anual.",
+                    },
+                    {
+                      fecha: "2027-01-01",
+                      titulo: "Año nuevo",
+                      noticia: "Reset de wons y nueva temporada de reputación.",
+                    },
+                  ],
+                };
+              </script>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra order-first xl:order-none row-span-1 col-span-12 xl:col-span-3"
+            >
+              <h3
+                class="surface-2 mb-2 xl:mb-3 rounded-sm px-1 py-2 md:p-2 text-center uppercase border border-color-1 font-bold text-sm md:text-base flex items-center justify-center gap-2"
+              >
+                <i class="ph-fill ph-shield-star text-base text-color-accent"></i>Staff
+              </h3>
+            </div>
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 tablon-extra row-span-1 col-span-12 xl:col-span-3 col-start-1"
+            ></div>
+            <!-- Búsquedas: franja ancha y baja, con la etiqueta al lado -->
+            <div
+              class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 row-span-1 col-span-12 xl:col-span-9 flex flex-col md:flex-row gap-2 xl:gap-3"
+            >
+              <h3 class="flex md:flex-col items-center justify-center gap-2 md:gap-1 px-1 md:px-3 xl:px-4 py-2 surface-2 rounded-sm border border-color-1 uppercase text-sm md:text-[0.625rem] font-bold shrink-0">
+                <i class="ph-fill ph-magnifying-glass text-base md:text-2xl text-color-accent"></i>
+                <span>Búsquedas</span>
+              </h3>
+              <div class="flex-1 min-h-12"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-10">
+        <div class="rounded-sm surface-2 xl:p-3 p-2 border border-color-3">
+          <div class="surface-1 xl:p-10 p-5 text-center uppercase rounded-sm xl:mb-3 mb-2 border border-color-3">
+            <div class="category-title flex items-center justify-center gap-3 xl:gap-5 before:h-px before:flex-1 before:max-w-48 before:bg-linear-to-r before:from-transparent before:to-(--accent-color) after:h-px after:flex-1 after:max-w-48 after:bg-linear-to-l after:from-transparent after:to-(--accent-color)">
+              <h2 class="text-2xl xl:text-3xl font-extrabold">Idols</h2>
+            </div>
+          </div>
+          <ul id="memberlist" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 xl:gap-3 list-none m-0 p-0">
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u1" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Ten Leechaiyapornkul">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Ten Leechaiyapornkul" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u1" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-2)">Ten Leechaiyapornkul</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">03/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">Hoy 21:30</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">1.284</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">12.450</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u1" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Ten Leechaiyapornkul"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=1" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Ten Leechaiyapornkul"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u11" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Benjamin Evan Ainsworth">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Benjamin Evan Ainsworth" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u11" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-1)">Benjamin Evan Ainsworth</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">03/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">Hoy 20:12</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">967</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">8.920</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u11" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Benjamin Evan Ainsworth"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=11" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Benjamin Evan Ainsworth"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u25" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Kim Min Ji">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Kim Min Ji" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u25" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-5)">Kim Min Ji</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">05/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">Hoy 18:05</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">1.540</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">15.300</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u25" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Kim Min Ji"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=25" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Kim Min Ji"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u20" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Jackson Wang">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Jackson Wang" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u20" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-3)">Jackson Wang</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">07/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">Ayer 23:47</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">702</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">6.780</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u20" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Jackson Wang"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=20" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Jackson Wang"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u16" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Christian Yu">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Christian Yu" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u16" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-2)">Christian Yu</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">08/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">Ayer 19:43</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">455</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">4.115</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u16" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Christian Yu"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=16" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Christian Yu"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u23" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Kim Do Hoon">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Kim Do Hoon" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u23" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-4)">Kim Do Hoon</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">12/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">27/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">318</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">3.260</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u23" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Kim Do Hoon"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=23" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Kim Do Hoon"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u10" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Bae Hyun Sung">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Bae Hyun Sung" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u10" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-6)">Bae Hyun Sung</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">18/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">24/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">96</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">1.040</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u10" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Bae Hyun Sung"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=10" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Bae Hyun Sung"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+            <li class="surface-3 border border-color-1 rounded-sm p-2 xl:p-3 flex flex-col gap-2 xl:gap-3 min-w-0">
+              <a href="/u2" class="block w-full aspect-[10/16] overflow-hidden rounded-sm surface-2 border border-color-1" aria-label="Perfil de Alexaundra C Schneiderman">
+                <img src="https://2img.net/i.imgur.com/YrTi1Su.png" alt="Avatar de Alexaundra C Schneiderman" loading="lazy" class="w-full h-full object-cover object-center" />
+              </a>
+              <a href="/u2" class="block surface-2 border border-color-1 rounded-sm p-2 text-center uppercase font-bold text-xs xl:text-sm break-words hover:border-(--accent-color)"><span class="usr_grp_clr" style="color:var(--group-9)">Alexaundra C Schneiderman</span></a>
+              <dl class="flex flex-col gap-1.5 xl:gap-2 m-0">
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-calendar-plus text-base text-color-accent"></i>Inscrito</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">20/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-clock text-base text-color-accent"></i>Conexión</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">12/10/2026</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-chats text-base text-color-accent"></i>Mensajes</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">12</dd>
+                </div>
+                <div class="flex items-center justify-between gap-2 surface-2 border border-color-1 rounded-sm px-2 py-2 xl:px-3">
+                  <dt class="flex items-center gap-2 uppercase text-xs"><i class="ph-fill ph-coins text-base text-color-accent"></i>Wons</dt>
+                  <dd class="font-bold text-xs xl:text-sm text-right">250</dd>
+                </div>
+              </dl>
+              <div class="grid grid-cols-2 gap-2 surface-2 border border-color-1 rounded-sm p-2">
+                <a href="/u2" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Perfil" aria-label="Perfil de Alexaundra C Schneiderman"><i class="ph-fill ph-user text-base"></i><span class="hidden md:inline">Perfil</span></a>
+                <a href="/privmsg?mode=post&amp;u=2" class="flex items-center justify-center gap-2 py-2 surface-3 rounded-sm text-color border border-color-1 hover:border-(--accent-color) uppercase text-xs font-bold" data-title="Mensaje privado" aria-label="Enviar mensaje privado a Alexaundra C Schneiderman"><i class="ph-fill ph-envelope-simple text-base"></i><span class="hidden md:inline">MP</span></a>
+              </div>
+            </li>
+          </ul>
+          <nav class="flex flex-wrap items-center justify-center gap-1 text-xs font-bold surface-1 border border-color-3 rounded-sm p-2 mt-2 xl:mt-3" aria-label="Paginación">
+            <a href="/memberlist" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" data-title="Primera página" aria-label="Primera página"><i class="ph ph-caret-line-left text-sm"></i></a>
+            <a href="/memberlist" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" data-title="Anterior" aria-label="Anterior"><i class="ph ph-caret-left text-sm"></i></a>
+            <a href="/memberlist?start=0" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">1</a>
+            <a href="/memberlist?start=8" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2 border-(--accent-color)! text-color-accent" aria-current="page">2</a>
+            <a href="/memberlist?start=16" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2">3</a>
+            <a href="/memberlist?start=16" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" data-title="Siguiente" aria-label="Siguiente"><i class="ph ph-caret-right text-sm"></i></a>
+            <a href="/memberlist?start=16" class="flex items-center justify-center surface-1 border border-color-3 rounded-sm hover:border-(--accent-color) min-w-8 h-8 px-2" data-title="Última página" aria-label="Última página"><i class="ph ph-caret-line-right text-sm"></i></a>
+          </nav>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

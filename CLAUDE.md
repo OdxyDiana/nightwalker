@@ -44,7 +44,7 @@ Repo-root loose files (`Group.png`, `Perfil.png`, `lista-temas.png`, `topics.png
 
 ## Workflow rules (from AGENTS.md, as amended by the user)
 
-- Never work on or push directly to the `develop` branch — use `feature/*` branches (this repo follows `feature/*` → `develop` → `main`).
+- Never work on or push directly to `main` — use `feature/*` branches (this repo follows `feature/*` → `main`; there is no `develop` branch).
 - Opening pull requests is allowed. Don't merge them independently, though.
 - Don't refactor existing code without explicit permission.
 - If starting in Plan Mode, notify the user and get confirmation to switch to Build Mode before writing/modifying files.
