@@ -235,7 +235,7 @@
             <!-- BEGIN switch_user_logged_out -->
             <div id="header-user" class="user-anon flex justify-start items-center min-w-0 after:left-0! after:transform-none! after:z-20! after:w-max!" data-title="Invitado" role="group" aria-label="Invitado">
                 <div class="shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] overflow-hidden rounded-sm surface-2 p-[5px] object-cover object-center border border-color-3 box-content">
-                    <img id="header-guest-avatar" alt="Avatar de invitado" class="[&:not([src])]:invisible w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
+                    <img id="header-guest-avatar" alt="Avatar de invitado" class="[&:not([src])]:invisible block max-w-none shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm" />
                 </div>
                 <span class="hidden sm:block uppercase font-bold ml-[10px] truncate">Invitado</span>
             </div>
@@ -253,9 +253,9 @@
                 <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color light-theme theme-selector flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Modo claro">
                     <i class="ph-fill ph-sun-dim"></i>
                 </a>
-                <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="Cambiar cuenta" href="{S_LOGIN_ACTION}" data-switch-account-open>
+                <button type="button" class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color) cursor-pointer" data-title="Cambiar cuenta" aria-label="Cambiar cuenta" data-switch-account-open>
                     <i class="ph-fill ph-user-switch"></i>
-                </a>
+                </button>
                 <!-- BEGIN switch_user_logged_in -->
                 <a class="nav-icon p-1 sm:p-2 text-sm sm:text-base surface-2 rounded-sm text-color flex align-center border-color-3 border hover:border-(--accent-color)" data-title="{L_PROFILE}" href="{U_PROFILE}">
                     <i class="ph-fill ph-user-gear"></i>
@@ -385,7 +385,7 @@
             var img = document.createElement('img');
             img.src = avatar;
             img.alt = name;
-            img.className = 'w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm';
+            img.className = 'block max-w-none shrink-0 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border-color-3 border object-cover object-center rounded-sm';
             frame.appendChild(img);
         }
         var label = document.createElement('span');
