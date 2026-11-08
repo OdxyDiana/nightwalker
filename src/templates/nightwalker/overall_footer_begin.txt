@@ -9,7 +9,7 @@
     </footer>
 
     <script type="text/javascript">
-        // El iframe es del mismo dominio: se ajusta a la altura de su contenido
+        /* El iframe es del mismo dominio: se ajusta a la altura de su contenido */
         (function () {
             var frame = document.getElementById('afiliaciones-frame');
             if (!frame) return;
@@ -18,14 +18,14 @@
                 try {
                     var doc = frame.contentDocument;
                     if (doc && doc.documentElement) frame.style.height = doc.documentElement.scrollHeight + 'px';
-                } catch (e) {}
+                } catch (e) { /* sin acceso al iframe */ }
             }
 
             frame.addEventListener('load', function () {
                 fit();
                 try {
                     if (window.ResizeObserver) new ResizeObserver(fit).observe(frame.contentDocument.documentElement);
-                } catch (e) {}
+                } catch (e) { /* sin acceso al iframe */ }
             });
         })();
     </script>

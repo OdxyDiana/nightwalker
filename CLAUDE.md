@@ -40,6 +40,12 @@ There is no test suite (`npm test` is the unconfigured npm stub) and no lint/for
 
 **Pages** (`src/*.html`), each a standalone forum page type: `indice.html` (forum index), `listado-temas.html` (topic list), `tema.html` (topic/thread template), `pack-html.html` (working copy of `tema.html` used to develop the `.post-content` markup — see Project overview), `perfil.html` (user profile), `paleta.html` (color palette dev tool), `tablon-viejo.html` (legacy reference page — imports an external live ForoActivo/Forumotion/Forumactif stylesheet instead of the local one, kept for comparison, not part of the active build).
 
+**Forum templates** (`src/templates/nightwalker/*.txt`): the files pasted into the forum's template editor (`src/templates/*.txt` at the top level are the platform's original defaults, kept as reference). The platform **strips line breaks** from the HTML it serves, so these files must be written with that in mind or the page renders cut off (this already happened once and left the forum rendering only the navbar, the tablón and the first categories):
+- Every HTML tag, with all its attributes, goes on **one line**. A tag split as `<div` + newline + `class="..."` is served as `<divclass="...` and breaks the DOM from there on (same for attributes: `"data-title` glued to the previous quote). Formatters like Prettier split long tags, so re-check after formatting.
+- No `//` line comments inside inline `<script>`: without newlines the comment swallows the code after it. Use `/* ... */`. The `//<![CDATA[` / `//]]>` markers are the exception.
+- No empty `{}` (e.g. `catch (e) {}`): it gets stripped to a syntax error. Put something inside, e.g. `{ /* ... */ }`.
+- Keep the platform's `<!-- BEGIN html_validation -->` blocks intact (they balance the `div`s the header/footer open and close).
+
 Repo-root loose files (`Group.png`, `Perfil.png`, `lista-temas.png`, `topics.png`) are visual reference mockups for the pages being built, not source assets used at runtime.
 
 ## Workflow rules (from AGENTS.md, as amended by the user)

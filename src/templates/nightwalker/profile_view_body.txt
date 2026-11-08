@@ -56,7 +56,7 @@
 <script src="https://cdn.jsdelivr.net/gh/OdxyDiana/nightwalker@main/src/profile-section.js" defer></script>
 <script type="text/javascript">
     //<![CDATA[
-    // Edición de campos en el propio perfil (los campos editables traen .field_editable / .field_uneditable)
+    /* Edición de campos en el propio perfil (los campos editables traen .field_editable / .field_uneditable) */
     $(document).ready(function(){
         $('[id^=field_id]').each(function(){
             if ( $(this).find('.field_editable').is('span, div') )

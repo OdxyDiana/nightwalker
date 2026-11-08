@@ -79,7 +79,7 @@
 
 <script type="text/javascript">
     //<![CDATA[
-    // La ruta de navegación la escriben viewforum_body / viewtopic_body (#breadcrumbs); se lleva a la barra de arriba
+    /* La ruta de navegación la escriben viewforum_body / viewtopic_body (#breadcrumbs); se lleva a la barra de arriba */
     $(document).ready(function () {
         var crumbs = $('#breadcrumbs'),
             slot = $('#breadcrump');

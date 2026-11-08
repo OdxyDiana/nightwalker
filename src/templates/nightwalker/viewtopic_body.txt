@@ -7,7 +7,7 @@
 <!-- END switch_plus_menu -->
 <script type="text/javascript">
     //<![CDATA[
-    // Los mensajes ocultos no se pueden mostrar desde el navegador: solo los ven quienes tienen permiso en el foro
+    /* Los mensajes ocultos no se pueden mostrar desde el navegador: solo los ven quienes tienen permiso en el foro */
     showHiddenMessage = function () { return false; };
     //]]>
 </script>
